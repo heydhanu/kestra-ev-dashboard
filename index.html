@@ -726,6 +726,2843 @@
     transition: background 0.3s;
   }
   .nb-bar.empty { background: #333; }
+  .nb-bar.low    { background: var(--red); }
+  .nb-bar.medium { background: var(--yellow); }
+  .nb-bar.good   { background: var(--green-dark); }
+  .nav-batt-info { text-align: center; }
+  .nav-batt-pct { font-family: var(--font-head); font-size: 24px; font-weight: 700; color: var(--red); }
+  .nav-batt-range { font-size: 13px; color: #aaa; margin-top: 3px; }
+  .nav-alert-card {
+    background: #1a1a2e; border-radius: 12px; padding: 14px 12px;
+    text-align: center;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+  .nav-alert-card.hidden {
+    display: none;
+  }
+  .alert-head { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 6px; }
+  .alert-icon { font-size: 22px; }
+  .alert-title { font-family: var(--font-head); font-size: 13px; font-weight: 700; color: var(--yellow); }
+  .alert-desc { font-size: 13px; color: #aaa; line-height: 1.4; }
+  .nav-charging-btn {
+    background: var(--blue); border-radius: 12px; padding: 14px 12px;
+    display: flex; align-items: center; gap: 10px; cursor: pointer;
+    border: none; color: white; text-align: left;
+    transition: background 0.15s;
+  }
+  .nav-charging-btn:hover { background: var(--blue-light); }
+  .nav-charging-btn-icon { font-size: 24px; }
+  .nav-charging-btn-text { flex: 1; }
+  .nav-charging-btn-title { font-family: var(--font-head); font-size: 13px; font-weight: 700; }
+  .nav-charging-btn-sub { font-size: 12px; color: #cde; }
+  .nav-charging-btn-arrow { margin-left: auto; font-size: 20px; }
+
+  /* ========== DRIVE MODE ROW (Nav screen) ========== */
+  .nav-drive-mode-row {
+    background: #0a0a18; border-bottom: 1px solid #222;
+    padding: 10px 16px; display: flex; align-items: center; gap: 10px;
+    flex-shrink: 0;
+  }
+  .nav-dm-label {
+    font-family: var(--font-head); font-size: 10px; font-weight: 700;
+    color: #666; letter-spacing: 0.08em; white-space: nowrap; flex-shrink: 0;
+  }
+  .nav-dm-btns {
+    display: flex; gap: 6px; flex: 1;
+  }
+  .nav-dm-btn {
+    flex: 1; display: flex; flex-direction: column; align-items: center; gap: 3px;
+    background: #1a1a2e; border: 1.5px solid #2a2a4a; border-radius: 10px;
+    padding: 7px 4px; cursor: pointer; transition: background 0.15s, border-color 0.15s, transform 0.1s;
+    color: white;
+  }
+  .nav-dm-btn:hover { border-color: var(--purple-light); background: #24183e; }
+  .nav-dm-btn.active.eco   { background: #0d3322; border-color: #00e07a; }
+  .nav-dm-btn.active.comfort { background: #1a1050; border-color: var(--purple-light); }
+  .nav-dm-btn.active.sport { background: #2a1000; border-color: var(--yellow); }
+  .nav-dm-btn.active.sport-plus { background: #2a0808; border-color: var(--red); }
+  .nav-dm-btn:active { transform: scale(0.94); }
+  .nav-dm-icon { font-size: 16px; }
+  .nav-dm-name {
+    font-family: var(--font-head); font-size: 8px; font-weight: 700;
+    letter-spacing: 0.05em; color: #aaa;
+  }
+  .nav-dm-btn.active .nav-dm-name { color: white; }
+  .nav-dm-btn.active.eco   .nav-dm-name { color: #00e07a; }
+  .nav-dm-btn.active.sport .nav-dm-name { color: var(--yellow); }
+  .nav-dm-btn.active.sport-plus .nav-dm-name { color: var(--red); }
+  /* range badge per mode */
+  .nav-dm-range {
+    font-size: 8px; color: #555; font-weight: 500;
+  }
+  .nav-dm-btn.active .nav-dm-range { color: #aaa; }
+
+  .nav-bottom-bar {
+    background: #111; padding: 14px 20px;
+    display: flex; align-items: center; gap: 0;
+    flex-shrink: 0;
+  }
+  .nav-stat {
+    flex: 1; display: flex; align-items: center; gap: 10px;
+    padding: 0 12px; color: white;
+  }
+  .nav-stat:not(:last-child) { border-right: 1px solid #333; }
+  .nav-stat-icon { font-size: 20px; color: #aaa; }
+  .nav-stat-label { font-size: 10px; color: #888; }
+  .nav-stat-val { font-family: var(--font-head); font-size: 14px; font-weight: 700; color: white; }
+  .start-trip-btn {
+    background: var(--green); color: white; border: none; border-radius: 10px;
+    padding: 12px 24px; font-family: var(--font-head); font-size: 13px; font-weight: 700;
+    cursor: pointer; margin-left: 10px;
+    transition: background 0.15s, transform 0.1s;
+    display: none;
+  }
+  .start-trip-btn.visible { display: block; }
+  .start-trip-btn:hover { background: var(--green-dark); color: white; }
+  .start-trip-btn:active { transform: scale(0.96); }
+
+  /* ========== ENERGY SCREEN ========== */
+  #screen-energy {
+    background: linear-gradient(160deg, #f8f6ff 0%, #eee8ff 100%);
+    padding: 0;
+  }
+  .energy-inner {
+    flex: 1; padding: 16px 20px; display: grid;
+    grid-template-rows: auto 1fr auto auto;
+    gap: 12px; overflow-y: auto;
+  }
+  .energy-top {
+    display: grid; grid-template-columns: 220px 1fr; gap: 16px; align-items: start;
+  }
+  .battery-section { }
+  .batt-title { font-family: var(--font-head); font-size: 28px; font-weight: 900; color: #111; margin-bottom: 4px; }
+  .batt-pct-big { font-family: var(--font-head); font-size: 40px; font-weight: 900; color: var(--red); display: flex; align-items: center; gap: 8px; }
+  .batt-spin-icon { font-size: 22px; animation: spinSlow 2s linear infinite; }
+  @keyframes spinSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  .batt-range-e { font-size: 14px; color: #555; margin-top: 4px; }
+  .batt-chart-area {
+    display: flex; align-items: flex-end; gap: 8px;
+    height: 120px; padding: 8px 0;
+  }
+  .batt-bar-e {
+    border-radius: 4px 4px 0 0;
+    flex-shrink: 0;
+    transition: height 0.4s;
+  }
+
+  .energy-stats-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+  }
+  .ecard {
+    background: #0e0e1a; border-radius: 14px; padding: 14px 16px;
+    color: white;
+  }
+  .ecard-head { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .ecard-icon { font-size: 22px; }
+  .ecard-title { font-size: 13px; font-weight: 600; color: #ccc; }
+  .ecard-val { font-family: var(--font-head); font-size: 22px; font-weight: 700; color: white; margin-bottom: 2px; }
+  .ecard-unit { font-size: 11px; color: #888; margin-bottom: 8px; }
+  .ecard-tag {
+    background: #1a1a2e; border-radius: 20px; padding: 4px 12px;
+    font-size: 11px; color: #aaa; display: inline-block;
+  }
+  .ecard-icon-green { color: var(--green); }
+  .ecard-icon-blue { color: var(--blue-light); }
+  .ecard-icon-yellow { color: var(--yellow); }
+  .ecard-icon-purple { color: var(--purple-light); }
+
+  .energy-alert-bar {
+    background: var(--red); border-radius: 12px; padding: 12px 16px;
+    display: flex; align-items: center; gap: 12px;
+    cursor: pointer; border: none; width: 100%; text-align: left;
+    transition: filter 0.15s;
+  }
+  .energy-alert-bar:hover { filter: brightness(1.1); }
+  .energy-alert-icon { font-size: 22px; color: white; }
+  .energy-alert-text { flex: 1; }
+  .energy-alert-title { font-family: var(--font-head); font-size: 12px; font-weight: 700; color: white; margin-bottom: 2px; }
+  .energy-alert-desc { font-size: 11px; color: rgba(255,255,255,0.85); }
+  .energy-alert-arrow { font-size: 22px; color: white; }
+
+  .energy-charging-bar {
+    background: var(--green-dark); border-radius: 12px; padding: 12px 16px;
+    display: flex; align-items: center; gap: 12px;
+    cursor: pointer; border: none; width: 100%; text-align: left;
+    transition: filter 0.15s;
+  }
+  .energy-charging-bar:hover { filter: brightness(1.1); }
+  .energy-charging-icon { font-size: 22px; color: white; }
+  .energy-charging-label { font-family: var(--font-head); font-size: 13px; font-weight: 700; color: white; flex: 1; }
+  .energy-charging-arrow { font-size: 22px; color: white; }
+
+  /* ========== CAMERA SCREEN ========== */
+  #screen-camera {
+    background: #e8f0ff;
+  }
+  .camera-inner {
+    flex: 1; padding: 12px 16px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .camera-views {
+    flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+    position: relative;
+  }
+  .cam-view {
+    border-radius: 14px; overflow: hidden; position: relative;
+    background: #1a1a1a; min-height: 0;
+  }
+  .cam-view svg { width: 100%; height: 100%; display: block; }
+  .cam-label {
+    position: absolute; top: 10px; left: 50%; transform: translateX(-50%);
+    background: rgba(0,0,0,0.6); color: white;
+    font-family: var(--font-head); font-size: 10px; font-weight: 700;
+    padding: 4px 12px; border-radius: 20px; white-space: nowrap;
+    letter-spacing: 0.08em;
+  }
+  .cam-toggle-btn {
+    position: absolute; top: 10px; right: 10px; z-index: 5;
+    background: rgba(0,0,0,0.7); color: white;
+    border: none; border-radius: 8px; padding: 6px 10px;
+    font-size: 14px; cursor: pointer;
+    transition: background 0.15s;
+  }
+  .cam-toggle-btn:hover { background: var(--purple); }
+  .sensor-status {
+    background: #0e0e1a; border-radius: 10px; padding: 8px 14px;
+    display: flex; align-items: center; gap: 14px;
+    flex-wrap: wrap;
+  }
+  .sensor-label { font-family: var(--font-head); font-size: 10px; color: #aaa; font-weight: 700; }
+  .sensor-dot { display: flex; align-items: center; gap: 6px; font-size: 11px; color: #ccc; }
+  .sdot { width: 10px; height: 10px; border-radius: 50%; }
+
+  /* ========== BOTTOM NAV ========== */
+  .bottom-nav {
+    background: white; height: 62px;
+    display: flex; align-items: stretch;
+    border-top: 1px solid var(--border);
+    flex-shrink: 0;
+    position: sticky; bottom: 0; z-index: 50;
+  }
+  .nav-tab {
+    flex: 1; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 3px;
+    cursor: pointer; background: none; border: none;
+    transition: background 0.15s;
+    border-radius: 0;
+  }
+  .nav-tab:hover { background: #f0ecff; }
+  .nav-tab.active { background: var(--nav-active); }
+  .nav-tab-icon { font-size: 20px; color: #888; transition: color 0.15s; }
+  .nav-tab.active .nav-tab-icon { color: var(--purple); }
+  .nav-tab-label { font-family: var(--font-head); font-size: 9px; font-weight: 700; color: #888; letter-spacing: 0.05em; }
+  .nav-tab.active .nav-tab-label { color: var(--purple); }
+
+  /* ========== MODALS ========== */
+  .modal-overlay {
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.65);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 9999;
+    visibility: hidden; opacity: 0;
+    transition: opacity 0.2s, visibility 0.2s;
+    pointer-events: none;
+  }
+  .modal-overlay.open {
+    visibility: visible; opacity: 1;
+    pointer-events: all;
+  }
+  .modal-box {
+    background: white; border-radius: 20px; padding: 28px 32px;
+    max-width: 380px; width: 90%; text-align: center;
+    animation: popIn 0.25s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  @keyframes popIn {
+    from { transform: scale(0.85) translateY(10px); opacity: 0; }
+    to { transform: scale(1) translateY(0); opacity: 1; }
+  }
+  .modal-icon { font-size: 40px; margin-bottom: 12px; }
+  .modal-title { font-family: var(--font-head); font-size: 16px; font-weight: 700; margin-bottom: 8px; color: #111; }
+  .modal-desc { font-size: 13px; color: #666; line-height: 1.6; margin-bottom: 20px; }
+  .modal-btn {
+    background: var(--purple); color: white; border: none;
+    border-radius: 10px; padding: 12px 28px;
+    font-family: var(--font-head); font-size: 13px; font-weight: 700;
+    cursor: pointer; transition: background 0.15s;
+    margin: 0 6px;
+  }
+  .modal-btn:hover { background: var(--purple-light); }
+  .modal-btn.secondary { background: #eee; color: #333; }
+  .modal-btn.secondary:hover { background: #ddd; }
+  .modal-btn.danger { background: var(--red); }
+  .modal-btn.danger:hover { background: #e52; }
+
+  /* Undo prompt */
+  .undo-toast {
+    position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%);
+    background: #222; color: white; border-radius: 12px;
+    padding: 12px 24px; display: flex; align-items: center; gap: 14px;
+    font-size: 13px; z-index: 200; animation: slideUp 0.25s;
+    display: none;
+  }
+  .undo-toast.show { display: flex; }
+  @keyframes slideUp {
+    from { transform: translateX(-50%) translateY(20px); opacity: 0; }
+    to { transform: translateX(-50%) translateY(0); opacity: 1; }
+  }
+  .undo-btn {
+    background: var(--green); color: white; border: none;
+    border-radius: 8px; padding: 6px 14px;
+    font-family: var(--font-head); font-size: 11px; font-weight: 700;
+    cursor: pointer;
+  }
+
+  /* ===== SEARCH SUGGESTIONS ===== */
+  .search-suggestions {
+    position: absolute; top: 100%; left: 16px; right: 60px;
+    background: white; border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    z-index: 20; overflow: hidden; display: none;
+  }
+  .search-suggestions.show { display: block; }
+  .suggestion-item {
+    padding: 12px 18px; cursor: pointer; font-size: 13px;
+    border-bottom: 1px solid #f0f0f5; display: flex; align-items: center; gap: 10px;
+  }
+  .suggestion-item:last-child { border-bottom: none; }
+  .suggestion-item:hover { background: #f5f0ff; }
+  .suggestion-icon { font-size: 16px; color: #888; }
+
+  /* Trip started overlay */
+  .trip-active-bar {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: var(--green-dark); padding: 8px 14px;
+    display: none; align-items: center; gap: 10px;
+    z-index: 6;
+  }
+  .trip-active-bar.show { display: flex; }
+  .trip-active-dot { width: 8px; height: 8px; border-radius: 50%; background: #7fff7f; animation: pulse 1.2s ease infinite; }
+  @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.4); } }
+  .trip-active-text { font-family: var(--font-head); font-size: 12px; color: white; font-weight: 700; }
+  .trip-stop-btn {
+    margin-left: auto; background: rgba(255,255,255,0.2); color: white;
+    border: none; border-radius: 8px; padding: 5px 14px;
+    font-family: var(--font-head); font-size: 11px; cursor: pointer;
+  }
+
+  /* ========== PERSISTENT FAULT BANNER ========== */
+  @keyframes slideDown {
+    from { transform: translateY(-100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  .fault-banner {
+    display: none;
+    position: fixed; top: 56px; left: 0; right: 0;
+    z-index: 90;
+    background: linear-gradient(90deg, #b81010 0%, #d42020 100%);
+    color: white;
+    padding: 10px 16px;
+    align-items: center; gap: 10px;
+    border-bottom: 2px solid rgba(255,255,255,0.2);
+    animation: slideDown 0.35s cubic-bezier(0.34,1.1,0.64,1);
+    box-shadow: 0 4px 20px rgba(180,0,0,0.4);
+  }
+  .fault-banner.show { display: flex; }
+  .fault-banner-icon { font-size: 20px; flex-shrink: 0; }
+  .fault-banner-text { flex: 1; }
+  .fault-banner-title {
+    font-family: var(--font-head); font-size: 11px; font-weight: 700;
+    letter-spacing: 0.06em; margin-bottom: 2px;
+  }
+  .fault-banner-desc { font-size: 12px; color: rgba(255,255,255,0.88); line-height: 1.3; }
+  .fault-banner-dismiss {
+    background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.35);
+    color: white; border-radius: 8px; padding: 5px 12px;
+    font-family: var(--font-head); font-size: 10px; font-weight: 700;
+    cursor: pointer; flex-shrink: 0;
+    transition: background 0.15s;
+  }
+  .fault-banner-dismiss:hover { background: rgba(255,255,255,0.3); }
+
+  /* Push screens down when banner is active */
+  body.fault-active .header { top: 0; }
+  body.fault-active .screen { padding-top: 44px; }
+  @media (max-width: 768px) {
+    .fault-banner { top: 50px; }
+    body.fault-active .screen { padding-top: 40px; }
+  }
+
+  /* ========== ENERGY SCREEN FAULT PANEL ========== */
+  .energy-fault-panel {
+    background: #1a0000; border: 1.5px solid #c00; border-radius: 14px;
+    padding: 16px 18px; display: none; flex-direction: column; gap: 12px;
+  }
+  .energy-fault-panel.show { display: flex; }
+  .efp-header { display: flex; align-items: center; gap: 10px; }
+  .efp-icon { font-size: 24px; }
+  .efp-title { font-family: var(--font-head); font-size: 13px; font-weight: 700; color: #ff6060; flex: 1; }
+  .efp-desc { font-size: 12px; color: #ffaaaa; line-height: 1.5; }
+  .efp-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+  .efp-call-btn {
+    flex: 1; min-width: 120px;
+    background: var(--red); border: none; border-radius: 10px;
+    padding: 11px 16px; color: white;
+    font-family: var(--font-head); font-size: 12px; font-weight: 700;
+    cursor: pointer; display: flex; align-items: center; gap: 8px; justify-content: center;
+    transition: filter 0.15s;
+  }
+  .efp-call-btn:hover { filter: brightness(1.15); }
+  .efp-toggle-btn {
+    background: #333; border: 1px solid #555; border-radius: 10px;
+    padding: 11px 16px; color: #aaa;
+    font-family: var(--font-head); font-size: 11px; font-weight: 700;
+    cursor: pointer; transition: background 0.15s;
+  }
+  .efp-toggle-btn:hover { background: #444; color: white; }
+
+  /* Larger battery bar on energy screen */
+  .batt-bar-e {
+    border-radius: 4px 4px 0 0;
+    flex-shrink: 0;
+    transition: height 0.4s;
+  }
+  .batt-chart-area {
+    display: flex; align-items: flex-end; gap: 8px;
+    height: 150px; padding: 8px 0;
+  }
+
+  /* Glare overlay for startup */
+  .glare-overlay {
+    position: fixed; inset: 0; background: white; z-index: 999;
+    animation: glare 1.8s forwards;
+    pointer-events: none;
+  }
+  @keyframes glare {
+    0% { opacity: 1; }
+    40% { opacity: 0.9; }
+    100% { opacity: 0; pointer-events: none; display: none; }
+  }
+
+  /* ========== DRIVING SCREEN ========== */
+  #screen-driving {
+    background: #111; flex-direction: column; position: relative;
+  }
+  .driving-road-view {
+    flex: 1; position: relative; overflow: hidden;
+  }
+  .driving-road-view svg { width: 100%; height: 100%; display: block; }
+  /* Animated road movement */
+  @keyframes roadMove {
+    from { stroke-dashoffset: 0; }
+    to { stroke-dashoffset: -60; }
+  }
+  @keyframes treeBob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+  }
+  .driving-hud {
+    position: absolute; top: 16px; left: 16px;
+    background: rgba(0,0,0,0.65); border-radius: 14px;
+    padding: 12px 20px; color: white;
+    font-family: var(--font-head);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .driving-hud-speed { font-size: 40px; font-weight: 900; color: var(--green); line-height: 1; }
+  .driving-hud-unit { font-size: 13px; color: #aaa; }
+  .driving-hud-dest { margin-top: 8px; font-size: 12px; color: #ccc; font-weight: 600; }
+  .driving-end-btn {
+    position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%);
+    background: var(--red); color: white; border: none;
+    border-radius: 16px; padding: 18px 60px;
+    font-family: var(--font-head); font-size: 18px; font-weight: 900;
+    cursor: pointer; letter-spacing: 0.08em;
+    box-shadow: 0 6px 30px rgba(255,59,59,0.5);
+    transition: transform 0.15s, background 0.15s;
+  }
+  .driving-end-btn:hover { background: #e52; transform: translateX(-50%) scale(1.04); }
+  .driving-end-btn:active { transform: translateX(-50%) scale(0.97); }
+
+  /* ========== CHARGING ACTIVE VIEW (energy screen overlay) ========== */
+  .charging-active-overlay {
+    display: none; position: absolute; inset: 0;
+    background: linear-gradient(160deg, #f8f6ff 0%, #eee8ff 100%);
+    flex-direction: column; align-items: center; justify-content: center;
+    gap: 20px; z-index: 10; padding: 24px;
+    pointer-events: none;
+  }
+  .charging-active-overlay.show { display: flex; pointer-events: all; }
+  .charging-active-icon { font-size: 64px; animation: chargePulse 1.2s ease infinite; }
+  @keyframes chargePulse { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.15); opacity: 0.75; } }
+  .charging-active-title { font-family: var(--font-head); font-size: 26px; font-weight: 900; color: #111; text-align: center; }
+  .charging-active-pct { font-family: var(--font-head); font-size: 64px; font-weight: 900; color: var(--green-dark); line-height: 1; }
+  .charging-active-bars {
+    display: flex; align-items: flex-end; gap: 8px; height: 80px;
+  }
+  .ca-bar {
+    width: 22px; border-radius: 4px 4px 0 0;
+    transition: height 0.5s, background 0.5s;
+  }
+  .charging-active-stats {
+    display: flex; gap: 32px;
+    background: rgba(0,0,0,0.06); border-radius: 14px; padding: 14px 28px;
+  }
+  .ca-stat { text-align: center; }
+  .ca-stat-label { font-size: 11px; color: #777; margin-bottom: 4px; }
+  .ca-stat-val { font-family: var(--font-head); font-size: 18px; font-weight: 800; color: #111; }
+  .stop-charging-btn {
+    background: #111; color: white; border: none; border-radius: 14px;
+    padding: 18px 60px; font-family: var(--font-head); font-size: 18px; font-weight: 900;
+    cursor: pointer; letter-spacing: 0.06em;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+    transition: background 0.15s, transform 0.1s;
+  }
+  .stop-charging-btn:hover { background: var(--purple); }
+  .stop-charging-btn:active { transform: scale(0.97); }
+
+  /* Destination reached message */
+  .dest-reached-overlay {
+    display: none; position: absolute; inset: 0;
+    background: rgba(0,0,0,0.7); align-items: center; justify-content: center;
+    z-index: 20; animation: fadeIn 0.3s;
+  }
+  .dest-reached-overlay.show { display: flex; }
+  .dest-reached-box {
+    background: white; border-radius: 24px; padding: 40px 48px;
+    text-align: center; max-width: 380px;
+    animation: popIn 0.3s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  .dest-reached-icon { font-size: 56px; margin-bottom: 14px; }
+  .dest-reached-title { font-family: var(--font-head); font-size: 20px; font-weight: 900; color: #111; margin-bottom: 10px; }
+  .dest-reached-desc { font-size: 14px; color: #666; margin-bottom: 24px; }
+  .dest-reached-btn {
+    background: var(--purple); color: white; border: none; border-radius: 12px;
+    padding: 14px 36px; font-family: var(--font-head); font-size: 14px; font-weight: 700;
+    cursor: pointer; transition: background 0.15s;
+  }
+  /* ========== BLUETOOTH INDICATOR ========== */
+  .bt-indicator {
+    display: flex; align-items: center; gap: 4px;
+    background: #f0f0f5; border-radius: 6px; padding: 4px 8px;
+    border: 1.5px solid #ccc;
+    transition: background 0.2s, border-color 0.2s;
+    position: relative;
+  }
+  .bt-indicator.connected { background: #e8f0ff; border-color: #4d9fff; }
+  .bt-indicator.connected svg path { stroke: #1e6fff; }
+  .bt-label {
+    font-family: var(--font-head); font-size: 10px; font-weight: 700; color: #555;
+    letter-spacing: 0.04em;
+  }
+  .bt-indicator.connected .bt-label { color: #1e6fff; }
+  .bt-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: #ccc; transition: background 0.3s;
+  }
+  .bt-indicator.connected .bt-dot { background: #00c853; box-shadow: 0 0 5px rgba(0,200,83,0.7); animation: btPulse 2s ease infinite; }
+  @keyframes btPulse { 0%,100%{opacity:1;} 50%{opacity:0.5;} }
+  .bt-device-toast {
+    display: none; position: absolute; top: calc(100% + 8px); right: 0;
+    background: white; border-radius: 10px; padding: 8px 12px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.15); border: 1px solid #e0e0ef;
+    min-width: 160px; z-index: 50;
+    animation: fadeIn 0.18s ease;
+  }
+  .bt-device-toast.show { display: block; }
+  .bt-toast-title { font-family: var(--font-head); font-size: 10px; font-weight: 700; color: #444; margin-bottom: 6px; letter-spacing: 0.06em; }
+  .bt-device-item { display: flex; align-items: center; gap: 7px; padding: 5px 0; border-top: 1px solid #f0f0f5; font-size: 12px; color: #333; }
+  .bt-device-icon { font-size: 14px; }
+  .bt-device-name { flex: 1; font-weight: 500; }
+  .bt-device-status { font-size: 10px; color: #00c853; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<!-- Startup glare effect -->
+<div class="glare-overlay" id="glareOverlay"></div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-time" id="timeDisplay">10:20 AM</div>
+  <div class="header-logo">KESTRA EV</div>
+  <div class="header-status">
+    <!-- Bluetooth indicator -->
+    <div class="bt-indicator connected" id="btIndicator" title="Bluetooth devices" onclick="toggleBtToast(event)" style="cursor:pointer;position:relative;">
+      <svg width="14" height="18" viewBox="0 0 14 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;">
+        <path d="M3 5L11 13L7 17V3L11 7L3 15" stroke="#1e6fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="bt-label" id="btLabel">BT</span>
+      <div class="bt-dot" id="btDot"></div>
+      <!-- Dropdown toast -->
+      <div class="bt-device-toast" id="btToast">
+        <div class="bt-toast-title">BLUETOOTH DEVICES</div>
+        <div class="bt-device-item"><span class="bt-device-icon">🎵</span><span class="bt-device-name">Kestra Audio</span><span class="bt-device-status">Connected</span></div>
+        <div class="bt-device-item"><span class="bt-device-icon">📱</span><span class="bt-device-name">My Phone</span><span class="bt-device-status">Connected</span></div>
+        <div class="bt-device-item" style="opacity:0.45;"><span class="bt-device-icon">🎧</span><span class="bt-device-name">EarBuds Pro</span><span class="bt-device-status" style="color:#aaa;">Paired</span></div>
+      </div>
+    </div>
+    <span class="status-icon" style="color:#1e6fff;">
+      <svg width="16" height="18" viewBox="0 0 16 22" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;">
+        <path d="M2 5.5L13 14L8 18V4L13 8L2 16.5" stroke="#1e6fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+    <div class="signal-bars" id="signalBars">
+      <div class="signal-bar" style="height:5px;"></div>
+      <div class="signal-bar" style="height:9px;"></div>
+      <div class="signal-bar" style="height:14px;"></div>
+      <div class="signal-bar" style="height:18px;"></div>
+    </div>
+    <div class="battery-indicator">
+      <div class="battery-bar-wrap"><div class="battery-bar-fill" id="headerBattFill"></div></div>
+      <span id="headerBattPct">15%</span>
+    </div>
+  </div>
+</header>
+
+<!-- PERSISTENT FAULT BANNER -->
+<div class="fault-banner" id="faultBanner" onclick="openFaultFromBanner()" style="cursor:pointer;" title="Tap to contact technician">
+  <span class="fault-banner-icon">⚠️</span>
+  <div class="fault-banner-text">
+    <div class="fault-banner-title">VEHICLE FAULT DETECTED — Tap for details</div>
+    <div class="fault-banner-desc" id="faultBannerDesc">Battery sensor is not responding correctly — please contact a technician.</div>
+  </div>
+  <button class="fault-banner-dismiss" onclick="event.stopPropagation(); dismissFault()">✕</button>
+</div>
+
+<!-- ======== HOME SCREEN ======== -->
+<div class="screen active" id="screen-home">
+  <div class="home-cards">
+    <!-- Battery Card -->
+    <div class="home-card card-battery" onclick="goTo('energy')" style="align-items:center;justify-content:flex-start;">
+      <div class="card-header-row">
+        <div class="card-icon-wrap">&#x1F50B;</div>
+        <span class="card-title">BATTERY / RANGE</span>
+        <span class="card-arrow">›</span>
+      </div>
+
+      <!-- Big % centered -->
+      <div class="battery-pct" id="homeBattPct" style="text-align:center;width:100%;margin-bottom:6px;">15%</div>
+
+      <!-- Status pill + drain badge centered -->
+      <div style="display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin-bottom:10px;">
+        <div class="batt-status-pill"><div class="batt-status-dot warn" id="homeBattDot"></div><span id="homeBattStatusTxt">Critical</span></div>
+        <div class="batt-drain-badge draining" id="homeBattDrainBadge">⬇ DRAINING</div>
+      </div>
+
+      <!-- Bar visualiser centered -->
+      <div class="home-batt-bars" id="homeBattBars" style="justify-content:center;margin-bottom:10px;">
+        <div class="home-nb-bar low" style="height:18px;"></div>
+        <div class="home-nb-bar empty" style="height:28px;"></div>
+        <div class="home-nb-bar empty" style="height:38px;"></div>
+        <div class="home-nb-bar empty" style="height:46px;"></div>
+        <div class="home-nb-bar empty" style="height:52px;"></div>
+      </div>
+
+      <!-- Power flow row centered -->
+      <div class="batt-power-row" style="margin-bottom:10px;">
+        <div class="batt-power-item" style="text-align:center;">
+          <div class="batt-power-icon">⚡</div>
+          <div class="batt-power-label">Power Use</div>
+          <div class="batt-power-val" id="homeBattPower">14.2 kW</div>
+        </div>
+        <div class="batt-power-item" style="text-align:center;">
+          <div class="batt-power-icon">🔁</div>
+          <div class="batt-power-label">Regen</div>
+          <div class="batt-power-val">+1.3 kW</div>
+        </div>
+        <div class="batt-power-item" style="text-align:center;">
+          <div class="batt-power-icon">🌡️</div>
+          <div class="batt-power-label">Batt Temp</div>
+          <div class="batt-power-val">34°C</div>
+        </div>
+      </div>
+
+      <!-- Spacer pushes stats to bottom -->
+      <div style="flex:1;"></div>
+
+      <!-- Stats row pinned to bottom -->
+      <div class="batt-warning-msg" id="homeBattWarning" style="margin-bottom:8px;">⚠️ Low Battery — Please Charge ASAP!</div>
+      <div class="battery-stats" style="width:100%;">
+        <div class="bstat">
+          <div class="bstat-label">Est. Range</div>
+          <div class="bstat-val" id="homeBattRange">10 km</div>
+        </div>
+        <div class="bstat">
+          <div class="bstat-label">Est. Charge Time</div>
+          <div class="bstat-val" id="homeBattEstTime">5h 25m</div>
+        </div>
+      </div>
+    </div>
+    <!-- Navigation Card -->
+    <div class="home-card card-nav" onclick="goTo('nav')">
+      <div class="card-header-row">
+        <div class="card-icon-wrap">&#x2191;</div>
+        <span class="card-title">NAVIGATION</span>
+        <span class="card-arrow">›</span>
+      </div>
+      <div class="map-thumb" style="position:relative;">
+        <svg class="map-thumb-svg" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+          <rect width="200" height="100" fill="#c8dfb8"/>
+          <rect x="0" y="40" width="200" height="20" fill="#e8e0c8" opacity="0.8"/>
+          <line x1="0" y1="50" x2="200" y2="50" stroke="#d4c870" stroke-width="1.5" stroke-dasharray="8,6"/>
+          <path d="M60 90 Q80 55 120 45 Q150 38 200 50" fill="none" stroke="#aac8e8" stroke-width="3"/>
+          <circle cx="120" cy="45" r="6" fill="#1e6fff"/>
+          <polygon points="120,30 125,44 115,44" fill="#1e6fff"/>
+          <circle cx="60" cy="90" r="5" fill="#ff3b3b"/>
+          <rect x="30" y="20" width="30" height="16" rx="3" fill="#d4c8a0" stroke="#b8b088" stroke-width="0.5"/>
+          <rect x="140" y="60" width="28" height="14" rx="3" fill="#d4c8a0" stroke="#b8b088" stroke-width="0.5"/>
+        </svg>
+        <div style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:9px;color:rgba(0,0,0,0.45);font-style:italic;pointer-events:none;">Stylised map · No live API</div>
+      </div>
+      <div class="nav-stats">
+        <div class="nstat">
+          <span class="nstat-icon">&#x23F0;</span>
+          <div class="nstat-info">
+            <div class="nstat-label">ETA</div>
+            <div class="nstat-val">9:30 AM</div>
+          </div>
+        </div>
+        <div class="nstat">
+          <span class="nstat-icon">&#x26F0;</span>
+          <div class="nstat-info">
+            <div class="nstat-label">Distance</div>
+            <div class="nstat-val">0 km</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Climate Card -->
+    <div class="home-card card-climate" onclick="goTo('climate')" style="align-items:center;">
+      <div class="card-header-row">
+        <div class="card-icon-wrap">&#x1F4A8;</div>
+        <span class="card-title">CLIMATE CONTROL</span>
+        <span class="card-arrow">›</span>
+      </div>
+
+      <!-- Big temp + ambient row (no "Interior" label) -->
+      <div style="display:flex;align-items:flex-end;justify-content:center;gap:10px;width:100%;">
+        <div class="climate-temp" id="homeTempDisplay" style="margin-bottom:0;">22°C</div>
+        <div style="margin-bottom:6px;text-align:left;">
+          <div class="climate-ambient-row" style="margin-bottom:0;gap:4px;">
+            <span class="climate-ambient-icon">🌤️</span>
+            <span class="climate-ambient-label">Outside</span>
+            <span class="climate-ambient-val" id="homeOutsideTemp">31°C</span>
+          </div>
+        </div>
+      </div>
+      <div class="climate-sublabel" style="margin-bottom:6px;">Interior temperature</div>
+
+      <!-- Temp gradient gauge -->
+      <div class="climate-gauge-row">
+        <div class="climate-gauge-track">
+          <div class="climate-gauge-thumb" id="climateGaugeThumb" style="left:40%;"></div>
+        </div>
+        <div class="climate-gauge-labels"><span>16°</span><span>22°</span><span>28°</span><span>34°</span></div>
+      </div>
+
+      <!-- Mode row -->
+      <div class="climate-mode-row">Mode: <span class="climate-mode-badge" id="homeClimateMode">COOL</span></div>
+
+      <!-- Stats grid -->
+      <div class="climate-stats-grid">
+        <div class="climate-stat-item">
+          <span class="climate-stat-icon">💨</span>
+          <div>
+            <div class="climate-stat-label">Fan Speed</div>
+            <div class="climate-stat-val" id="homeFanBadgeText2">Auto</div>
+          </div>
+        </div>
+        <div class="climate-stat-item">
+          <span class="climate-stat-icon">💧</span>
+          <div>
+            <div class="climate-stat-label">Humidity</div>
+            <div class="climate-stat-val">62%</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- A/C off msg -->
+      <div class="climate-ac-off-msg" id="homeAcOffMsg">A/C is off — ventilation only</div>
+
+      <!-- Fan dot row -->
+      <div class="climate-fan-row" id="homeFanRow" style="margin-bottom:0;">
+        <div class="fan-dot fan-dot-cold">❄️</div>
+        <div class="fan-dot active">&#x1F4A8;</div>
+        <div class="fan-dot active">&#x1F4A8;</div>
+        <div class="fan-dot active">&#x1F4A8;</div>
+        <div class="fan-dot fan-dot-heat">🔥</div>
+      </div>
+
+      <!-- Spacer pushes badges + status to bottom -->
+      <div style="flex:1;"></div>
+
+      <!-- AC badge only - full width -->
+      <div style="margin-bottom:8px;width:100%;">
+        <div class="cbadge" id="homeAcBadge" style="width:100%;"><span class="cbadge-icon">&#x2744;</span> <span id="homeAcBadgeText">A/C ON</span></div>
+      </div>
+
+      <!-- Dynamic status message -->
+      <div class="climate-status-msg cooling" id="homeClimateMsgRow">
+        <span>❄️</span><span id="homeClimateStatusMsg">Cooling cabin to 22°C</span>
+      </div>
+    </div>
+  </div>
+  <!-- Status bar -->
+  <div class="home-status-bar">
+    <div class="hstat">
+      <span class="hstat-icon">&#x1F6A8;</span>
+      <div>
+        <div class="hstat-label">Speed</div>
+        <div class="hstat-val" id="speedDisplay">70 km/h</div>
+      </div>
+    </div>
+    <div class="hstat">
+      <span class="hstat-icon" style="color:#4dff9f;">&#x1F343;</span>
+      <div>
+        <div class="hstat-label">Drive Mode <span style="font-size:9px;opacity:0.55;font-weight:400;">(status)</span></div>
+        <div class="hstat-val">🌿 Eco</div>
+      </div>
+    </div>
+    <div class="hstat">
+      <span class="hstat-icon" style="color:#7ddfff;">&#x26A1;</span>
+      <div>
+        <div class="hstat-label">Regen Braking</div>
+        <div class="hstat-val">ON</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======== CLIMATE SCREEN ======== -->
+<div class="screen" id="screen-climate">
+  <div class="screen-inner">
+    <button class="back-btn" onclick="goTo('home')">&#x2190; Back</button>
+    <div class="climate-top">
+      <div class="climate-screen-title">Interior temperature</div>
+      <div class="climate-temp-controls">
+        <button class="temp-btn cool-btn" onclick="changeTemp(-1)" title="Cool">&#x2744;</button>
+        <div class="temp-display" id="tempDisplay">22°C</div>
+        <button class="temp-btn heat-btn" onclick="changeTemp(1)" title="Heat">&#x1F525;</button>
+      </div>
+    </div>
+    <!-- Fan Speed -->
+    <div class="climate-dark-card">
+      <div class="fan-speed-row">
+        <span class="fan-label">Fan Speed</span>
+        <div class="fan-btns">
+          <button class="fan-speed-btn" onclick="setFan(1)" id="fan1">&#x1F4A8;</button>
+          <button class="fan-speed-btn" onclick="setFan(2)" id="fan2">&#x1F4A8;</button>
+          <button class="fan-speed-btn" onclick="setFan(3)" id="fan3">&#x1F4A8;</button>
+          <button class="fan-speed-btn" onclick="setFan(4)" id="fan4">&#x1F4A8;</button>
+          <button class="fan-speed-btn fan-auto active" onclick="setFan(0)" id="fan0">&#x1F504; Auto</button>
+        </div>
+      </div>
+    </div>
+    <!-- A/C Toggle -->
+    <div class="climate-dark-card">
+      <button class="ac-fullbtn on" id="acToggle" onclick="toggleAC()">
+        <span class="ac-glow-dot"></span>
+        <span id="acLabel">AC ON</span>
+      </button>
+      <div class="climate-status-line active" id="climateStatusLine">Fan Speed: Auto · Cooling active</div>
+    </div>
+    <!-- Mode buttons -->
+    <div class="climate-dark-card">
+      <div class="climate-modes-row">
+        <button class="mode-btn active" onclick="setMode(this,'cool')">
+          <span class="mode-icon">&#x2744;&#xFE0F;</span>
+          <span class="mode-name">COOL</span>
+        </button>
+        <button class="mode-btn" onclick="setMode(this,'heat')">
+          <span class="mode-icon">&#x2600;&#xFE0F;</span>
+          <span class="mode-name">HEAT</span>
+        </button>
+        <button class="mode-btn" onclick="setMode(this,'vent')">
+          <span class="mode-icon">&#x1F32C;</span>
+          <span class="mode-name">VENT</span>
+        </button>
+        <button class="mode-btn" onclick="setMode(this,'auto')">
+          <span class="mode-icon">&#x1F504;</span>
+          <span class="mode-name">AUTO</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======== NAVIGATION SCREEN ======== -->
+<div class="screen" id="screen-nav">
+  <div class="nav-screen-inner">
+    <div class="nav-search-bar" style="position:relative;">
+      <span class="search-icon">&#x1F50D;</span>
+      <input class="search-input" id="navSearch" type="text" placeholder="Search destination"
+        oninput="handleSearch(this.value)" onfocus="showSuggestions()" onblur="hideSuggestions()">
+      <button class="mic-btn" onclick="triggerVoice()">&#x1F3A4;</button>
+      <div class="search-suggestions" id="searchSuggestions">
+        <div class="suggestion-item" onmousedown="selectDest('Sarawak General Hospital')"><span class="suggestion-icon">&#x1F3E5;</span>Sarawak General Hospital</div>
+        <div class="suggestion-item" onmousedown="selectDest('UNIMAS Campus')"><span class="suggestion-icon">&#x1F3EB;</span>UNIMAS Campus</div>
+        <div class="suggestion-item" onmousedown="selectDest('Kuching Waterfront')"><span class="suggestion-icon">&#x1F30A;</span>Kuching Waterfront</div>
+        <div class="suggestion-item" onmousedown="selectDest('Petronas AEON Kuching')"><span class="suggestion-icon">&#x26FD;</span>Petronas AEON Kuching</div>
+        <div class="suggestion-item" onmousedown="selectDest('Damai Beach Resort')"><span class="suggestion-icon">&#x1F3D6;</span>Damai Beach Resort</div>
+      </div>
+    </div>
+    <!-- Drive Mode selector row -->
+    <div class="nav-drive-mode-row">
+      <span class="nav-dm-label">DRIVE MODE</span>
+      <div class="nav-dm-btns">
+        <button class="nav-dm-btn eco active" id="dm-eco"        onclick="setDriveMode('eco')"        title="Eco — maximise range">
+          <span class="nav-dm-icon">🌿</span>
+          <span class="nav-dm-name">ECO</span>
+          <span class="nav-dm-range">+18% range</span>
+        </button>
+        <button class="nav-dm-btn comfort" id="dm-comfort"     onclick="setDriveMode('comfort')"    title="Comfort — balanced">
+          <span class="nav-dm-icon">🛋️</span>
+          <span class="nav-dm-name">COMFORT</span>
+          <span class="nav-dm-range">Balanced</span>
+        </button>
+        <button class="nav-dm-btn sport" id="dm-sport"         onclick="setDriveMode('sport')"      title="Sport — responsive">
+          <span class="nav-dm-icon">⚡</span>
+          <span class="nav-dm-name">SPORT</span>
+          <span class="nav-dm-range">−12% range</span>
+        </button>
+        <button class="nav-dm-btn sport-plus" id="dm-sport-plus" onclick="setDriveMode('sport-plus')" title="Sport+ — maximum performance">
+          <span class="nav-dm-icon">🏁</span>
+          <span class="nav-dm-name">SPORT+</span>
+          <span class="nav-dm-range">−22% range</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="nav-body">
+    <div class="nav-map-area">
+      <button class="back-btn" style="position:absolute;top:12px;left:12px;z-index:6;padding:6px 14px;font-size:11px;" onclick="goTo('home')">&#x2190; Back</button>
+      <!-- Map SVG -->
+      <svg class="nav-map-svg" viewBox="0 0 800 340" xmlns="http://www.w3.org/2000/svg" id="navMapSvg">
+        <rect width="800" height="340" fill="#c8dfb8"/>
+        <!-- Water -->
+        <ellipse cx="200" cy="280" rx="200" ry="80" fill="#7ec8e3" opacity="0.6"/>
+        <path d="M350 300 Q380 280 420 295 Q460 310 500 290 Q540 270 580 285 Q620 300 650 280 Q680 260 710 275 Q740 290 800 270 L800 340 L0 340 Z" fill="#7ec8e3" opacity="0.5"/>
+        <!-- Roads -->
+        <path d="M0 180 Q200 170 400 165 Q600 160 800 168" fill="none" stroke="#e8e0c8" stroke-width="22" stroke-linecap="round"/>
+        <path d="M0 180 Q200 170 400 165 Q600 160 800 168" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="20,14" opacity="0.7"/>
+        <path d="M300 0 Q295 80 290 160 Q285 240 280 340" fill="none" stroke="#e8e0c8" stroke-width="18" stroke-linecap="round"/>
+        <path d="M300 0 Q295 80 290 160 Q285 240 280 340" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="16,12" opacity="0.6"/>
+        <path d="M500 0 Q510 80 515 160 Q520 240 525 340" fill="none" stroke="#e8e0c8" stroke-width="14" stroke-linecap="round"/>
+        <path d="M0 100 Q150 110 300 115 Q400 118 500 120 Q600 122 700 125 Q750 127 800 130" fill="none" stroke="#d8d0b8" stroke-width="10" stroke-linecap="round"/>
+        <!-- Labels -->
+        <text x="140" y="175" font-size="10" fill="#666" font-family="sans-serif">Jln Datuk Mohammad Musa</text>
+        <text x="310" y="90" font-size="9" fill="#666" font-family="sans-serif" transform="rotate(-85,310,90)">Jln Foochow</text>
+        <text x="530" y="95" font-size="9" fill="#666" font-family="sans-serif" transform="rotate(-88,530,95)">Jln Utama</text>
+        <!-- Landmarks -->
+        <rect x="360" y="60" width="55" height="35" rx="5" fill="#c8b89a" stroke="#a89870" stroke-width="0.8"/>
+        <text x="363" y="83" font-size="8" fill="#555" font-family="sans-serif">Petronas</text>
+        <rect x="120" y="115" width="50" height="30" rx="5" fill="#c8b89a" stroke="#a89870" stroke-width="0.8"/>
+        <rect x="550" y="200" width="65" height="32" rx="5" fill="#c8b89a" stroke="#a89870" stroke-width="0.8"/>
+        <text x="554" y="219" font-size="8" fill="#555" font-family="sans-serif">Masjid Darul</text>
+        <text x="554" y="228" font-size="7" fill="#555" font-family="sans-serif">Ibadah</text>
+        <!-- Route line -->
+        <path id="routeLine" d="M140 270 Q220 230 290 190 Q360 150 420 140 Q470 132 500 128" fill="none" stroke="#1e6fff" stroke-width="4" stroke-linecap="round" opacity="0" style="transition: opacity 0.5s;"/>
+        <!-- Car position -->
+        <circle cx="140" cy="270" r="10" fill="#1e6fff" opacity="0.9"/>
+        <circle cx="140" cy="270" r="7" fill="white"/>
+        <circle cx="140" cy="270" r="4" fill="#1e6fff"/>
+        <!-- Destination marker -->
+        <g id="destMarker" opacity="0">
+          <circle cx="500" cy="128" r="10" fill="#ff3b3b"/>
+          <polygon points="500,110 506,126 494,126" fill="#ff3b3b"/>
+          <circle cx="500" cy="128" r="5" fill="white"/>
+        </g>
+      </svg>
+      <!-- Zoom controls -->
+      <div class="map-zoom-controls">
+        <button class="zoom-btn" onclick="mapZoom(1)">+</button>
+        <button class="zoom-btn" onclick="mapZoom(-1)">−</button>
+        <button class="center-btn" onclick="mapCenter()">⦿</button>
+      </div>
+      <!-- Trip active bar -->
+      <div class="trip-active-bar" id="tripActiveBar">
+        <div class="trip-active-dot"></div>
+        <div class="trip-active-text" id="tripDestText">Trip Active</div>
+        <button class="trip-stop-btn" onclick="stopTrip()">End Trip</button>
+      </div>
+    </div>
+    <!-- Sidebar -->
+    <div class="nav-sidebar">
+      <div class="nav-battery-card">
+        <div class="nav-batt-bars" id="navBattBars">
+          <div class="nb-bar low"   style="height:20px;"></div>
+          <div class="nb-bar empty" style="height:32px;"></div>
+          <div class="nb-bar empty" style="height:44px;"></div>
+          <div class="nb-bar empty" style="height:54px;"></div>
+          <div class="nb-bar empty" style="height:64px;"></div>
+        </div>
+        <div class="nav-batt-info">
+          <div class="nav-batt-pct" id="navBattPct">15%</div>
+          <div class="nav-batt-range" id="navBattRange">Range 10 km</div>
+        </div>
+      </div>
+      <div class="nav-alert-card">
+        <div class="alert-head">
+          <span class="alert-icon">&#x26A0;&#xFE0F;</span>
+          <span class="alert-title">LOW BATTERY</span>
+        </div>
+        <div class="alert-desc">Find charging station on route</div>
+      </div>
+      <button class="nav-charging-btn" onclick="showChargingModal()">
+        <span class="nav-charging-btn-icon">&#x26A1;</span>
+        <div class="nav-charging-btn-text">
+          <div class="nav-charging-btn-title">Find Charging Station</div>
+          <div class="nav-charging-btn-sub">Nearest on route</div>
+        </div>
+        <span class="nav-charging-btn-arrow">›</span>
+      </button>
+    </div>
+    </div><!-- end nav-body -->
+    <!-- Bottom bar -->
+    <div class="nav-bottom-bar">
+      <div class="nav-stat">
+        <span class="nav-stat-icon">&#x23F0;</span>
+        <div><div class="nav-stat-label">ETA</div><div class="nav-stat-val" id="navETA">9:30 AM</div></div>
+      </div>
+      <div class="nav-stat">
+        <span class="nav-stat-icon">&#x26F0;</span>
+        <div><div class="nav-stat-label">Distance</div><div class="nav-stat-val" id="navDist">0 km</div></div>
+      </div>
+      <div class="nav-stat">
+        <span class="nav-stat-icon">&#x1F4CD;</span>
+        <div><div class="nav-stat-label">Arrival</div><div class="nav-stat-val">10:20 AM</div></div>
+      </div>
+      <button class="start-trip-btn" id="startTripBtn" onclick="startTrip()">Start Trip</button>
+    </div>
+  </div>
+</div>
+
+<!-- ======== ENERGY SCREEN ======== -->
+<div class="screen" id="screen-energy" style="position:relative;">
+  <!-- Charging active overlay -->
+  <div class="charging-active-overlay" id="chargingActiveOverlay">
+    <div class="charging-active-icon">⚡</div>
+    <div class="charging-active-title">Charging in Progress</div>
+    <div class="charging-active-pct" id="chargingPct">15%</div>
+    <div class="charging-active-bars" id="chargingBars">
+      <div class="ca-bar" style="height:16px;background:var(--red);"></div>
+      <div class="ca-bar" style="height:26px;background:#333;"></div>
+      <div class="ca-bar" style="height:38px;background:#333;"></div>
+      <div class="ca-bar" style="height:52px;background:#333;"></div>
+      <div class="ca-bar" style="height:64px;background:#333;"></div>
+      <div class="ca-bar" style="height:78px;background:#333;"></div>
+    </div>
+    <div class="charging-active-stats">
+      <div class="ca-stat">
+        <div class="ca-stat-label">Power</div>
+        <div class="ca-stat-val">7.2 kW</div>
+      </div>
+      <div class="ca-stat">
+        <div class="ca-stat-label">Station</div>
+        <div class="ca-stat-val" id="chargingStation">Petronas AEON</div>
+      </div>
+      <div class="ca-stat">
+        <div class="ca-stat-label">ETA Full</div>
+        <div class="ca-stat-val" id="chargingETA">5h 20m</div>
+      </div>
+    </div>
+    <button class="stop-charging-btn" onclick="stopCharging()">Stop Charging</button>
+  </div>
+  <div class="energy-inner">
+    <div class="energy-top">
+      <div class="battery-section">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+          <button class="back-btn" style="padding:6px 14px;font-size:11px;" onclick="goTo('home')">&#x2190; Back</button>
+        </div>
+        <div class="batt-title">Battery</div>
+        <div class="batt-pct-big" id="energyBattPct">15% <span class="batt-spin-icon">&#x21BA;</span></div>
+        <div class="batt-range-e" id="energyBattRange">Range 10 km</div>
+      </div>
+      <div class="batt-chart-area" id="energyBattChart">
+        <div class="batt-bar-e" style="width:30px;height:24px;background:#c00;"></div>
+        <div class="batt-bar-e" style="width:30px;height:54px;background:#444;"></div>
+        <div class="batt-bar-e" style="width:30px;height:84px;background:#444;"></div>
+        <div class="batt-bar-e" style="width:30px;height:114px;background:#444;"></div>
+        <div class="batt-bar-e" style="width:30px;height:144px;background:#444;"></div>
+      </div>
+    </div>
+    <!-- Stats grid -->
+    <div class="energy-stats-grid">
+      <div class="ecard">
+        <div class="ecard-head"><span class="ecard-icon ecard-icon-green">&#x1F4C8;</span><span class="ecard-title">Consumption</span></div>
+        <div class="ecard-val">15.2</div>
+        <div class="ecard-unit">kWh/100km</div>
+        <div class="ecard-tag">&#x2193; 8% vs last trip</div>
+      </div>
+      <div class="ecard">
+        <div class="ecard-head"><span class="ecard-icon ecard-icon-blue">&#x1F504;</span><span class="ecard-title">Regen Saved</span></div>
+        <div class="ecard-val">18.6</div>
+        <div class="ecard-unit">kWh</div>
+        <div class="ecard-tag">&#x2191; 12% vs last trip</div>
+      </div>
+      <div class="ecard">
+        <div class="ecard-head"><span class="ecard-icon ecard-icon-yellow">&#x23F1;</span><span class="ecard-title">Charge Time</span></div>
+        <div class="ecard-val">5h 25m</div>
+        <div class="ecard-unit">AC · 7kW</div>
+        <div class="ecard-tag">&#x1F550; Full at 6:45 PM</div>
+      </div>
+      <div class="ecard">
+        <div class="ecard-head"><span class="ecard-icon ecard-icon-purple">&#x1F31F;</span><span class="ecard-title">Solar Assist</span></div>
+        <div class="ecard-val">2.4</div>
+        <div class="ecard-unit">kWh</div>
+        <div class="ecard-tag">&#x2191; Today</div>
+      </div>
+    </div>
+    <!-- Expanded Fault Panel (Energy screen only) -->
+    <div class="energy-fault-panel show" id="energyFaultPanel">
+      <div class="efp-header">
+        <span class="efp-icon">⚠️</span>
+        <span class="efp-title">BATTERY SENSOR FAULT</span>
+      </div>
+      <div class="efp-desc">The battery management sensor is not responding correctly. This may affect range estimates and charging accuracy. Drive with caution and seek service soon.</div>
+      <div class="efp-actions">
+        <button class="efp-call-btn" onclick="callTechnician()">📞 Call Technician</button>
+        <button class="efp-toggle-btn" id="faultSimToggle" onclick="toggleFaultSim()">Dismiss Fault (Demo)</button>
+      </div>
+    </div>
+    <!-- Charging bar -->
+    <button class="energy-charging-bar" onclick="showChargingModal()">
+      <span class="energy-charging-icon">&#x1F4CD;</span>
+      <span class="energy-charging-label">Find Nearest Charging Station</span>
+      <span class="energy-charging-arrow">›</span>
+    </button>
+  </div>
+</div>
+<div class="screen" id="screen-camera">
+  <div class="camera-inner">
+    <div style="display:flex;align-items:center;justify-content:space-between;">
+      <button class="back-btn" style="padding:6px 14px;font-size:11px;" onclick="goTo('home')">&#x2190; Back</button>
+      <div class="sensor-status">
+        <span class="sensor-label">SENSOR ARRAY</span>
+        <span class="sensor-dot"><span class="sdot" style="background:#00e07a;"></span>Front OK</span>
+        <span class="sensor-dot"><span class="sdot" style="background:#00e07a;"></span>Rear OK</span>
+        <span class="sensor-dot"><span class="sdot" style="background:#ffbc00;"></span>Left Warn</span>
+        <span class="sensor-dot"><span class="sdot" style="background:#00e07a;"></span>Right OK</span>
+      </div>
+    </div>
+    <div class="camera-views">
+      <!-- Bird's eye view -->
+      <div class="cam-view">
+        <div class="cam-label">BIRD'S-EYE VIEW</div>
+        <svg viewBox="0 0 360 280" xmlns="http://www.w3.org/2000/svg" style="background:#3a3a3a;">
+          <!-- Parking lot background -->
+          <rect width="360" height="280" fill="#4a4a4a"/>
+          <!-- Parking spaces -->
+          <line x1="60" y1="0" x2="60" y2="280" stroke="#666" stroke-width="1.5"/>
+          <line x1="120" y1="0" x2="120" y2="280" stroke="#666" stroke-width="1.5"/>
+          <line x1="240" y1="0" x2="240" y2="280" stroke="#666" stroke-width="1.5"/>
+          <line x1="300" y1="0" x2="300" y2="280" stroke="#666" stroke-width="1.5"/>
+          <line x1="0" y1="100" x2="360" y2="100" stroke="#666" stroke-width="1.5"/>
+          <line x1="0" y1="180" x2="360" y2="180" stroke="#666" stroke-width="1.5"/>
+          <!-- Circular fish-eye effect -->
+          <ellipse cx="180" cy="140" rx="165" ry="130" fill="none" stroke="#555" stroke-width="1" stroke-dasharray="4,4"/>
+          <!-- Car body -->
+          <rect x="148" y="95" width="64" height="90" rx="12" fill="#f0f0f0"/>
+          <rect x="154" y="101" width="52" height="78" rx="8" fill="#d8d8d8"/>
+          <!-- Car details -->
+          <rect x="158" y="105" width="44" height="28" rx="4" fill="#aaa" opacity="0.6"/>
+          <rect x="158" y="147" width="44" height="24" rx="4" fill="#aaa" opacity="0.6"/>
+          <text x="180" y="178" text-anchor="middle" font-size="8" fill="#666" font-family="sans-serif" font-weight="bold">KESTRA EV</text>
+          <!-- Wheels -->
+          <rect x="144" y="103" width="10" height="18" rx="3" fill="#888"/>
+          <rect x="206" y="103" width="10" height="18" rx="3" fill="#888"/>
+          <rect x="144" y="159" width="10" height="18" rx="3" fill="#888"/>
+          <rect x="206" y="159" width="10" height="18" rx="3" fill="#888"/>
+          <!-- Proximity rings - animated -->
+          <ellipse cx="180" cy="86" rx="30" ry="10" fill="none" stroke="#ffd700" stroke-width="2.5" stroke-dasharray="6,4" opacity="0.9">
+            <animate attributeName="opacity" values="0.9;0.3;0.9" dur="1.2s" repeatCount="indefinite"/>
+          </ellipse>
+          <ellipse cx="180" cy="80" rx="42" ry="14" fill="none" stroke="#ffd700" stroke-width="1.5" stroke-dasharray="5,5" opacity="0.6">
+            <animate attributeName="opacity" values="0.6;0.1;0.6" dur="1.2s" begin="0.3s" repeatCount="indefinite"/>
+          </ellipse>
+          <ellipse cx="180" cy="194" rx="30" ry="10" fill="none" stroke="#ffd700" stroke-width="2.5" stroke-dasharray="6,4" opacity="0.9">
+            <animate attributeName="opacity" values="0.9;0.3;0.9" dur="1.2s" begin="0.6s" repeatCount="indefinite"/>
+          </ellipse>
+          <ellipse cx="180" cy="200" rx="42" ry="14" fill="none" stroke="#ffd700" stroke-width="1.5" stroke-dasharray="5,5" opacity="0.6">
+            <animate attributeName="opacity" values="0.6;0.1;0.6" dur="1.2s" begin="0.9s" repeatCount="indefinite"/>
+          </ellipse>
+          <!-- Side warning -->
+          <ellipse cx="135" cy="140" rx="12" ry="26" fill="none" stroke="#ff9900" stroke-width="2" stroke-dasharray="4,4" opacity="0.8">
+            <animate attributeName="opacity" values="0.8;0.2;0.8" dur="0.8s" repeatCount="indefinite"/>
+          </ellipse>
+        </svg>
+        <button class="cam-toggle-btn" id="birdToggle" onclick="toggleBirdView()">&#x1F4F7;</button>
+      </div>
+      <!-- Rear camera -->
+      <div class="cam-view">
+        <div class="cam-label">REAR CAMERA</div>
+        <div id="camViewSvgWrap" style="width:100%;height:100%;position:absolute;inset:0;">
+        <svg viewBox="0 0 360 280" xmlns="http://www.w3.org/2000/svg" style="background:#2a2a2a;width:100%;height:100%;display:block;">
+          <!-- Road -->
+          <rect width="360" height="280" fill="#888"/>
+          <!-- Road texture -->
+          <rect x="0" y="0" width="360" height="280" fill="url(#roadGrad)"/>
+          <defs>
+            <linearGradient id="roadGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#777"/>
+              <stop offset="100%" stop-color="#555"/>
+            </linearGradient>
+          </defs>
+          <!-- Road markings -->
+          <line x1="180" y1="220" x2="60" y2="280" stroke="#fff" stroke-width="2" opacity="0.4"/>
+          <line x1="180" y1="220" x2="300" y2="280" stroke="#fff" stroke-width="2" opacity="0.4"/>
+          <!-- Curb/edge -->
+          <path d="M0 140 Q80 120 180 110 Q280 100 360 90" fill="none" stroke="#aaa" stroke-width="2"/>
+          <!-- Object on right -->
+          <rect x="300" y="80" width="60" height="120" rx="5" fill="#666" opacity="0.8"/>
+          <!-- Parking guide lines - green zone (safe) -->
+          <path d="M80 60 L40 180" fill="none" stroke="#00cc44" stroke-width="3.5" stroke-linecap="round"/>
+          <path d="M280 60 L320 180" fill="none" stroke="#00cc44" stroke-width="3.5" stroke-linecap="round"/>
+          <!-- Yellow zone (caution) -->
+          <path d="M100 140 L65 220" fill="none" stroke="#ffcc00" stroke-width="3.5" stroke-linecap="round"/>
+          <path d="M260 140 L295 220" fill="none" stroke="#ffcc00" stroke-width="3.5" stroke-linecap="round"/>
+          <!-- Red zone (danger) -->
+          <path d="M135 220 L80 275" fill="none" stroke="#ff2222" stroke-width="4" stroke-linecap="round"/>
+          <path d="M225 220 L280 275" fill="none" stroke="#ff2222" stroke-width="4" stroke-linecap="round"/>
+          <!-- Guide arc -->
+          <path d="M70 280 Q180 230 290 280" fill="none" stroke="#ff2222" stroke-width="3" stroke-dasharray="10,6"/>
+          <!-- Center guide -->
+          <line x1="180" y1="100" x2="180" y2="280" stroke="#ffcc00" stroke-width="1.5" stroke-dasharray="12,8" opacity="0.6"/>
+        </svg>
+        </div>
+        <button class="cam-toggle-btn" onclick="toggleCamView()" id="rearToggle">&#x1F504; Front</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======== DRIVING SCREEN ======== -->
+<div class="screen" id="screen-driving">
+  <div class="driving-road-view">
+    <svg id="drivingRoadSvg" viewBox="0 0 800 440" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%;">
+      <defs>
+        <linearGradient id="driveSky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#1a2a4a"/>
+          <stop offset="100%" stop-color="#3a5a8a"/>
+        </linearGradient>
+        <linearGradient id="driveRoad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#555"/>
+          <stop offset="100%" stop-color="#7a7a7a"/>
+        </linearGradient>
+      </defs>
+      <!-- Sky -->
+      <rect width="800" height="220" fill="url(#driveSky)"/>
+      <!-- Horizon glow -->
+      <ellipse cx="400" cy="218" rx="500" ry="40" fill="#4a7aaa" opacity="0.3"/>
+      <!-- Road surface -->
+      <path d="M0 440 L0 218 Q400 195 800 218 L800 440 Z" fill="url(#driveRoad)"/>
+      <!-- Left road edge -->
+      <path d="M80 440 L300 220" stroke="#fff" stroke-width="3" opacity="0.6"/>
+      <!-- Right road edge -->
+      <path d="M720 440 L500 220" stroke="#fff" stroke-width="3" opacity="0.6"/>
+      <!-- Center lane - animated -->
+      <path d="M400 440 L400 222" stroke="#ffcc00" stroke-width="4" stroke-dasharray="30,20" opacity="0.85">
+        <animate attributeName="stroke-dashoffset" from="0" to="-200" dur="0.6s" repeatCount="indefinite"/>
+      </path>
+      <!-- Left secondary lane -->
+      <path d="M240 440 L350 222" stroke="#fff" stroke-width="2" stroke-dasharray="24,16" opacity="0.4">
+        <animate attributeName="stroke-dashoffset" from="0" to="-160" dur="0.6s" repeatCount="indefinite"/>
+      </path>
+      <!-- Right secondary lane -->
+      <path d="M560 440 L450 222" stroke="#fff" stroke-width="2" stroke-dasharray="24,16" opacity="0.4">
+        <animate attributeName="stroke-dashoffset" from="0" to="-160" dur="0.6s" repeatCount="indefinite"/>
+      </path>
+      <!-- Trees left -->
+      <rect x="40" y="165" width="12" height="58" fill="#3a5a2a"/>
+      <ellipse cx="46" cy="158" rx="28" ry="36" fill="#2a4a1a"/>
+      <rect x="10" y="178" width="10" height="44" fill="#3a5a2a"/>
+      <ellipse cx="15" cy="172" rx="22" ry="28" fill="#1a3a12"/>
+      <!-- Trees right -->
+      <rect x="748" y="165" width="12" height="58" fill="#3a5a2a"/>
+      <ellipse cx="754" cy="158" rx="28" ry="36" fill="#2a4a1a"/>
+      <rect x="780" y="178" width="10" height="44" fill="#3a5a2a"/>
+      <ellipse cx="785" cy="172" rx="22" ry="28" fill="#1a3a12"/>
+      <!-- Distant car -->
+      <rect x="355" y="212" width="90" height="46" rx="6" fill="#cc4444" opacity="0.9"/>
+      <rect x="365" y="215" width="70" height="26" rx="3" fill="#88aacc" opacity="0.6"/>
+      <rect x="355" y="252" width="20" height="8" rx="2" fill="#ffee88"/>
+      <rect x="425" y="252" width="20" height="8" rx="2" fill="#ffee88"/>
+      <!-- Collision warning box -->
+      <rect x="348" y="207" width="104" height="56" rx="4" fill="none" stroke="#ffcc00" stroke-width="2" stroke-dasharray="6,4" opacity="0.9">
+        <animate attributeName="opacity" values="0.9;0.3;0.9" dur="1.5s" repeatCount="indefinite"/>
+      </rect>
+      <!-- HUD AR guide lines -->
+      <path d="M0 340 Q200 300 400 290 Q600 300 800 340" fill="none" stroke="#00cc44" stroke-width="3" stroke-dasharray="10,8" opacity="0.6"/>
+      <!-- Speed overlay bottom -->
+      <rect x="0" y="380" width="800" height="60" fill="rgba(0,0,0,0.45)"/>
+      <text x="400" y="418" text-anchor="middle" font-family="monospace" font-size="18" fill="#00e07a" font-weight="bold" letter-spacing="4">● KESTRA DRIVE ASSIST ACTIVE</text>
+    </svg>
+    <!-- HUD overlay -->
+    <div class="driving-hud">
+      <div class="driving-hud-speed" id="driveSpeed">72</div>
+      <div class="driving-hud-unit">km/h</div>
+      <div class="driving-hud-dest" id="driveDest">Navigating to destination</div>
+    </div>
+    <!-- End trip button -->
+    <button class="driving-end-btn" onclick="endTrip()">⬛ End Trip</button>
+    <!-- Destination reached overlay -->
+    <div class="dest-reached-overlay" id="destReachedOverlay">
+      <div class="dest-reached-box">
+        <div class="dest-reached-icon">🏁</div>
+        <div class="dest-reached-title">You have reached your destination!</div>
+        <div class="dest-reached-desc" id="destReachedDesc">Welcome to your destination. Have a great day!</div>
+        <button class="dest-reached-btn" onclick="finishTrip()">Back to Navigation</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======== BOTTOM NAV ======== -->
+<nav class="bottom-nav">
+  <button class="nav-tab" id="tab-energy" onclick="goTo('energy')">
+    <span class="nav-tab-icon">&#x26A1;</span>
+    <span class="nav-tab-label">Energy</span>
+  </button>
+  <button class="nav-tab" id="tab-nav" onclick="goTo('nav')">
+    <span class="nav-tab-icon">&#x27A4;</span>
+    <span class="nav-tab-label">Navigate</span>
+  </button>
+  <button class="nav-tab active" id="tab-home" onclick="goTo('home')">
+    <span class="nav-tab-icon">&#x1F3E0;</span>
+    <span class="nav-tab-label">Home</span>
+  </button>
+  <button class="nav-tab" id="tab-climate" onclick="goTo('climate')">
+    <span class="nav-tab-icon">&#x1F4A8;</span>
+    <span class="nav-tab-label">Climate</span>
+  </button>
+  <button class="nav-tab" id="tab-camera" onclick="goTo('camera')">
+    <span class="nav-tab-icon">&#x1F4F7;</span>
+    <span class="nav-tab-label">Camera</span>
+  </button>
+</nav>
+
+<!-- ======== MODALS ======== -->
+<div class="modal-overlay" id="alertModal">
+  <div class="modal-box">
+    <div class="modal-icon">&#x26A0;&#xFE0F;</div>
+    <div class="modal-title">Battery Sensor Issue Detected</div>
+    <div class="modal-desc">There may be an issue with the battery sensor. This may affect range estimation accuracy. Please contact an authorised KESTRA EV technician for inspection at your earliest convenience.</div>
+    <button class="modal-btn danger" onclick="callTechnician()">&#x1F4DE; Call Technician</button>
+    <button class="modal-btn secondary" onclick="closeModal('alertModal'); dismissFault()">Dismiss</button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="chargingModal">
+  <div class="modal-box">
+    <div class="modal-icon">&#x26A1;</div>
+    <div class="modal-title">Nearest Charging Stations</div>
+    <div class="modal-desc">
+      <strong>1. Petronas AEON Kuching</strong> — 2.3 km · Available<br>
+      <strong>2. Sarawak Energy HQ</strong> — 5.1 km · Available<br>
+      <strong>3. Wisma Boustead</strong> — 7.8 km · 2 Occupied
+    </div>
+    <button class="modal-btn" onclick="navigateToCharger()">&#x1F4CD; Navigate to Nearest</button>
+    <button class="modal-btn secondary" onclick="closeModal('chargingModal')">Cancel</button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="voiceModal">
+  <div class="modal-box">
+    <div class="modal-icon">&#x1F3A4;</div>
+    <div class="modal-title">Voice Input</div>
+    <div class="modal-desc">Say your destination...<br><span id="voiceStatus" style="color:var(--purple);font-weight:600;">Listening...</span></div>
+    <button class="modal-btn secondary" onclick="closeModal('voiceModal')">Cancel</button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="technicianModal">
+  <div class="modal-box">
+    <div class="modal-icon">&#x1F4DE;</div>
+    <div class="modal-title">Contacting KESTRA Service</div>
+    <div class="modal-desc">Calling KESTRA EV Service Centre...<br><strong>+60 82-XXX XXXX</strong><br><br>Reference: BSI-2026-0531</div>
+    <button class="modal-btn secondary" onclick="closeModal('technicianModal'); dismissFault()">Close</button>
+  </div>
+</div>
+
+<!-- Undo toast -->
+<div class="undo-toast" id="undoToast">
+  <span id="undoMessage">Setting changed</span>
+  <button class="undo-btn" onclick="undoLast()">Undo</button>
+</div>
+
+<script>
+  // ========== STATE ==========
+  let currentScreen = 'home';
+  let temperature = 22;
+  let acOn = true;
+  let currentFan = 0; // 0=auto
+  let currentMode = 'cool';
+  let tripStarted = false;
+  let tripDest = '';
+  let lastAction = null;
+  let undoTimer = null;
+  let mapZoomLevel = 1;
+  let rearCamFront = false;
+
+  // ========== CLOCK ==========
+  function updateClock() {
+    const now = new Date();
+    let h = now.getHours(), m = now.getMinutes();
+    const ampm = h >= 12 ? 'PM' : 'AM';
+    h = h % 12 || 12;
+    document.getElementById('timeDisplay').textContent =
+      h + ':' + String(m).padStart(2,'0') + ' ' + ampm;
+  }
+  updateClock();
+  setInterval(updateClock, 10000);
+
+  // ========== NAVIGATION ==========
+  function goTo(screen) {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('screen-' + screen).classList.add('active');
+    const tab = document.getElementById('tab-' + screen);
+    if (tab) tab.classList.add('active');
+    currentScreen = screen;
+  }
+
+  function updateTempColor() {
+    const el = document.getElementById('tempDisplay');
+    if (!el) return;
+    if (temperature < 20) {
+      el.style.color = '#4080ff';
+    } else if (temperature <= 26) {
+      el.style.color = '#00b860';
+    } else {
+      el.style.color = '#ff6040';
+    }
+  }
+
+  // ========== TEMPERATURE ==========
+  function changeTemp(delta) {
+    const prev = temperature;
+    temperature = Math.max(16, Math.min(30, temperature + delta));
+    document.getElementById('tempDisplay').textContent = temperature + '°C';
+    document.getElementById('homeTempDisplay').textContent = temperature + '°C';
+    updateTempColor();
+    updateClimateStatus();
+    lastAction = { type: 'temp', val: prev };
+    showUndo('Temperature set to ' + temperature + '°C');
+  }
+
+  // ========== FAN SPEED ==========
+  function setFan(level) {
+    const prev = currentFan;
+    currentFan = level;
+    document.querySelectorAll('.fan-speed-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('fan' + level).classList.add('active');
+    updateClimateStatus();
+    lastAction = { type: 'fan', val: prev };
+    showUndo('Fan set to ' + (level === 0 ? 'Auto' : 'Speed ' + level));
+  }
+
+  function updateClimateStatus() {
+    const line = document.getElementById('climateStatusLine');
+    if (!line) return;
+    if (!acOn) {
+      line.textContent = 'A/C is off — ventilation only';
+      line.className = 'climate-status-line';
+    } else {
+      const fanNames = ['Auto', 'Low', 'Med-Low', 'Medium', 'High'];
+      const fanLabel = fanNames[currentFan] || 'Auto';
+      line.textContent = 'Fan Speed: ' + fanLabel + ' · ' + (currentMode.charAt(0).toUpperCase() + currentMode.slice(1)) + ' active';
+      line.className = 'climate-status-line active';
+    }
+    // Sync home climate card whenever climate state changes
+    if (typeof updateHomeClimateCard === 'function') updateHomeClimateCard();
+  }
+
+  // ========== AC TOGGLE ==========
+  function toggleAC() {
+    const prev = acOn;
+    acOn = !acOn;
+    const btn = document.getElementById('acToggle');
+    const lbl = document.getElementById('acLabel');
+    if (acOn) {
+      btn.classList.remove('off');
+      btn.classList.add('on');
+      lbl.textContent = 'AC ON';
+    } else {
+      btn.classList.remove('on');
+      btn.classList.add('off');
+      lbl.textContent = 'AC OFF';
+    }
+    updateClimateStatus();
+    lastAction = { type: 'ac', val: prev };
+    showUndo('A/C turned ' + (acOn ? 'ON' : 'OFF'));
+  }
+
+  // ========== CLIMATE MODE ==========
+  function setMode(btn, mode) {
+    const prev = currentMode;
+    document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentMode = mode;
+    updateClimateStatus();
+    lastAction = { type: 'mode', val: prev };
+  }
+
+  // ========== UNDO ==========
+  function showUndo(msg) {
+    const toast = document.getElementById('undoToast');
+    document.getElementById('undoMessage').textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(undoTimer);
+    undoTimer = setTimeout(() => toast.classList.remove('show'), 3500);
+  }
+
+  function undoLast() {
+    if (!lastAction) return;
+    const { type, val } = lastAction;
+    lastAction = null;
+    document.getElementById('undoToast').classList.remove('show');
+    if (type === 'temp') {
+      temperature = val;
+      document.getElementById('tempDisplay').textContent = val + '°C';
+      document.getElementById('homeTempDisplay').textContent = val + '°C';
+    } else if (type === 'fan') {
+      setFan(val);
+    } else if (type === 'ac') {
+      acOn = val;
+      const btn = document.getElementById('acToggle');
+      const lbl = document.getElementById('acLabel');
+      if (acOn) { btn.classList.remove('off'); btn.classList.add('on'); lbl.textContent = 'AC ON'; }
+      else { btn.classList.remove('on'); btn.classList.add('off'); lbl.textContent = 'AC OFF'; }
+      updateClimateStatus();
+    } else if (type === 'mode') {
+      // revert mode
+      const modeBtns = document.querySelectorAll('.mode-btn');
+      modeBtns.forEach(b => {
+        b.classList.remove('active');
+        if (b.getAttribute('onclick').includes(val)) b.classList.add('active');
+      });
+      currentMode = val;
+    }
+  }
+
+  // ========== NAV / SEARCH ==========
+  let searchTimer = null;
+  function handleSearch(val) {
+    const sugg = document.getElementById('searchSuggestions');
+    if (val.length > 0) sugg.classList.add('show');
+    else sugg.classList.remove('show');
+    if (val.length > 2) {
+      document.getElementById('navDist').textContent = Math.floor(Math.random()*20+2) + ' km';
+      document.getElementById('navETA').textContent = (Math.floor(Math.random()*3)+9) + ':' + String(Math.floor(Math.random()*6)*10).padStart(2,'0') + ' AM';
+      document.getElementById('routeLine').style.opacity = '1';
+      document.getElementById('destMarker').style.opacity = '1';
+      tripDest = val;
+      showStartTripBtn();
+    } else if (val.length === 0) {
+      hideStartTripBtn();
+      document.getElementById('routeLine').style.opacity = '0';
+      document.getElementById('destMarker').style.opacity = '0';
+    }
+  }
+
+  function showSuggestions() {
+    const val = document.getElementById('navSearch').value;
+    if (val.length >= 0) document.getElementById('searchSuggestions').classList.add('show');
+  }
+
+  function hideSuggestions() {
+    setTimeout(() => document.getElementById('searchSuggestions').classList.remove('show'), 200);
+  }
+
+  function showStartTripBtn() {
+    document.getElementById('startTripBtn').classList.add('visible');
+  }
+  function hideStartTripBtn() {
+    document.getElementById('startTripBtn').classList.remove('visible');
+  }
+
+  function selectDest(dest) {
+    document.getElementById('navSearch').value = dest;
+    document.getElementById('searchSuggestions').classList.remove('show');
+    tripDest = dest;
+    // Show route
+    document.getElementById('routeLine').style.opacity = '1';
+    document.getElementById('destMarker').style.opacity = '1';
+    document.getElementById('navDist').textContent = (Math.floor(Math.random()*15+3)) + ' km';
+    document.getElementById('navETA').textContent = (Math.floor(Math.random()*2)+9) + ':' + String(Math.floor(Math.random()*6)*10).padStart(2,'0') + ' AM';
+    showStartTripBtn();
+  }
+
+  // ========== TRIP & DRIVING ==========
+  let drivingInterval = null;
+  let chargingInterval = null;
+  let chargingBatteryPct = 15;
+  let tripIsChargerDest = false;
+
+  function startTrip() {
+    const dest = document.getElementById('navSearch').value || tripDest;
+    if (!dest) {
+      document.getElementById('navSearch').focus();
+      return;
+    }
+    tripDest = dest;
+    tripStarted = true;
+    // Determine if this is a charger trip
+    tripIsChargerDest = (dest === 'Petronas AEON Kuching' || dest === 'Sarawak Energy HQ' || dest === 'Wisma Boustead');
+    // Show driving screen
+    document.getElementById('driveDest').textContent = 'Navigating to ' + dest;
+    goTo('driving');
+    // Animate speed
+    startDrivingAnimation();
+  }
+
+  function startDrivingAnimation() {
+    let spd = 60 + Math.floor(Math.random()*20);
+    const el = document.getElementById('driveSpeed');
+    drivingInterval = setInterval(() => {
+      spd += (Math.random() > 0.5 ? 1 : -1) * Math.floor(Math.random()*3);
+      spd = Math.max(50, Math.min(90, spd));
+      if (el) el.textContent = spd;
+    }, 1200);
+  }
+
+  function endTrip() {
+    clearInterval(drivingInterval);
+    if (tripIsChargerDest) {
+      // Go to energy screen with charging overlay
+      startChargingSession(tripDest);
+      tripStarted = false;
+      tripDest = '';
+      document.getElementById('navSearch').value = '';
+      document.getElementById('routeLine').style.opacity = '0';
+      document.getElementById('destMarker').style.opacity = '0';
+      document.getElementById('navDist').textContent = '0 km';
+      hideStartTripBtn();
+      goTo('energy');
+    } else {
+      // Show destination reached overlay
+      document.getElementById('destReachedDesc').textContent = 'You have arrived at ' + tripDest + '. Have a great day!';
+      document.getElementById('destReachedOverlay').classList.add('show');
+    }
+  }
+
+  function finishTrip() {
+    document.getElementById('destReachedOverlay').classList.remove('show');
+    tripStarted = false;
+    tripDest = '';
+    document.getElementById('navSearch').value = '';
+    document.getElementById('routeLine').style.opacity = '0';
+    document.getElementById('destMarker').style.opacity = '0';
+    document.getElementById('navDist').textContent = '0 km';
+    document.getElementById('navETA').textContent = '9:30 AM';
+    document.getElementById('startTripBtn').textContent = 'Start Trip';
+    hideStartTripBtn();
+    goTo('nav');
+  }
+
+  function startChargingSession(stationName) {
+    chargingBatteryPct = 15; // start from current battery
+    const stationShort = stationName ? stationName.replace(' Kuching','').replace(' HQ','') : 'Petronas AEON';
+    document.getElementById('chargingStation').textContent = stationShort;
+    document.getElementById('chargingActiveOverlay').classList.add('show');
+    updateChargingDisplay();
+    chargingInterval = setInterval(() => {
+      chargingBatteryPct = Math.min(100, chargingBatteryPct + 0.3);
+      updateChargingDisplay();
+      if (chargingBatteryPct >= 100) clearInterval(chargingInterval);
+    }, 500);
+  }
+
+  function updateChargingDisplay() {
+    const pct = Math.round(chargingBatteryPct);
+    document.getElementById('chargingPct').textContent = pct + '%';
+    // Update ETA
+    const minsLeft = Math.round((100 - pct) * 3.2);
+    const h = Math.floor(minsLeft/60), m = minsLeft%60;
+    document.getElementById('chargingETA').textContent = (h > 0 ? h+'h ' : '') + m + 'm';
+    // Update bars
+    const bars = document.getElementById('chargingBars').querySelectorAll('.ca-bar');
+    const barHeights = [16,28,40,54,66,80];
+    bars.forEach((bar, i) => {
+      const threshold = (i+1) * (100/bars.length);
+      if (pct >= threshold) {
+        bar.style.background = pct < 30 ? 'var(--red)' : pct < 60 ? 'var(--yellow)' : 'var(--green)';
+      } else {
+        bar.style.background = '#333';
+      }
+      bar.style.height = barHeights[i] + 'px';
+    });
+  }
+
+  function updateAllBatteryDisplays(pct) {
+    const p = Math.round(pct);
+    const range = Math.round(p * 0.67); // ~100km at 100%
+    const color = p < 20 ? 'var(--red)' : p < 50 ? 'var(--yellow)' : 'var(--green)';
+    const colorHex = p < 20 ? '#c00' : p < 50 ? '#c8a000' : '#00b860';
+
+    // --- Header bar ---
+    document.getElementById('headerBattPct').textContent = p + '%';
+    const fill = document.getElementById('headerBattFill');
+    fill.style.width = p + '%';
+    fill.style.background = colorHex;
+
+    // --- Nav low battery alert ---
+    const navAlert = document.querySelector('.nav-alert-card');
+    if (navAlert) {
+      if (p >= 20) navAlert.classList.add('hidden');
+      else navAlert.classList.remove('hidden');
+    }
+
+    // --- Home card ---
+    document.getElementById('homeBattPct').textContent = p + '%';
+    const homeBars = document.getElementById('homeBattBars').querySelectorAll('.home-nb-bar');
+    const homeHeights = [18, 28, 38, 46, 52];
+    const homeTotal = homeBars.length;
+    homeBars.forEach((bar, i) => {
+      // Bar i represents the band from (i * 100/total)% to ((i+1) * 100/total)%
+      // Light it up if the charge level is above the bottom of this band (i.e. the band has any charge in it)
+      const bandBottom = i * (100 / homeTotal);
+      bar.className = 'home-nb-bar';
+      if (p > bandBottom) {
+        bar.classList.add(p < 20 ? 'low' : p < 50 ? 'medium' : 'good');
+      } else {
+        bar.classList.add('empty');
+      }
+      bar.style.height = homeHeights[i] + 'px';
+    });
+
+    // --- Nav sidebar ---
+    document.getElementById('navBattPct').textContent = p + '%';
+    document.getElementById('navBattPct').style.color = colorHex;
+    document.getElementById('navBattRange').textContent = 'Range ' + range + ' km';
+    const navBars = document.getElementById('navBattBars').querySelectorAll('.nb-bar');
+    const navHeights = [20, 32, 44, 54, 64];
+    const navTotal = navBars.length;
+    navBars.forEach((bar, i) => {
+      const bandBottom = i * (100 / navTotal);
+      bar.className = 'nb-bar';
+      bar.style.height = navHeights[i] + 'px';
+      if (p > bandBottom) {
+        bar.classList.add(p < 20 ? 'low' : p < 50 ? 'medium' : 'good');
+      } else {
+        bar.classList.add('empty');
+      }
+    });
+
+    // --- Energy screen ---
+    document.getElementById('energyBattPct').innerHTML = p + '% <span class="batt-spin-icon">&#x21BA;</span>';
+    document.getElementById('energyBattPct').style.color = colorHex;
+    document.getElementById('energyBattRange').textContent = 'Range ' + range + ' km';
+    const energyBars = document.getElementById('energyBattChart').querySelectorAll('.batt-bar-e');
+    const eHeights = [24, 54, 84, 114, 144];
+    const eTotal = energyBars.length;
+    energyBars.forEach((bar, i) => {
+      const bandBottom = i * (100 / eTotal);
+      bar.style.height = eHeights[i] + 'px';
+      bar.style.background = p > bandBottom ? colorHex : '#444';
+    });
+  }
+
+  function stopCharging() {
+    clearInterval(chargingInterval);
+    document.getElementById('chargingActiveOverlay').classList.remove('show');
+    updateAllBatteryDisplays(chargingBatteryPct);
+    // Sync home battery card and restart drain if above 20%
+    liveBattPct = Math.round(chargingBatteryPct);
+    if (typeof updateHomeBattCard === 'function') updateHomeBattCard(liveBattPct);
+    if (liveBattPct > 20 && typeof startBattDrain === 'function') startBattDrain();
+  }
+
+  function stopTrip() {
+    tripStarted = false;
+    tripDest = '';
+    document.getElementById('tripActiveBar').classList.remove('show');
+    document.getElementById('startTripBtn').textContent = 'Start Trip';
+    document.getElementById('navSearch').value = '';
+    document.getElementById('routeLine').style.opacity = '0';
+    document.getElementById('destMarker').style.opacity = '0';
+    document.getElementById('navDist').textContent = '0 km';
+    hideStartTripBtn();
+  }
+
+  function triggerVoice() {
+    openModal('voiceModal');
+    setTimeout(() => {
+      document.getElementById('voiceStatus').textContent = 'Processing...';
+      setTimeout(() => {
+        closeModal('voiceModal');
+        selectDest('UNIMAS Campus');
+      }, 1800);
+    }, 2000);
+  }
+
+  function mapZoom(dir) {
+    mapZoomLevel = Math.max(0.7, Math.min(2.2, mapZoomLevel + dir * 0.2));
+    const svg = document.getElementById('navMapSvg');
+    const cx = 400, cy = 170;
+    svg.setAttribute('viewBox', `${cx - 400/mapZoomLevel} ${cy - 170/mapZoomLevel} ${800/mapZoomLevel} ${340/mapZoomLevel}`);
+  }
+
+  function mapCenter() {
+    mapZoomLevel = 1;
+    document.getElementById('navMapSvg').setAttribute('viewBox', '0 0 800 340');
+  }
+
+  // ========== CAMERA ==========
+  function toggleBirdView() {
+    // toggle animation effect
+    const view = document.querySelector('#screen-camera .camera-views .cam-view:first-child svg');
+    view.style.transition = 'opacity 0.2s';
+    view.style.opacity = '0';
+    setTimeout(() => { view.style.opacity = '1'; }, 220);
+  }
+
+  function toggleCamView() {
+    rearCamFront = !rearCamFront;
+    const btn = document.getElementById('rearToggle');
+    const label = document.querySelector('#screen-camera .cam-view:last-child .cam-label');
+    const svgWrap = document.getElementById('camViewSvgWrap');
+    btn.innerHTML = rearCamFront ? '&#x1F504; Rear' : '&#x1F504; Front';
+    label.textContent = rearCamFront ? 'FRONT CAMERA' : 'REAR CAMERA';
+
+    // Fade transition
+    svgWrap.style.transition = 'opacity 0.18s';
+    svgWrap.style.opacity = '0';
+    setTimeout(() => {
+      if (rearCamFront) {
+        // FRONT CAMERA — forward road view
+        svgWrap.innerHTML = `<svg viewBox="0 0 360 280" xmlns="http://www.w3.org/2000/svg" style="background:#2a2a2a;width:100%;height:100%;display:block;">
+          <defs>
+            <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#1a2a4a"/>
+              <stop offset="100%" stop-color="#3a5a8a"/>
+            </linearGradient>
+            <linearGradient id="roadGradF" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#555"/>
+              <stop offset="100%" stop-color="#777"/>
+            </linearGradient>
+          </defs>
+          <!-- Sky -->
+          <rect width="360" height="150" fill="url(#skyGrad)"/>
+          <!-- Horizon glow -->
+          <ellipse cx="180" cy="150" rx="200" ry="30" fill="#4a7aaa" opacity="0.3"/>
+          <!-- Road surface -->
+          <path d="M0 280 L0 150 Q180 135 360 150 L360 280 Z" fill="url(#roadGradF)"/>
+          <!-- Lane markings -->
+          <path d="M180 280 L180 155" stroke="#ffcc00" stroke-width="2.5" stroke-dasharray="18,12" opacity="0.7"/>
+          <!-- Left lane edge -->
+          <path d="M60 280 L135 155" stroke="#fff" stroke-width="2" opacity="0.5"/>
+          <!-- Right lane edge -->
+          <path d="M300 280 L225 155" stroke="#fff" stroke-width="2" opacity="0.5"/>
+          <!-- Distant car -->
+          <rect x="155" y="148" width="50" height="30" rx="4" fill="#cc4444" opacity="0.85"/>
+          <rect x="161" y="150" width="38" height="16" rx="2" fill="#88aacc" opacity="0.6"/>
+          <rect x="155" y="174" width="12" height="6" rx="1" fill="#ffee88"/>
+          <rect x="193" y="174" width="12" height="6" rx="1" fill="#ffee88"/>
+          <!-- Trees left -->
+          <rect x="20" y="120" width="8" height="35" fill="#3a5a2a"/>
+          <ellipse cx="24" cy="115" rx="18" ry="22" fill="#2a4a1a"/>
+          <rect x="50" y="125" width="6" height="28" fill="#3a5a2a"/>
+          <ellipse cx="53" cy="122" rx="14" ry="18" fill="#2a4a1a"/>
+          <!-- Trees right -->
+          <rect x="330" y="120" width="8" height="35" fill="#3a5a2a"/>
+          <ellipse cx="334" cy="115" rx="18" ry="22" fill="#2a4a1a"/>
+          <rect x="300" y="125" width="6" height="28" fill="#3a5a2a"/>
+          <ellipse cx="303" cy="122" rx="14" ry="18" fill="#2a4a1a"/>
+          <!-- HUD overlay lines -->
+          <path d="M0 200 Q90 180 180 175 Q270 180 360 200" fill="none" stroke="#00cc44" stroke-width="2" stroke-dasharray="6,4" opacity="0.5"/>
+          <!-- Collision warning box around distant car -->
+          <rect x="148" y="144" width="64" height="38" rx="3" fill="none" stroke="#ffcc00" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.8"/>
+        </svg>`;
+      } else {
+        // REAR CAMERA — original rear view
+        svgWrap.innerHTML = `<svg viewBox="0 0 360 280" xmlns="http://www.w3.org/2000/svg" style="background:#2a2a2a;width:100%;height:100%;display:block;">
+          <defs>
+            <linearGradient id="roadGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#777"/>
+              <stop offset="100%" stop-color="#555"/>
+            </linearGradient>
+          </defs>
+          <rect width="360" height="280" fill="#888"/>
+          <rect x="0" y="0" width="360" height="280" fill="url(#roadGrad)"/>
+          <line x1="180" y1="220" x2="60" y2="280" stroke="#fff" stroke-width="2" opacity="0.4"/>
+          <line x1="180" y1="220" x2="300" y2="280" stroke="#fff" stroke-width="2" opacity="0.4"/>
+          <path d="M0 140 Q80 120 180 110 Q280 100 360 90" fill="none" stroke="#aaa" stroke-width="2"/>
+          <rect x="300" y="80" width="60" height="120" rx="5" fill="#666" opacity="0.8"/>
+          <path d="M80 60 L40 180" fill="none" stroke="#00cc44" stroke-width="3.5" stroke-linecap="round"/>
+          <path d="M280 60 L320 180" fill="none" stroke="#00cc44" stroke-width="3.5" stroke-linecap="round"/>
+          <path d="M100 140 L65 220" fill="none" stroke="#ffcc00" stroke-width="3.5" stroke-linecap="round"/>
+          <path d="M260 140 L295 220" fill="none" stroke="#ffcc00" stroke-width="3.5" stroke-linecap="round"/>
+          <path d="M135 220 L80 275" fill="none" stroke="#ff2222" stroke-width="4" stroke-linecap="round"/>
+          <path d="M225 220 L280 275" fill="none" stroke="#ff2222" stroke-width="4" stroke-linecap="round"/>
+          <path d="M70 280 Q180 230 290 280" fill="none" stroke="#ff2222" stroke-width="3" stroke-dasharray="10,6"/>
+          <line x1="180" y1="100" x2="180" y2="280" stroke="#ffcc00" stroke-width="1.5" stroke-dasharray="12,8" opacity="0.6"/>
+        </svg>`;
+      }
+      svgWrap.style.opacity = '1';
+    }, 180);
+  }
+
+  // ========== MODALS ==========
+  function openModal(id) { document.getElementById(id).classList.add('open'); }
+  function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+  function showAlertModal() { openModal('alertModal'); }
+  function showChargingModal() { openModal('chargingModal'); }
+  function callTechnician() {
+    closeModal('alertModal');
+    openModal('technicianModal');
+    dismissFaultFully();
+  }
+  function navigateToCharger() {
+    closeModal('chargingModal');
+    selectDest('Petronas AEON Kuching');
+    goTo('nav');
+    // The Start Trip button is already visible in the bottom bar
+  }
+
+  // Close modals on overlay click
+  document.querySelectorAll('.modal-overlay').forEach(m => {
+    m.addEventListener('click', (e) => { if (e.target === m) m.classList.remove('open'); });
+  });
+
+  // ========== GLARE EFFECT ==========
+  setTimeout(() => {
+    const g = document.getElementById('glareOverlay');
+    if (g) g.remove();
+  }, 1900);
+
+  // ========== FAULT BANNER ==========
+  let faultActive = true; // starts active for demo
+
+  function openFaultFromBanner() {
+    // Clicking the banner goes straight to the technician modal
+    openModal('technicianModal');
+  }
+
+  function showFault(description) {
+    faultActive = true;
+    document.getElementById('faultBannerDesc').textContent = description || 'Battery sensor is not responding correctly — please contact a technician.';
+    document.getElementById('faultBanner').classList.add('show');
+    document.body.classList.add('fault-active');
+    // Show energy panel
+    const panel = document.getElementById('energyFaultPanel');
+    if (panel) panel.classList.add('show');
+    const btn = document.getElementById('faultSimToggle');
+    if (btn) btn.textContent = 'Dismiss Fault (Demo)';
+  }
+
+  function dismissFault() {
+    // Only hides the top banner — energy panel stays visible until dismissed from there or after calling technician
+    const banner = document.getElementById('faultBanner');
+    banner.classList.remove('show');
+    document.body.classList.remove('fault-active');
+  }
+
+  function dismissFaultFully() {
+    // Called from energy panel dismiss button or after calling technician — clears everything
+    faultActive = false;
+    const banner = document.getElementById('faultBanner');
+    banner.classList.remove('show');
+    document.body.classList.remove('fault-active');
+    const panel = document.getElementById('energyFaultPanel');
+    if (panel) panel.classList.remove('show');
+    const btn = document.getElementById('faultSimToggle');
+    if (btn) btn.textContent = 'Activate Fault (Demo)';
+  }
+
+  function toggleFaultSim() {
+    if (faultActive) {
+      dismissFaultFully();
+    } else {
+      showFault('Battery sensor is not responding correctly — please contact a technician.');
+    }
+  }
+
+  // Init: show banner on load
+  showFault('Battery sensor is not responding correctly — please contact a technician.');
+
+  // ========== HOME CARD CLIMATE SYNC ==========
+  function updateHomeClimateCard() {
+    const modeNames = { cool: 'COOL', heat: 'HEAT', vent: 'VENT', auto: 'AUTO' };
+    const fanNames = ['Auto', 'Low', 'Med-Low', 'Medium', 'High'];
+
+    const modeEl = document.getElementById('homeClimateMode');
+    if (modeEl) modeEl.textContent = modeNames[currentMode] || currentMode.toUpperCase();
+
+    const acOffMsg = document.getElementById('homeAcOffMsg');
+    const fanRow = document.getElementById('homeFanRow');
+    if (acOffMsg && fanRow) {
+      if (!acOn) {
+        acOffMsg.classList.add('show');
+        fanRow.style.opacity = '0.35';
+      } else {
+        acOffMsg.classList.remove('show');
+        fanRow.style.opacity = '1';
+      }
+    }
+
+    const acBadgeText = document.getElementById('homeAcBadgeText');
+    const acBadge = document.getElementById('homeAcBadge');
+    if (acBadgeText && acBadge) {
+      acBadgeText.textContent = acOn ? 'A/C ON' : 'A/C OFF';
+      acBadge.style.opacity = acOn ? '1' : '0.5';
+    }
+
+    const fanBadgeText = document.getElementById('homeFanBadgeText');
+    if (fanBadgeText) fanBadgeText.textContent = 'Fan: ' + (fanNames[currentFan] || 'Auto');
+
+    // also sync the second fan speed label
+    const fanBadgeText2 = document.getElementById('homeFanBadgeText2');
+    if (fanBadgeText2) fanBadgeText2.textContent = fanNames[currentFan] || 'Auto';
+
+    // Fan dots reflect active level
+    const fanDots = document.querySelectorAll('#homeFanRow .fan-dot:not(.fan-dot-cold):not(.fan-dot-heat)');
+    fanDots.forEach((dot, i) => {
+      dot.classList.toggle('active', currentFan === 0 || i < currentFan);
+    });
+
+    // Update climate status message
+    const msgRow = document.getElementById('homeClimateMsgRow');
+    const msgEl = document.getElementById('homeClimateStatusMsg');
+    if (msgRow && msgEl) {
+      if (!acOn) {
+        msgRow.className = 'climate-status-msg off';
+        msgEl.textContent = 'Climate system is off';
+        msgRow.querySelector('span:first-child').textContent = '⏸️';
+      } else if (currentMode === 'cool') {
+        msgRow.className = 'climate-status-msg cooling';
+        msgEl.textContent = 'Cooling cabin to ' + temperature + '°C';
+        msgRow.querySelector('span:first-child').textContent = '❄️';
+      } else if (currentMode === 'heat') {
+        msgRow.className = 'climate-status-msg heating';
+        msgEl.textContent = 'Heating cabin to ' + temperature + '°C';
+        msgRow.querySelector('span:first-child').textContent = '🔥';
+      } else if (currentMode === 'vent') {
+        msgRow.className = 'climate-status-msg comfort';
+        msgEl.textContent = 'Ventilating at ' + temperature + '°C';
+        msgRow.querySelector('span:first-child').textContent = '🌬️';
+      } else {
+        msgRow.className = 'climate-status-msg comfort';
+        msgEl.textContent = 'Auto climate at ' + temperature + '°C';
+        msgRow.querySelector('span:first-child').textContent = '✅';
+      }
+    }
+
+    // Update temp gauge thumb (16–34°C range → 0%–100%)
+    const thumb = document.getElementById('climateGaugeThumb');
+    if (thumb) {
+      const pct = Math.max(0, Math.min(100, ((temperature - 16) / 18) * 100));
+      thumb.style.left = pct + '%';
+    }
+  }
+
+  // ========== HOME BATTERY CARD SYNC ==========
+  function updateHomeBattCard(p) {
+    const range = Math.round(p * 0.67);
+    const minsToFull = Math.round((100 - p) * 3.25);
+    const h = Math.floor(minsToFull / 60), m = minsToFull % 60;
+    const estTimeStr = (h > 0 ? h + 'h ' : '') + m + 'm';
+
+    const rangeEl = document.getElementById('homeBattRange');
+    const estEl = document.getElementById('homeBattEstTime');
+    const warnEl = document.getElementById('homeBattWarning');
+    const dotEl = document.getElementById('homeBattDot');
+    const statusTxtEl = document.getElementById('homeBattStatusTxt');
+    const drainBadge = document.getElementById('homeBattDrainBadge');
+
+    if (rangeEl) rangeEl.textContent = range + ' km';
+    if (estEl) estEl.textContent = estTimeStr;
+
+    // Warning / tip visibility
+    const isLow = p < 20;
+    const isCritical = p <= 15;
+    if (warnEl) { if (isLow) warnEl.classList.add('show'); else warnEl.classList.remove('show'); }
+
+    // Status dot & text
+    if (dotEl) { dotEl.className = 'batt-status-dot' + (isLow ? ' warn' : ''); }
+    if (statusTxtEl) {
+      statusTxtEl.textContent = isCritical ? 'Critical' : isLow ? 'Low' : p < 50 ? 'Fair' : 'Good';
+    }
+
+    // Drain badge
+    if (drainBadge) {
+      drainBadge.textContent = battDrainInterval ? '⬇ DRAINING' : '— IDLE';
+      drainBadge.className = 'batt-drain-badge' + (battDrainInterval ? ' draining' : '');
+    }
+
+    // Power use (simulated fluctuation)
+    const pwrEl = document.getElementById('homeBattPower');
+    if (pwrEl) pwrEl.textContent = (12 + Math.random() * 4).toFixed(1) + ' kW';
+  }
+
+  // ========== DRIVE MODE SELECTOR ==========
+  let currentDriveMode = 'eco';
+  const driveModeConfig = {
+    'eco':        { label: 'Eco',     icon: '🌿', homeClass: 'dm-eco',    homeStyle: 'color:#00e07a;' },
+    'comfort':    { label: 'Comfort', icon: '🛋️', homeClass: 'dm-comfort', homeStyle: 'color:#8a5cf6;' },
+    'sport':      { label: 'Sport',   icon: '⚡',  homeClass: 'dm-sport',  homeStyle: 'color:#ffbc00;' },
+    'sport-plus': { label: 'Sport+',  icon: '🏁', homeClass: 'dm-sport+', homeStyle: 'color:#ff3b3b;' },
+  };
+
+  function setDriveMode(mode) {
+    currentDriveMode = mode;
+    // Update nav selector buttons
+    ['eco','comfort','sport','sport-plus'].forEach(m => {
+      const btn = document.getElementById('dm-' + m);
+      if (btn) {
+        btn.className = 'nav-dm-btn ' + m + (m === mode ? ' active' : '');
+      }
+    });
+    // Sync Home screen Drive Mode status badge
+    const cfg = driveModeConfig[mode];
+    const homeVal = document.querySelector('.home-status-bar .hstat:nth-child(2) .hstat-val');
+    if (homeVal && cfg) {
+      homeVal.textContent = cfg.icon + ' ' + cfg.label;
+      homeVal.style.cssText = cfg.homeStyle;
+    }
+    // Show brief toast
+    showUndoToast('Drive Mode: ' + (cfg ? cfg.label : mode));
+    // Dismiss toast quickly (no undo needed for mode change)
+    setTimeout(hideUndoToast, 1800);
+  }
+
+  function showUndoToast(msg) {
+    const t = document.getElementById('undoToast');
+    if (!t) return;
+    const msgEl = t.querySelector('.undo-msg') || t;
+    // Reuse the undo toast purely as an info toast for drive mode
+    const oldHTML = t.innerHTML;
+    t.innerHTML = '<span>' + msg + '</span>';
+    t.classList.add('show');
+    t._restoreHTML = oldHTML;
+  }
+  function hideUndoToast() {
+    const t = document.getElementById('undoToast');
+    if (!t) return;
+    t.classList.remove('show');
+    if (t._restoreHTML) { setTimeout(() => { t.innerHTML = t._restoreHTML; t._restoreHTML = null; }, 200); }
+  }
+
+  // ========== BATTERY DRAIN ==========
+  let liveBattPct = 72;
+  let battDrainInterval = null;
+
+  function startBattDrain() {
+    if (battDrainInterval) return;
+    battDrainInterval = setInterval(() => {
+      if (liveBattPct > 15) {
+        liveBattPct = Math.max(15, parseFloat((liveBattPct - 0.5).toFixed(1)));
+        updateAllBatteryDisplays(liveBattPct);
+        updateHomeBattCard(liveBattPct);
+      } else {
+        clearInterval(battDrainInterval);
+        battDrainInterval = null;
+        updateHomeBattCard(liveBattPct);
+      }
+    }, 2000);
+  }
+
+  // Init
+  updateHomeBattCard(liveBattPct);
+  updateHomeClimateCard();
+  // Start drain if battery already above 15 on load (it starts at 15, so drain won't run until charged)
+  if (liveBattPct > 15) startBattDrain();
+
+  // ========== BLUETOOTH TOGGLE ==========
+  function toggleBtToast(e) {
+    e.stopPropagation();
+    const toast = document.getElementById('btToast');
+    toast.classList.toggle('show');
+  }
+  // Close BT toast on outside click
+  document.addEventListener('click', () => {
+    const toast = document.getElementById('btToast');
+    if (toast) toast.classList.remove('show');
+  });
+
+  // ========== SPEED ANIMATION ==========
+  updateTempColor();
+  let speed = 70, speedDir = 1;
+  setInterval(() => {
+    speed += speedDir * (Math.random() * 2 | 0);
+    if (speed > 80) speedDir = -1;
+    if (speed < 60) speedDir = 1;
+    const el = document.getElementById('speedDisplay');
+    if (el) el.textContent = speed + ' km/h';
+  }, 3000);
+</script>
+</body>
+</html>
+    /* HOME — stack cards vertically */
+    #screen-home { padding: 12px 12px 6px; overflow-y: auto; }
+    .home-cards {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    .home-card { padding: 14px 16px; }
+    .battery-pct { font-size: 38px; }
+    .climate-temp { font-size: 36px; }
+    .home-batt-bars { height: 38px; margin-bottom: 8px; }
+    .home-nb-bar { width: 14px; }
+    .home-status-bar {
+      grid-template-columns: 1fr;
+      margin-top: 10px;
+    }
+    .hstat { padding: 10px 14px; }
+    .hstat:not(:last-child) { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+
+    /* CLIMATE — compact */
+    .screen-inner { padding: 14px 14px 10px; gap: 10px; justify-content: flex-start; }
+    .temp-display { font-size: 40px; }
+    .climate-modes-row { grid-template-columns: repeat(2, 1fr); }
+    .fan-speed-row { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .fan-btns { flex-wrap: wrap; }
+
+    /* NAV — vertical layout */
+    .nav-body { flex-direction: column; }
+    .nav-map-area { min-height: 240px; height: 240px; }
+    .nav-sidebar {
+      width: 100%; flex-direction: row; flex-wrap: wrap;
+      gap: 8px; padding: 8px 10px; justify-content: flex-start;
+    }
+    .nav-battery-card { flex: 1; min-width: 120px; }
+    .nav-alert-card { flex: 1; min-width: 140px; }
+    .nav-charging-btn { flex: 1 1 100%; }
+    .nav-bottom-bar { flex-wrap: wrap; gap: 6px; padding: 10px 14px; }
+    .nav-stat { flex: 1; min-width: 80px; padding: 0 8px; }
+    .start-trip-btn { width: 100%; margin-left: 0; margin-top: 6px; }
+    /* Drive mode row on mobile */
+    .nav-drive-mode-row { padding: 8px 10px; gap: 8px; }
+    .nav-dm-btn { padding: 6px 3px; }
+    .nav-dm-range { display: none; }
+
+    /* ENERGY */
+    .energy-inner { grid-template-rows: auto auto auto auto; overflow-y: auto; padding: 12px 14px; }
+    .energy-top { grid-template-columns: 1fr; }
+    .batt-chart-area { height: 80px; justify-content: center; }
+    .energy-stats-grid { grid-template-columns: 1fr 1fr; }
+
+    /* CAMERA */
+    .camera-inner { padding: 10px 12px; gap: 8px; }
+    .camera-views { grid-template-columns: 1fr; }
+    .cam-view { min-height: 180px; }
+
+    /* BOTTOM NAV */
+    .bottom-nav { height: 56px; position: sticky; bottom: 0; z-index: 50; }
+    .nav-tab-label { font-size: 8px; }
+    .nav-tab-icon { font-size: 18px; }
+  }
+
+  /* Small phones */
+  @media (max-width: 390px) {
+    .header-logo { font-size: 12px; letter-spacing: 0.06em; }
+    .battery-indicator { display: none; }
+    .battery-pct { font-size: 32px; }
+    .climate-temp { font-size: 30px; }
+    .home-card { padding: 12px 14px; }
+    .energy-stats-grid { grid-template-columns: 1fr; }
+    .climate-modes-row { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* Large tablets & landscape */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .home-cards { grid-template-columns: 1fr 1fr; }
+    .home-status-bar { grid-template-columns: 1fr 1fr 1fr; }
+    .nav-sidebar { width: 180px; }
+    .energy-top { grid-template-columns: 180px 1fr; }
+  }
+
+  /* Very tall screens — let content breathe */
+  @media (min-height: 900px) {
+    .screen-inner { justify-content: center; }
+  }
+
+  /* ========== HEADER ========== */
+  .header {
+    background: var(--header-bg);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 28px;
+    height: 56px;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+    z-index: 10;
+    position: relative;
+  }
+  .header-time {
+    font-family: var(--font-head);
+    font-size: 20px; font-weight: 600;
+    color: #111; letter-spacing: 0.04em;
+  }
+  .header-logo {
+    font-family: var(--font-head);
+    font-size: 18px; font-weight: 900;
+    letter-spacing: 0.12em;
+    color: var(--purple);
+    position: absolute; left: 50%; transform: translateX(-50%);
+  }
+  .header-status {
+    display: flex; align-items: center; gap: 14px;
+  }
+  .status-icon { font-size: 18px; color: #333; }
+  .signal-bars { display: flex; align-items: flex-end; gap: 2px; }
+  .signal-bar { background: #333; border-radius: 1px; width: 4px; }
+  .battery-indicator {
+    display: flex; align-items: center; gap: 6px;
+    background: #f0f0f5; border-radius: 6px; padding: 4px 10px;
+    font-family: var(--font-head); font-size: 12px; font-weight: 600;
+    color: #333; border: 1.5px solid #ccc;
+  }
+  .battery-bar-wrap {
+    width: 28px; height: 12px; border: 2px solid #555; border-radius: 3px; position: relative;
+    background: #eee;
+  }
+  .battery-bar-wrap::after {
+    content: ''; position: absolute; right: -5px; top: 50%; transform: translateY(-50%);
+    width: 3px; height: 6px; background: #555; border-radius: 0 2px 2px 0;
+  }
+  .battery-bar-fill {
+    position: absolute; left: 1px; top: 1px; bottom: 1px;
+    width: 20%; background: var(--red); border-radius: 1px;
+    transition: width 0.5s;
+  }
+
+  /* ========== SCREENS ========== */
+  .screen {
+    flex: 1; overflow: hidden;
+    display: none; flex-direction: column;
+    animation: fadeIn 0.28s ease;
+  }
+  .screen.active { display: flex; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ========== HOME SCREEN ========== */
+  #screen-home {
+    background: linear-gradient(135deg, #1a0a3d 0%, #0d0528 100%);
+    padding: 16px 20px 8px;
+    position: relative; overflow-y: auto;
+  }
+  #screen-home::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 40% at 50% 80%, rgba(108,53,245,0.22) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .home-cards {
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px; flex: 1;
+  }
+  .home-card {
+    border-radius: 18px; padding: 18px 20px;
+    display: flex; flex-direction: column;
+    cursor: pointer; transition: transform 0.18s, box-shadow 0.18s;
+    position: relative; overflow: hidden;
+  }
+  .home-card:hover { transform: translateY(-3px) scale(1.01); box-shadow: 0 12px 40px rgba(0,0,0,0.35); }
+  .home-card:active { transform: scale(0.98); }
+  .card-battery { background: linear-gradient(140deg, #d4fce8 0%, #a8f0cc 100%); align-items: center; }
+  .card-battery .card-header-row { align-self: stretch; }
+  .card-nav { background: linear-gradient(140deg, #c9e7ff 0%, #9fd4ff 100%); }
+  .card-climate { background: linear-gradient(140deg, #e8d9ff 0%, #cfb3ff 100%); align-items: center; }
+  .card-climate .card-header-row { align-self: stretch; }
+
+  .card-header-row {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 12px;
+  }
+  .card-icon-wrap {
+    width: 36px; height: 36px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+  .card-battery .card-icon-wrap { background: rgba(0,160,80,0.18); }
+  .card-nav .card-icon-wrap { background: rgba(30,111,255,0.18); }
+  .card-climate .card-icon-wrap { background: rgba(108,53,245,0.18); }
+  .card-title { font-family: var(--font-head); font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: #222; }
+  .card-arrow { font-size: 18px; color: #444; font-weight: 700; }
+
+  /* Battery card */
+  .battery-pct {
+    font-family: var(--font-head); font-size: 52px; font-weight: 900;
+    color: #111; line-height: 1; margin-bottom: 10px;
+    text-align: center;
+  }
+  .battery-track {
+    display: none;
+  }
+  .home-batt-bars {
+    display: flex; align-items: flex-end; justify-content: center; gap: 5px;
+    margin-bottom: 10px; height: 52px;
+  }
+  .home-nb-bar {
+    width: 18px; border-radius: 3px 3px 0 0;
+    transition: background 0.3s;
+  }
+  .home-nb-bar.empty { background: rgba(0,0,0,0.12); }
+  .home-nb-bar.low { background: var(--red); }
+  .home-nb-bar.medium { background: var(--yellow); }
+  .home-nb-bar.good { background: var(--green-dark); }
+  .battery-stats {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+    background: rgba(0,0,0,0.08); border-radius: 10px;
+    overflow: hidden;
+  }
+  .bstat {
+    padding: 10px 12px; text-align: center;
+  }
+  .bstat:first-child { border-right: 1px solid rgba(0,0,0,0.1); }
+  .bstat-label { font-size: 11px; color: #555; font-weight: 500; margin-bottom: 2px; }
+  .bstat-val { font-family: var(--font-head); font-size: 16px; font-weight: 700; color: #111; }
+
+  /* battery card - title stays top via normal flow, content centered */
+  .card-battery .battery-stats { width: 100%; }
+  .card-battery .battery-pct { text-align: center; width: 100%; }
+  .card-battery .home-batt-bars { width: 100%; justify-content: center; }
+
+  /* climate card content width */
+  .card-climate .climate-badges { width: 100%; }
+  .card-climate .climate-fan-row { width: 100%; }
+  .card-climate .climate-temp { width: 100%; text-align: center; }
+  .card-climate .climate-sublabel { width: 100%; text-align: center; }
+
+  /* Nav card */
+  .map-thumb {
+    background: #c8dfb8; border-radius: 10px; flex: 1;
+    min-height: 80px; overflow: hidden; position: relative;
+    margin-bottom: 10px;
+  }
+  .map-thumb-svg { width: 100%; height: 100%; }
+  .nav-stats {
+    display: flex; gap: 0; background: rgba(0,0,0,0.08); border-radius: 10px; overflow: hidden;
+  }
+  .nstat {
+    flex: 1; padding: 8px 10px; display: flex; align-items: center; gap: 6px;
+  }
+  .nstat:not(:last-child) { border-right: 1px solid rgba(0,0,0,0.1); }
+  .nstat-icon { font-size: 14px; color: #444; }
+  .nstat-info { }
+  .nstat-label { font-size: 9px; color: #666; font-weight: 500; }
+  .nstat-val { font-family: var(--font-head); font-size: 12px; font-weight: 700; color: #111; }
+
+  /* Climate card */
+  .climate-temp {
+    font-family: var(--font-head); font-size: 48px; font-weight: 900;
+    color: #111; line-height: 1; margin-bottom: 4px;
+    text-align: center;
+  }
+  .climate-sublabel { font-size: 12px; color: #555; margin-bottom: 10px; text-align: center; }
+  .climate-fan-row {
+    display: flex; align-items: center; justify-content: center; gap: 6px; margin-bottom: 12px;
+  }
+  .fan-dot {
+    width: 30px; height: 30px; border-radius: 50%;
+    background: rgba(108,53,245,0.25); border: none;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; color: #555;
+  }
+  .fan-dot.active { background: var(--purple); color: white; }
+  /* Cold/Heat end dots */
+  .fan-dot-cold { background: rgba(30,111,255,0.2); font-size: 16px; }
+  .fan-dot-heat { background: rgba(255,80,0,0.15); font-size: 16px; }
+  .climate-badges {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+  }
+  .cbadge {
+    background: rgba(108,53,245,0.15); border-radius: 10px;
+    padding: 9px 10px; display: flex; align-items: center; justify-content: center; gap: 6px;
+    font-size: 13px; font-weight: 700; color: #333;
+  }
+  .cbadge-icon { font-size: 18px; }
+
+  /* Make home climate card center its content vertically only for body, not header */
+  .card-climate .climate-badges { width: 100%; }
+
+  /* Battery warning message */
+  .batt-warning-msg {
+    display: none; width: 100%;
+    background: rgba(255,59,59,0.15); border: 1px solid rgba(255,59,59,0.4);
+    border-radius: 8px; padding: 7px 10px; margin-bottom: 8px;
+    font-size: 12px; font-weight: 700; color: #cc0000;
+    text-align: center; animation: pulse-warn 1.5s ease-in-out infinite;
+  }
+  .batt-warning-msg.show { display: block; }
+  @keyframes pulse-warn {
+    0%, 100% { opacity: 1; } 50% { opacity: 0.55; }
+  }
+
+  /* Battery card extra info rows */
+  .batt-extra-row {
+    display: flex; align-items: center; justify-content: space-between;
+    width: 100%; margin-bottom: 8px; gap: 6px;
+  }
+  .batt-status-pill {
+    display: flex; align-items: center; gap: 5px;
+    background: rgba(0,0,0,0.08); border-radius: 20px;
+    padding: 5px 10px; font-size: 11px; font-weight: 600; color: #333;
+  }
+  .batt-status-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--green-dark);
+    box-shadow: 0 0 6px rgba(0,180,80,0.6);
+  }
+  .batt-status-dot.warn { background: var(--red); box-shadow: 0 0 6px rgba(255,59,59,0.6); animation: pulse-dot 1.2s ease infinite; }
+  @keyframes pulse-dot { 0%,100%{transform:scale(1);opacity:1;} 50%{transform:scale(1.35);opacity:0.7;} }
+  .batt-drain-badge {
+    font-size: 10px; font-weight: 700; color: #555;
+    background: rgba(0,0,0,0.07); border-radius: 6px;
+    padding: 3px 7px; font-family: var(--font-head); letter-spacing: 0.04em;
+  }
+  .batt-drain-badge.draining { color: #cc4400; background: rgba(255,80,0,0.12); }
+
+  /* Circular charge ring */
+  .batt-ring-wrap {
+    position: relative; width: 68px; height: 68px; flex-shrink: 0;
+    margin: 0 auto 6px;
+  }
+  .batt-ring-wrap svg { transform: rotate(-90deg); }
+  .batt-ring-bg { fill: none; stroke: rgba(0,0,0,0.1); stroke-width: 5; }
+  .batt-ring-fill { fill: none; stroke-width: 5; stroke-linecap: round; transition: stroke-dashoffset 0.6s ease, stroke 0.4s; }
+  .batt-ring-label {
+    position: absolute; inset: 0; display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    font-family: var(--font-head); line-height: 1;
+  }
+  .batt-ring-pct { font-size: 15px; font-weight: 900; color: #111; }
+  .batt-ring-unit { font-size: 8px; color: #555; margin-top: 1px; }
+
+  /* Power flow indicator */
+  .batt-power-row {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5px;
+    width: 100%; margin-bottom: 8px;
+  }
+  .batt-power-item {
+    background: rgba(0,0,0,0.07); border-radius: 8px;
+    padding: 7px 6px; text-align: center;
+  }
+  .batt-power-icon { font-size: 13px; margin-bottom: 2px; }
+  .batt-power-label { font-size: 9px; color: #666; font-weight: 500; }
+  .batt-power-val { font-family: var(--font-head); font-size: 11px; font-weight: 700; color: #222; margin-top: 1px; }
+
+  /* Charge tip */
+  .batt-tip-row {
+    display: none; width: 100%; align-items: center; gap: 7px;
+    background: rgba(255,59,59,0.1); border-left: 3px solid #ff3b3b;
+    border-radius: 0 8px 8px 0; padding: 7px 10px;
+    font-size: 11px; color: #aa1111; font-weight: 600; margin-bottom: 8px;
+    animation: pulse-warn 2s ease-in-out infinite;
+  }
+  .batt-tip-row.show { display: flex; }
+  .batt-tip-row span { font-size: 14px; flex-shrink: 0; }
+
+  /* Climate home card extra info */
+  .climate-mode-row {
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    width: 100%; margin-bottom: 8px;
+    font-size: 12px; color: #444; font-weight: 600;
+  }
+  .climate-mode-badge {
+    background: rgba(108,53,245,0.15); border-radius: 6px;
+    padding: 3px 8px; font-size: 11px; font-weight: 700;
+    color: #6c35f5; font-family: var(--font-head); letter-spacing: 0.04em;
+  }
+  .climate-ac-off-msg {
+    display: none; width: 100%; text-align: center;
+    font-size: 12px; color: #888; font-style: italic; margin-bottom: 6px;
+  }
+  .climate-ac-off-msg.show { display: block; }
+
+  /* Climate card extra widgets */
+  .climate-ambient-row {
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    width: 100%; margin-bottom: 8px;
+  }
+  .climate-ambient-icon { font-size: 18px; }
+  .climate-ambient-label { font-size: 11px; color: #555; font-weight: 500; }
+  .climate-ambient-val { font-family: var(--font-head); font-size: 13px; font-weight: 700; color: #222; }
+
+  /* Mini temp gauge bar */
+  .climate-gauge-row {
+    width: 100%; margin-bottom: 10px;
+  }
+  .climate-gauge-track {
+    height: 8px; border-radius: 8px;
+    background: linear-gradient(90deg, #4d9fff 0%, #00e07a 45%, #ff8c00 75%, #ff3b3b 100%);
+    position: relative; overflow: visible;
+  }
+  .climate-gauge-thumb {
+    position: absolute; top: 50%; transform: translate(-50%, -50%);
+    width: 14px; height: 14px; background: white; border-radius: 50%;
+    border: 2.5px solid #6c35f5; box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    transition: left 0.4s ease;
+  }
+  .climate-gauge-labels {
+    display: flex; justify-content: space-between;
+    font-size: 9px; color: #666; margin-top: 3px; font-weight: 500;
+  }
+
+  /* Climate stats grid */
+  .climate-stats-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 6px;
+    width: 100%; margin-bottom: 8px;
+  }
+  .climate-stat-item {
+    background: rgba(108,53,245,0.1); border-radius: 9px;
+    padding: 8px 10px; display: flex; align-items: center; gap: 7px;
+  }
+  .climate-stat-icon { font-size: 16px; }
+  .climate-stat-label { font-size: 10px; color: #555; font-weight: 500; }
+  .climate-stat-val { font-family: var(--font-head); font-size: 13px; font-weight: 700; color: #222; }
+
+  /* Climate status message */
+  .climate-status-msg {
+    width: 100%; text-align: center; border-radius: 8px;
+    padding: 6px 10px; font-size: 11px; font-weight: 600;
+    margin-bottom: 0; display: flex; align-items: center; justify-content: center; gap: 5px;
+  }
+  .climate-status-msg.comfort { background: rgba(0,180,80,0.13); color: #006b30; }
+  .climate-status-msg.cooling { background: rgba(30,111,255,0.12); color: #0a3a80; }
+  .climate-status-msg.heating { background: rgba(255,100,0,0.12); color: #8a3200; }
+  .climate-status-msg.off { background: rgba(0,0,0,0.07); color: #666; }
+
+  /* Home bottom status bar */
+  .home-status-bar {
+    background: var(--black-card); border-radius: 14px;
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 12px; overflow: hidden;
+  }
+  .hstat {
+    padding: 12px 16px; display: flex; align-items: center; gap: 10px;
+    color: white;
+  }
+  .hstat:not(:last-child) { border-right: 1px solid rgba(255,255,255,0.08); }
+  .hstat-icon { font-size: 22px; color: var(--green); }
+  .hstat-label { font-size: 10px; color: #aaa; font-weight: 500; }
+  .hstat-val { font-family: var(--font-head); font-size: 16px; font-weight: 700; color: white; }
+
+  /* ========== CLIMATE SCREEN ========== */
+  #screen-climate {
+    background: linear-gradient(140deg, #f8f6ff 0%, #ede8ff 100%);
+    padding: 0;
+  }
+  .screen-inner {
+    flex: 1; overflow-y: auto; padding: 18px 24px 8px;
+    display: flex; flex-direction: column; gap: 14px;
+    justify-content: center;
+  }
+  .back-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #111; color: white; border: none;
+    border-radius: 10px; padding: 8px 16px;
+    font-family: var(--font-head); font-size: 12px; font-weight: 600;
+    cursor: pointer; width: fit-content;
+    transition: background 0.15s;
+  }
+  .back-btn:hover { background: #333; }
+  .climate-top {
+    text-align: center;
+  }
+  .climate-screen-title { font-size: 15px; font-weight: 600; color: #555; margin-bottom: 16px; }
+  .climate-temp-controls {
+    display: flex; align-items: center; justify-content: center; gap: 24px;
+  }
+  /* temp-btn styles moved to ac/temp section above */
+  .temp-display {
+    font-family: var(--font-head); font-size: 52px; font-weight: 900;
+    color: #111; text-align: center; line-height: 1;
+  }
+  .cool-btn-OLD { background: #1a3a8f; }
+  .heat-btn-OLD { background: #c04000; }
+
+  .climate-dark-card {
+    background: #0e0e1a; border-radius: 14px;
+    padding: 14px 18px; color: white;
+  }
+  .fan-speed-row {
+    display: flex; align-items: center; gap: 10px;
+    justify-content: center; flex-wrap: wrap;
+  }
+  .fan-label { font-size: 15px; font-weight: 700; color: #ccc; min-width: 90px; }
+  .fan-btns { display: flex; gap: 10px; flex: 1; align-items: center; justify-content: center; }
+  .fan-speed-btn {
+    width: 50px; height: 50px; border-radius: 12px;
+    background: #2a2a3a; color: white; border: none;
+    cursor: pointer; font-size: 20px;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.15s, transform 0.1s;
+    flex-shrink: 0;
+  }
+  .fan-speed-btn:hover { background: #3a3a5a; }
+  .fan-speed-btn.active { background: white; color: #111; font-weight: 700; }
+  .fan-speed-btn:active { transform: scale(0.9); }
+  .fan-auto {
+    margin-left: 4px; display: flex; align-items: center; gap: 6px;
+    padding: 10px 18px; border-radius: 12px; background: white;
+    color: #111; font-family: var(--font-head); font-size: 13px; font-weight: 700;
+    cursor: pointer; border: none; width: auto; height: 50px;
+  }
+  .fan-auto:not(.active) { background: #2a2a3a; color: white; }
+
+  .ac-toggle-row {
+    display: flex; align-items: center; justify-content: center; gap: 24px;
+  }
+  .ac-label { font-size: 18px; font-weight: 700; color: #ccc; }
+
+  /* ---- NEW: Full-width AC toggle button ---- */
+  .ac-fullbtn {
+    width: 100%; padding: 14px 20px;
+    border-radius: 14px; border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; gap: 14px;
+    font-family: var(--font-head); font-size: 15px; font-weight: 700;
+    letter-spacing: 0.06em;
+    transition: background 0.25s, box-shadow 0.25s, transform 0.1s;
+    position: relative;
+  }
+  .ac-fullbtn.on {
+    background: #0e2a1a;
+    color: var(--green);
+    border: 1.5px solid rgba(0,224,122,0.3);
+    box-shadow: 0 0 18px rgba(0,224,122,0.25), inset 0 0 12px rgba(0,224,122,0.08);
+  }
+  .ac-fullbtn.off {
+    background: #1c1c2e;
+    color: #666;
+    border: 1.5px solid #333;
+    box-shadow: none;
+  }
+  .ac-fullbtn:active { transform: scale(0.98); }
+  .ac-glow-dot {
+    width: 12px; height: 12px; border-radius: 50%;
+    flex-shrink: 0;
+    transition: background 0.25s, box-shadow 0.25s;
+  }
+  .ac-fullbtn.on .ac-glow-dot {
+    background: var(--green);
+    box-shadow: 0 0 8px 2px rgba(0,224,122,0.8), 0 0 16px 4px rgba(0,224,122,0.4);
+  }
+  .ac-fullbtn.off .ac-glow-dot {
+    background: #444;
+    box-shadow: none;
+  }
+
+  /* Climate status line */
+  .climate-status-line {
+    font-size: 12px; color: #aaa; text-align: center; margin-top: 8px;
+    font-family: var(--font-body); letter-spacing: 0.02em;
+    min-height: 16px;
+    transition: color 0.3s;
+  }
+  .climate-status-line.active { color: var(--green); }
+
+  /* ---- NEW: Circular temperature buttons 64×64 ---- */
+  .temp-btn {
+    width: 64px; height: 64px; border-radius: 50%;
+    background: #111; color: white; border: 3px solid #333;
+    font-size: 26px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.15s, border-color 0.15s, box-shadow 0.15s, transform 0.1s;
+    flex-shrink: 0;
+  }
+  .temp-btn:active { transform: scale(0.93); }
+  .cool-btn { border-color: #4080ff; }
+  .cool-btn:hover { background: #0d1f5a; box-shadow: 0 0 14px rgba(64,128,255,0.5); }
+  .heat-btn { border-color: #ff6040; }
+  .heat-btn:hover { background: #5a1500; box-shadow: 0 0 14px rgba(255,96,64,0.5); }
+
+  /* Dynamic temp display colour handled via JS inline style */
+
+  .climate-modes-row {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
+  }
+  .mode-btn {
+    background: #1a1a2e; border: 2px solid #2a2a4a; border-radius: 12px;
+    padding: 12px 8px; display: flex; flex-direction: column;
+    align-items: center; gap: 6px; cursor: pointer;
+    transition: background 0.15s, border-color 0.15s, transform 0.1s;
+    color: white;
+  }
+  .mode-btn:hover { border-color: var(--purple); background: #2a1a4a; }
+  .mode-btn.active { background: var(--purple); border-color: var(--purple-light); }
+  .mode-btn:active { transform: scale(0.95); }
+  .mode-icon { font-size: 22px; }
+  .mode-name { font-family: var(--font-head); font-size: 10px; font-weight: 700; color: white; }
+
+  /* ========== NAVIGATION SCREEN ========== */
+  #screen-nav {
+    background: #111; flex-direction: column;
+  }
+  .nav-screen-inner {
+    flex: 1; display: flex; flex-direction: column;
+    position: relative; overflow: hidden;
+  }
+  .nav-search-bar {
+    background: white; padding: 12px 16px;
+    display: flex; align-items: center; gap: 10px;
+    z-index: 5; flex-shrink: 0;
+  }
+  .search-input {
+    flex: 1; border: 1.5px solid #ddd; border-radius: 24px;
+    padding: 10px 18px; font-family: var(--font-body); font-size: 14px;
+    outline: none; background: #f8f8fc;
+    transition: border-color 0.15s;
+  }
+  .search-input:focus { border-color: var(--purple); }
+  .search-icon { font-size: 18px; color: #888; position: absolute; left: 30px; pointer-events: none; }
+  .search-input { padding-left: 40px; }
+  .mic-btn {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: #f0f0f5; border: none; cursor: pointer;
+    font-size: 18px; display: flex; align-items: center; justify-content: center;
+    transition: background 0.15s;
+  }
+  .mic-btn:hover { background: var(--purple); color: white; }
+
+  .nav-body {
+    flex: 1; display: flex; overflow: hidden; position: relative;
+  }
+  .nav-map-area {
+    flex: 1; position: relative; background: #c8dfb8;
+    overflow: hidden; display: flex; flex-direction: column;
+  }
+  .nav-map-svg { width: 100%; height: 100%; position: absolute; inset: 0; }
+  .map-zoom-controls {
+    position: absolute; left: 16px; top: 50%; transform: translateY(-50%);
+    display: flex; flex-direction: column; gap: 4px; z-index: 5;
+  }
+  .zoom-btn {
+    width: 36px; height: 36px; background: #111; color: white;
+    border: none; border-radius: 8px; font-size: 20px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.15s, transform 0.1s;
+  }
+  .zoom-btn:hover { background: var(--purple); }
+  .zoom-btn:active { transform: scale(0.9); }
+  .center-btn {
+    width: 36px; height: 36px; background: #111; color: white;
+    border: none; border-radius: 8px; font-size: 16px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    margin-top: 4px; transition: background 0.15s;
+  }
+  .center-btn:hover { background: var(--blue); }
+
+  .nav-sidebar {
+    width: 200px; background: #0e0e1a;
+    display: flex; flex-direction: column; gap: 10px; padding: 10px;
+    justify-content: center; flex-shrink: 0;
+  }
+  .nav-battery-card {
+    background: #1a1a2e; border-radius: 12px; padding: 14px 12px;
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+  }
+  .nav-batt-bars {
+    display: flex; align-items: flex-end; gap: 4px;
+  }
+  .nb-bar {
+    width: 18px; border-radius: 3px 3px 0 0;
+    transition: background 0.3s;
+  }
+  .nb-bar.empty { background: #333; }
   .nb-bar.low { background: var(--red); }
   .nb-bar.full { background: #444; }
   .nav-batt-info { text-align: center; }
