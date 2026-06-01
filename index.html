@@ -31,6 +31,8 @@
     --font-body: 'DM Sans', sans-serif;
   }
 
+  html { font-size: 18px; }
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
@@ -46,15 +48,15 @@
 
   /* Tablet & mobile: allow scrolling within screens */
   @media (max-width: 768px) {
-    body { height: auto; min-height: 100dvh; overflow: visible; }
+    body { height: auto; min-height: 100dvh; overflow: auto; }
 
     .header { padding: 0 14px; height: 50px; }
-    .header-time { font-size: 15px; }
-    .header-logo { font-size: 14px; }
-    .battery-indicator { font-size: 10px; padding: 3px 7px; }
+    .header-time { font-size: 17px; }
+    .header-logo { font-size: 16px; }
+    .battery-indicator { font-size: 12px; padding: 3px 7px; }
 
-    /* Screens become scrollable vertically */
-    .screen { height: auto; min-height: calc(100dvh - 50px - 62px); overflow-y: auto; }
+    /* Screens scrollable in both directions */
+    .screen { height: auto; min-height: calc(100dvh - 50px - 62px); overflow: auto; }
 
     /* HOME — stack cards vertically */
     #screen-home { padding: 12px 12px 6px; overflow-y: auto; }
@@ -63,8 +65,8 @@
       gap: 10px;
     }
     .home-card { padding: 14px 16px; }
-    .battery-pct { font-size: 38px; }
-    .climate-temp { font-size: 36px; }
+    .battery-pct { font-size: 44px; }
+    .climate-temp { font-size: 41px; }
     .home-batt-bars { height: 38px; margin-bottom: 8px; }
     .home-nb-bar { width: 14px; }
     .home-status-bar {
@@ -76,7 +78,7 @@
 
     /* CLIMATE — compact */
     .screen-inner { padding: 14px 14px 10px; gap: 10px; justify-content: flex-start; }
-    .temp-display { font-size: 40px; }
+    .temp-display { font-size: 46px; }
     .climate-modes-row { grid-template-columns: repeat(2, 1fr); }
     .fan-speed-row { flex-direction: column; align-items: flex-start; gap: 8px; }
     .fan-btns { flex-wrap: wrap; }
@@ -112,16 +114,16 @@
 
     /* BOTTOM NAV */
     .bottom-nav { height: 56px; position: sticky; bottom: 0; z-index: 50; }
-    .nav-tab-label { font-size: 8px; }
-    .nav-tab-icon { font-size: 18px; }
+    .nav-tab-label { font-size: 9px; }
+    .nav-tab-icon { font-size: 21px; }
   }
 
   /* Small phones */
   @media (max-width: 390px) {
-    .header-logo { font-size: 12px; letter-spacing: 0.06em; }
+    .header-logo { font-size: 14px; letter-spacing: 0.06em; }
     .battery-indicator { display: none; }
-    .battery-pct { font-size: 32px; }
-    .climate-temp { font-size: 30px; }
+    .battery-pct { font-size: 37px; }
+    .climate-temp { font-size: 34px; }
     .home-card { padding: 12px 14px; }
     .energy-stats-grid { grid-template-columns: 1fr; }
     .climate-modes-row { grid-template-columns: repeat(2, 1fr); }
@@ -153,12 +155,12 @@
   }
   .header-time {
     font-family: var(--font-head);
-    font-size: 20px; font-weight: 600;
+    font-size: 23px; font-weight: 600;
     color: #111; letter-spacing: 0.04em;
   }
   .header-logo {
     font-family: var(--font-head);
-    font-size: 18px; font-weight: 900;
+    font-size: 21px; font-weight: 900;
     letter-spacing: 0.12em;
     color: var(--purple);
     position: absolute; left: 50%; transform: translateX(-50%);
@@ -166,13 +168,13 @@
   .header-status {
     display: flex; align-items: center; gap: 14px;
   }
-  .status-icon { font-size: 18px; color: #333; }
+  .status-icon { font-size: 21px; color: #333; }
   .signal-bars { display: flex; align-items: flex-end; gap: 2px; }
   .signal-bar { background: #333; border-radius: 1px; width: 4px; }
   .battery-indicator {
     display: flex; align-items: center; gap: 6px;
     background: #f0f0f5; border-radius: 6px; padding: 4px 10px;
-    font-family: var(--font-head); font-size: 12px; font-weight: 600;
+    font-family: var(--font-head); font-size: 14px; font-weight: 600;
     color: #333; border: 1.5px solid #ccc;
   }
   .battery-bar-wrap {
@@ -238,17 +240,17 @@
   .card-icon-wrap {
     width: 36px; height: 36px; border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
-    font-size: 18px;
+    font-size: 21px;
   }
   .card-battery .card-icon-wrap { background: rgba(0,160,80,0.18); }
   .card-nav .card-icon-wrap { background: rgba(30,111,255,0.18); }
   .card-climate .card-icon-wrap { background: rgba(108,53,245,0.18); }
-  .card-title { font-family: var(--font-head); font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: #222; }
-  .card-arrow { font-size: 18px; color: #444; font-weight: 700; }
+  .card-title { font-family: var(--font-head); font-size: 13px; font-weight: 700; letter-spacing: 0.08em; color: #222; }
+  .card-arrow { font-size: 21px; color: #444; font-weight: 700; }
 
   /* Battery card */
   .battery-pct {
-    font-family: var(--font-head); font-size: 52px; font-weight: 900;
+    font-family: var(--font-head); font-size: 60px; font-weight: 900;
     color: #111; line-height: 1; margin-bottom: 10px;
     text-align: center;
   }
@@ -276,8 +278,8 @@
     padding: 10px 12px; text-align: center;
   }
   .bstat:first-child { border-right: 1px solid rgba(0,0,0,0.1); }
-  .bstat-label { font-size: 11px; color: #555; font-weight: 500; margin-bottom: 2px; }
-  .bstat-val { font-family: var(--font-head); font-size: 16px; font-weight: 700; color: #111; }
+  .bstat-label { font-size: 13px; color: #555; font-weight: 500; margin-bottom: 2px; }
+  .bstat-val { font-family: var(--font-head); font-size: 18px; font-weight: 700; color: #111; }
 
   /* battery card - title stays top via normal flow, content centered */
   .card-battery .battery-stats { width: 100%; }
@@ -304,18 +306,18 @@
     flex: 1; padding: 8px 10px; display: flex; align-items: center; gap: 6px;
   }
   .nstat:not(:last-child) { border-right: 1px solid rgba(0,0,0,0.1); }
-  .nstat-icon { font-size: 14px; color: #444; }
+  .nstat-icon { font-size: 13px; color: #444; }
   .nstat-info { }
   .nstat-label { font-size: 9px; color: #666; font-weight: 500; }
   .nstat-val { font-family: var(--font-head); font-size: 12px; font-weight: 700; color: #111; }
 
   /* Climate card */
   .climate-temp {
-    font-family: var(--font-head); font-size: 48px; font-weight: 900;
+    font-family: var(--font-head); font-size: 55px; font-weight: 900;
     color: #111; line-height: 1; margin-bottom: 4px;
     text-align: center;
   }
-  .climate-sublabel { font-size: 12px; color: #555; margin-bottom: 10px; text-align: center; }
+  .climate-sublabel { font-size: 14px; color: #555; margin-bottom: 10px; text-align: center; }
   .climate-fan-row {
     display: flex; align-items: center; justify-content: center; gap: 6px; margin-bottom: 12px;
   }
@@ -323,21 +325,21 @@
     width: 30px; height: 30px; border-radius: 50%;
     background: rgba(108,53,245,0.25); border: none;
     display: flex; align-items: center; justify-content: center;
-    font-size: 14px; color: #555;
+    font-size: 16px; color: #555;
   }
   .fan-dot.active { background: var(--purple); color: white; }
   /* Cold/Heat end dots */
-  .fan-dot-cold { background: rgba(30,111,255,0.2); font-size: 16px; }
-  .fan-dot-heat { background: rgba(255,80,0,0.15); font-size: 16px; }
+  .fan-dot-cold { background: rgba(30,111,255,0.2); font-size: 18px; }
+  .fan-dot-heat { background: rgba(255,80,0,0.15); font-size: 18px; }
   .climate-badges {
     display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
   }
   .cbadge {
     background: rgba(108,53,245,0.15); border-radius: 10px;
     padding: 9px 10px; display: flex; align-items: center; justify-content: center; gap: 6px;
-    font-size: 13px; font-weight: 700; color: #333;
+    font-size: 15px; font-weight: 700; color: #333;
   }
-  .cbadge-icon { font-size: 18px; }
+  .cbadge-icon { font-size: 21px; }
 
   /* Make home climate card center its content vertically only for body, not header */
   .card-climate .climate-badges { width: 100%; }
@@ -347,7 +349,7 @@
     display: none; width: 100%;
     background: rgba(255,59,59,0.15); border: 1px solid rgba(255,59,59,0.4);
     border-radius: 8px; padding: 7px 10px; margin-bottom: 8px;
-    font-size: 12px; font-weight: 700; color: #cc0000;
+    font-size: 14px; font-weight: 700; color: #cc0000;
     text-align: center; animation: pulse-warn 1.5s ease-in-out infinite;
   }
   .batt-warning-msg.show { display: block; }
@@ -363,7 +365,7 @@
   .batt-status-pill {
     display: flex; align-items: center; gap: 5px;
     background: rgba(0,0,0,0.08); border-radius: 20px;
-    padding: 5px 10px; font-size: 11px; font-weight: 600; color: #333;
+    padding: 5px 10px; font-size: 13px; font-weight: 600; color: #333;
   }
   .batt-status-dot {
     width: 8px; height: 8px; border-radius: 50%;
@@ -373,7 +375,7 @@
   .batt-status-dot.warn { background: var(--red); box-shadow: 0 0 6px rgba(255,59,59,0.6); animation: pulse-dot 1.2s ease infinite; }
   @keyframes pulse-dot { 0%,100%{transform:scale(1);opacity:1;} 50%{transform:scale(1.35);opacity:0.7;} }
   .batt-drain-badge {
-    font-size: 10px; font-weight: 700; color: #555;
+    font-size: 12px; font-weight: 700; color: #555;
     background: rgba(0,0,0,0.07); border-radius: 6px;
     padding: 3px 7px; font-family: var(--font-head); letter-spacing: 0.04em;
   }
@@ -392,8 +394,8 @@
     align-items: center; justify-content: center;
     font-family: var(--font-head); line-height: 1;
   }
-  .batt-ring-pct { font-size: 15px; font-weight: 900; color: #111; }
-  .batt-ring-unit { font-size: 8px; color: #555; margin-top: 1px; }
+  .batt-ring-pct { font-size: 17px; font-weight: 900; color: #111; }
+  .batt-ring-unit { font-size: 9px; color: #555; margin-top: 1px; }
 
   /* Power flow indicator */
   .batt-power-row {
@@ -404,35 +406,35 @@
     background: rgba(0,0,0,0.07); border-radius: 8px;
     padding: 7px 6px; text-align: center;
   }
-  .batt-power-icon { font-size: 13px; margin-bottom: 2px; }
-  .batt-power-label { font-size: 9px; color: #666; font-weight: 500; }
-  .batt-power-val { font-family: var(--font-head); font-size: 11px; font-weight: 700; color: #222; margin-top: 1px; }
+  .batt-power-icon { font-size: 15px; margin-bottom: 2px; }
+  .batt-power-label { font-size: 10px; color: #666; font-weight: 500; }
+  .batt-power-val { font-family: var(--font-head); font-size: 13px; font-weight: 700; color: #222; margin-top: 1px; }
 
   /* Charge tip */
   .batt-tip-row {
     display: none; width: 100%; align-items: center; gap: 7px;
     background: rgba(255,59,59,0.1); border-left: 3px solid #ff3b3b;
     border-radius: 0 8px 8px 0; padding: 7px 10px;
-    font-size: 11px; color: #aa1111; font-weight: 600; margin-bottom: 8px;
+    font-size: 13px; color: #aa1111; font-weight: 600; margin-bottom: 8px;
     animation: pulse-warn 2s ease-in-out infinite;
   }
   .batt-tip-row.show { display: flex; }
-  .batt-tip-row span { font-size: 14px; flex-shrink: 0; }
+  .batt-tip-row span { font-size: 16px; flex-shrink: 0; }
 
   /* Climate home card extra info */
   .climate-mode-row {
     display: flex; align-items: center; justify-content: center; gap: 6px;
     width: 100%; margin-bottom: 8px;
-    font-size: 12px; color: #444; font-weight: 600;
+    font-size: 14px; color: #444; font-weight: 600;
   }
   .climate-mode-badge {
     background: rgba(108,53,245,0.15); border-radius: 6px;
-    padding: 3px 8px; font-size: 11px; font-weight: 700;
+    padding: 3px 8px; font-size: 13px; font-weight: 700;
     color: #6c35f5; font-family: var(--font-head); letter-spacing: 0.04em;
   }
   .climate-ac-off-msg {
     display: none; width: 100%; text-align: center;
-    font-size: 12px; color: #888; font-style: italic; margin-bottom: 6px;
+    font-size: 14px; color: #888; font-style: italic; margin-bottom: 6px;
   }
   .climate-ac-off-msg.show { display: block; }
 
@@ -441,9 +443,9 @@
     display: flex; align-items: center; justify-content: center; gap: 6px;
     width: 100%; margin-bottom: 8px;
   }
-  .climate-ambient-icon { font-size: 18px; }
-  .climate-ambient-label { font-size: 11px; color: #555; font-weight: 500; }
-  .climate-ambient-val { font-family: var(--font-head); font-size: 13px; font-weight: 700; color: #222; }
+  .climate-ambient-icon { font-size: 21px; }
+  .climate-ambient-label { font-size: 13px; color: #555; font-weight: 500; }
+  .climate-ambient-val { font-family: var(--font-head); font-size: 15px; font-weight: 700; color: #222; }
 
   /* Mini temp gauge bar */
   .climate-gauge-row {
@@ -462,7 +464,7 @@
   }
   .climate-gauge-labels {
     display: flex; justify-content: space-between;
-    font-size: 9px; color: #666; margin-top: 3px; font-weight: 500;
+    font-size: 10px; color: #666; margin-top: 3px; font-weight: 500;
   }
 
   /* Climate stats grid */
@@ -474,14 +476,14 @@
     background: rgba(108,53,245,0.1); border-radius: 9px;
     padding: 8px 10px; display: flex; align-items: center; gap: 7px;
   }
-  .climate-stat-icon { font-size: 16px; }
-  .climate-stat-label { font-size: 10px; color: #555; font-weight: 500; }
-  .climate-stat-val { font-family: var(--font-head); font-size: 13px; font-weight: 700; color: #222; }
+  .climate-stat-icon { font-size: 18px; }
+  .climate-stat-label { font-size: 12px; color: #555; font-weight: 500; }
+  .climate-stat-val { font-family: var(--font-head); font-size: 15px; font-weight: 700; color: #222; }
 
   /* Climate status message */
   .climate-status-msg {
     width: 100%; text-align: center; border-radius: 8px;
-    padding: 6px 10px; font-size: 11px; font-weight: 600;
+    padding: 6px 10px; font-size: 13px; font-weight: 600;
     margin-bottom: 0; display: flex; align-items: center; justify-content: center; gap: 5px;
   }
   .climate-status-msg.comfort { background: rgba(0,180,80,0.13); color: #006b30; }
@@ -500,9 +502,9 @@
     color: white;
   }
   .hstat:not(:last-child) { border-right: 1px solid rgba(255,255,255,0.08); }
-  .hstat-icon { font-size: 22px; color: var(--green); }
-  .hstat-label { font-size: 10px; color: #aaa; font-weight: 500; }
-  .hstat-val { font-family: var(--font-head); font-size: 16px; font-weight: 700; color: white; }
+  .hstat-icon { font-size: 25px; color: var(--green); }
+  .hstat-label { font-size: 12px; color: #aaa; font-weight: 500; }
+  .hstat-val { font-family: var(--font-head); font-size: 18px; font-weight: 700; color: white; }
 
   /* ========== CLIMATE SCREEN ========== */
   #screen-climate {
@@ -518,7 +520,7 @@
     display: inline-flex; align-items: center; gap: 8px;
     background: #111; color: white; border: none;
     border-radius: 10px; padding: 8px 16px;
-    font-family: var(--font-head); font-size: 12px; font-weight: 600;
+    font-family: var(--font-head); font-size: 14px; font-weight: 600;
     cursor: pointer; width: fit-content;
     transition: background 0.15s;
   }
@@ -526,13 +528,13 @@
   .climate-top {
     text-align: center;
   }
-  .climate-screen-title { font-size: 15px; font-weight: 600; color: #555; margin-bottom: 16px; }
+  .climate-screen-title { font-size: 17px; font-weight: 600; color: #555; margin-bottom: 16px; }
   .climate-temp-controls {
     display: flex; align-items: center; justify-content: center; gap: 24px;
   }
   /* temp-btn styles moved to ac/temp section above */
   .temp-display {
-    font-family: var(--font-head); font-size: 52px; font-weight: 900;
+    font-family: var(--font-head); font-size: 60px; font-weight: 900;
     color: #111; text-align: center; line-height: 1;
   }
   .cool-btn-OLD { background: #1a3a8f; }
@@ -546,12 +548,12 @@
     display: flex; align-items: center; gap: 10px;
     justify-content: center; flex-wrap: wrap;
   }
-  .fan-label { font-size: 15px; font-weight: 700; color: #ccc; min-width: 90px; }
+  .fan-label { font-size: 17px; font-weight: 700; color: #ccc; min-width: 90px; }
   .fan-btns { display: flex; gap: 10px; flex: 1; align-items: center; justify-content: center; }
   .fan-speed-btn {
     width: 50px; height: 50px; border-radius: 12px;
     background: #2a2a3a; color: white; border: none;
-    cursor: pointer; font-size: 20px;
+    cursor: pointer; font-size: 23px;
     display: flex; align-items: center; justify-content: center;
     transition: background 0.15s, transform 0.1s;
     flex-shrink: 0;
@@ -562,7 +564,7 @@
   .fan-auto {
     margin-left: 4px; display: flex; align-items: center; gap: 6px;
     padding: 10px 18px; border-radius: 12px; background: white;
-    color: #111; font-family: var(--font-head); font-size: 13px; font-weight: 700;
+    color: #111; font-family: var(--font-head); font-size: 15px; font-weight: 700;
     cursor: pointer; border: none; width: auto; height: 50px;
   }
   .fan-auto:not(.active) { background: #2a2a3a; color: white; }
@@ -570,14 +572,14 @@
   .ac-toggle-row {
     display: flex; align-items: center; justify-content: center; gap: 24px;
   }
-  .ac-label { font-size: 18px; font-weight: 700; color: #ccc; }
+  .ac-label { font-size: 21px; font-weight: 700; color: #ccc; }
 
   /* ---- NEW: Full-width AC toggle button ---- */
   .ac-fullbtn {
     width: 100%; padding: 14px 20px;
     border-radius: 14px; border: none; cursor: pointer;
     display: flex; align-items: center; justify-content: center; gap: 14px;
-    font-family: var(--font-head); font-size: 15px; font-weight: 700;
+    font-family: var(--font-head); font-size: 17px; font-weight: 700;
     letter-spacing: 0.06em;
     transition: background 0.25s, box-shadow 0.25s, transform 0.1s;
     position: relative;
@@ -611,7 +613,7 @@
 
   /* Climate status line */
   .climate-status-line {
-    font-size: 12px; color: #aaa; text-align: center; margin-top: 8px;
+    font-size: 14px; color: #aaa; text-align: center; margin-top: 8px;
     font-family: var(--font-body); letter-spacing: 0.02em;
     min-height: 16px;
     transition: color 0.3s;
@@ -622,7 +624,7 @@
   .temp-btn {
     width: 64px; height: 64px; border-radius: 50%;
     background: #111; color: white; border: 3px solid #333;
-    font-size: 26px; cursor: pointer;
+    font-size: 30px; cursor: pointer;
     display: flex; align-items: center; justify-content: center;
     transition: background 0.15s, border-color 0.15s, box-shadow 0.15s, transform 0.1s;
     flex-shrink: 0;
@@ -648,8 +650,8 @@
   .mode-btn:hover { border-color: var(--purple); background: #2a1a4a; }
   .mode-btn.active { background: var(--purple); border-color: var(--purple-light); }
   .mode-btn:active { transform: scale(0.95); }
-  .mode-icon { font-size: 22px; }
-  .mode-name { font-family: var(--font-head); font-size: 10px; font-weight: 700; color: white; }
+  .mode-icon { font-size: 25px; }
+  .mode-name { font-family: var(--font-head); font-size: 12px; font-weight: 700; color: white; }
 
   /* ========== NAVIGATION SCREEN ========== */
   #screen-nav {
@@ -666,17 +668,17 @@
   }
   .search-input {
     flex: 1; border: 1.5px solid #ddd; border-radius: 24px;
-    padding: 10px 18px; font-family: var(--font-body); font-size: 14px;
+    padding: 10px 18px; font-family: var(--font-body); font-size: 16px;
     outline: none; background: #f8f8fc;
     transition: border-color 0.15s;
   }
   .search-input:focus { border-color: var(--purple); }
-  .search-icon { font-size: 18px; color: #888; position: absolute; left: 30px; pointer-events: none; }
+  .search-icon { font-size: 21px; color: #888; position: absolute; left: 30px; pointer-events: none; }
   .search-input { padding-left: 40px; }
   .mic-btn {
     width: 40px; height: 40px; border-radius: 50%;
     background: #f0f0f5; border: none; cursor: pointer;
-    font-size: 18px; display: flex; align-items: center; justify-content: center;
+    font-size: 21px; display: flex; align-items: center; justify-content: center;
     transition: background 0.15s;
   }
   .mic-btn:hover { background: var(--purple); color: white; }
@@ -695,7 +697,7 @@
   }
   .zoom-btn {
     width: 36px; height: 36px; background: #111; color: white;
-    border: none; border-radius: 8px; font-size: 20px; cursor: pointer;
+    border: none; border-radius: 8px; font-size: 23px; cursor: pointer;
     display: flex; align-items: center; justify-content: center;
     transition: background 0.15s, transform 0.1s;
   }
@@ -703,7 +705,7 @@
   .zoom-btn:active { transform: scale(0.9); }
   .center-btn {
     width: 36px; height: 36px; background: #111; color: white;
-    border: none; border-radius: 8px; font-size: 16px; cursor: pointer;
+    border: none; border-radius: 8px; font-size: 18px; cursor: pointer;
     display: flex; align-items: center; justify-content: center;
     margin-top: 4px; transition: background 0.15s;
   }
@@ -730,8 +732,8 @@
   .nb-bar.medium { background: var(--yellow); }
   .nb-bar.good   { background: var(--green-dark); }
   .nav-batt-info { text-align: center; }
-  .nav-batt-pct { font-family: var(--font-head); font-size: 24px; font-weight: 700; color: var(--red); }
-  .nav-batt-range { font-size: 13px; color: #aaa; margin-top: 3px; }
+  .nav-batt-pct { font-family: var(--font-head); font-size: 20px; font-weight: 700; color: var(--red); }
+  .nav-batt-range { font-size: 12px; color: #aaa; margin-top: 3px; }
   .nav-alert-card {
     background: #1a1a2e; border-radius: 12px; padding: 14px 12px;
     text-align: center;
@@ -741,9 +743,9 @@
     display: none;
   }
   .alert-head { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 6px; }
-  .alert-icon { font-size: 22px; }
-  .alert-title { font-family: var(--font-head); font-size: 13px; font-weight: 700; color: var(--yellow); }
-  .alert-desc { font-size: 13px; color: #aaa; line-height: 1.4; }
+  .alert-icon { font-size: 25px; }
+  .alert-title { font-family: var(--font-head); font-size: 15px; font-weight: 700; color: var(--yellow); }
+  .alert-desc { font-size: 15px; color: #aaa; line-height: 1.4; }
   .nav-charging-btn {
     background: var(--blue); border-radius: 12px; padding: 14px 12px;
     display: flex; align-items: center; gap: 10px; cursor: pointer;
@@ -751,11 +753,11 @@
     transition: background 0.15s;
   }
   .nav-charging-btn:hover { background: var(--blue-light); }
-  .nav-charging-btn-icon { font-size: 24px; }
+  .nav-charging-btn-icon { font-size: 20px; }
   .nav-charging-btn-text { flex: 1; }
-  .nav-charging-btn-title { font-family: var(--font-head); font-size: 13px; font-weight: 700; }
-  .nav-charging-btn-sub { font-size: 12px; color: #cde; }
-  .nav-charging-btn-arrow { margin-left: auto; font-size: 20px; }
+  .nav-charging-btn-title { font-family: var(--font-head); font-size: 12px; font-weight: 700; }
+  .nav-charging-btn-sub { font-size: 11px; color: #cde; }
+  .nav-charging-btn-arrow { margin-left: auto; font-size: 18px; }
 
   /* ========== DRIVE MODE ROW (Nav screen) ========== */
   .nav-drive-mode-row {
@@ -764,7 +766,7 @@
     flex-shrink: 0;
   }
   .nav-dm-label {
-    font-family: var(--font-head); font-size: 10px; font-weight: 700;
+    font-family: var(--font-head); font-size: 12px; font-weight: 700;
     color: #666; letter-spacing: 0.08em; white-space: nowrap; flex-shrink: 0;
   }
   .nav-dm-btns {
@@ -782,9 +784,9 @@
   .nav-dm-btn.active.sport { background: #2a1000; border-color: var(--yellow); }
   .nav-dm-btn.active.sport-plus { background: #2a0808; border-color: var(--red); }
   .nav-dm-btn:active { transform: scale(0.94); }
-  .nav-dm-icon { font-size: 16px; }
+  .nav-dm-icon { font-size: 14px; }
   .nav-dm-name {
-    font-family: var(--font-head); font-size: 8px; font-weight: 700;
+    font-family: var(--font-head); font-size: 9px; font-weight: 700;
     letter-spacing: 0.05em; color: #aaa;
   }
   .nav-dm-btn.active .nav-dm-name { color: white; }
@@ -793,7 +795,7 @@
   .nav-dm-btn.active.sport-plus .nav-dm-name { color: var(--red); }
   /* range badge per mode */
   .nav-dm-range {
-    font-size: 8px; color: #555; font-weight: 500;
+    font-size: 9px; color: #555; font-weight: 500;
   }
   .nav-dm-btn.active .nav-dm-range { color: #aaa; }
 
@@ -807,12 +809,12 @@
     padding: 0 12px; color: white;
   }
   .nav-stat:not(:last-child) { border-right: 1px solid #333; }
-  .nav-stat-icon { font-size: 20px; color: #aaa; }
+  .nav-stat-icon { font-size: 17px; color: #aaa; }
   .nav-stat-label { font-size: 10px; color: #888; }
-  .nav-stat-val { font-family: var(--font-head); font-size: 14px; font-weight: 700; color: white; }
+  .nav-stat-val { font-family: var(--font-head); font-size: 13px; font-weight: 700; color: white; }
   .start-trip-btn {
     background: var(--green); color: white; border: none; border-radius: 10px;
-    padding: 12px 24px; font-family: var(--font-head); font-size: 13px; font-weight: 700;
+    padding: 12px 24px; font-family: var(--font-head); font-size: 15px; font-weight: 700;
     cursor: pointer; margin-left: 10px;
     transition: background 0.15s, transform 0.1s;
     display: none;
@@ -827,22 +829,22 @@
     padding: 0;
   }
   .energy-inner {
-    flex: 1; padding: 16px 20px; display: grid;
+    flex: 1; padding: 10px 14px; display: grid;
     grid-template-rows: auto 1fr auto auto;
-    gap: 12px; overflow-y: auto;
+    gap: 8px; overflow-y: auto;
   }
   .energy-top {
     display: grid; grid-template-columns: 220px 1fr; gap: 16px; align-items: start;
   }
   .battery-section { }
-  .batt-title { font-family: var(--font-head); font-size: 28px; font-weight: 900; color: #111; margin-bottom: 4px; }
-  .batt-pct-big { font-family: var(--font-head); font-size: 40px; font-weight: 900; color: var(--red); display: flex; align-items: center; gap: 8px; }
-  .batt-spin-icon { font-size: 22px; animation: spinSlow 2s linear infinite; }
+  .batt-title { font-family: var(--font-head); font-size: 22px; font-weight: 900; color: #111; margin-bottom: 4px; }
+  .batt-pct-big { font-family: var(--font-head); font-size: 34px; font-weight: 900; color: var(--red); display: flex; align-items: center; gap: 8px; }
+  .batt-spin-icon { font-size: 25px; animation: spinSlow 2s linear infinite; }
   @keyframes spinSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-  .batt-range-e { font-size: 14px; color: #555; margin-top: 4px; }
+  .batt-range-e { font-size: 13px; color: #555; margin-top: 4px; }
   .batt-chart-area {
     display: flex; align-items: flex-end; gap: 8px;
-    height: 120px; padding: 8px 0;
+    height: 80px; padding: 4px 0;
   }
   .batt-bar-e {
     border-radius: 4px 4px 0 0;
@@ -851,19 +853,19 @@
   }
 
   .energy-stats-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 7px;
   }
   .ecard {
-    background: #0e0e1a; border-radius: 14px; padding: 14px 16px;
+    background: #0e0e1a; border-radius: 12px; padding: 9px 12px;
     color: white;
   }
-  .ecard-head { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
-  .ecard-icon { font-size: 22px; }
-  .ecard-title { font-size: 13px; font-weight: 600; color: #ccc; }
-  .ecard-val { font-family: var(--font-head); font-size: 22px; font-weight: 700; color: white; margin-bottom: 2px; }
-  .ecard-unit { font-size: 11px; color: #888; margin-bottom: 8px; }
+  .ecard-head { display: flex; align-items: center; gap: 6px; margin-bottom: 5px; }
+  .ecard-icon { font-size: 18px; }
+  .ecard-title { font-size: 12px; font-weight: 600; color: #ccc; }
+  .ecard-val { font-family: var(--font-head); font-size: 19px; font-weight: 700; color: white; margin-bottom: 2px; }
+  .ecard-unit { font-size: 11px; color: #888; margin-bottom: 5px; }
   .ecard-tag {
-    background: #1a1a2e; border-radius: 20px; padding: 4px 12px;
+    background: #1a1a2e; border-radius: 20px; padding: 3px 9px;
     font-size: 11px; color: #aaa; display: inline-block;
   }
   .ecard-icon-green { color: var(--green); }
@@ -872,36 +874,37 @@
   .ecard-icon-purple { color: var(--purple-light); }
 
   .energy-alert-bar {
-    background: var(--red); border-radius: 12px; padding: 12px 16px;
+    background: var(--red); border-radius: 12px; padding: 8px 12px;
     display: flex; align-items: center; gap: 12px;
     cursor: pointer; border: none; width: 100%; text-align: left;
     transition: filter 0.15s;
   }
   .energy-alert-bar:hover { filter: brightness(1.1); }
-  .energy-alert-icon { font-size: 22px; color: white; }
+  .energy-alert-icon { font-size: 18px; color: white; }
   .energy-alert-text { flex: 1; }
   .energy-alert-title { font-family: var(--font-head); font-size: 12px; font-weight: 700; color: white; margin-bottom: 2px; }
   .energy-alert-desc { font-size: 11px; color: rgba(255,255,255,0.85); }
-  .energy-alert-arrow { font-size: 22px; color: white; }
+  .energy-alert-arrow { font-size: 18px; color: white; }
 
   .energy-charging-bar {
-    background: var(--green-dark); border-radius: 12px; padding: 12px 16px;
+    background: var(--green-dark); border-radius: 12px; padding: 8px 12px;
     display: flex; align-items: center; gap: 12px;
     cursor: pointer; border: none; width: 100%; text-align: left;
     transition: filter 0.15s;
   }
   .energy-charging-bar:hover { filter: brightness(1.1); }
-  .energy-charging-icon { font-size: 22px; color: white; }
-  .energy-charging-label { font-family: var(--font-head); font-size: 13px; font-weight: 700; color: white; flex: 1; }
-  .energy-charging-arrow { font-size: 22px; color: white; }
+  .energy-charging-icon { font-size: 18px; color: white; }
+  .energy-charging-label { font-family: var(--font-head); font-size: 12px; font-weight: 700; color: white; flex: 1; }
+  .energy-charging-arrow { font-size: 18px; color: white; }
 
   /* ========== CAMERA SCREEN ========== */
   #screen-camera {
     background: #e8f0ff;
   }
   .camera-inner {
-    flex: 1; padding: 12px 16px;
-    display: flex; flex-direction: column; gap: 10px;
+    flex: 1; padding: 8px 12px;
+    display: flex; flex-direction: column; gap: 6px; overflow: hidden;
+    min-height: 0;
   }
   .camera-views {
     flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
@@ -915,7 +918,7 @@
   .cam-label {
     position: absolute; top: 10px; left: 50%; transform: translateX(-50%);
     background: rgba(0,0,0,0.6); color: white;
-    font-family: var(--font-head); font-size: 10px; font-weight: 700;
+    font-family: var(--font-head); font-size: 12px; font-weight: 700;
     padding: 4px 12px; border-radius: 20px; white-space: nowrap;
     letter-spacing: 0.08em;
   }
@@ -923,7 +926,7 @@
     position: absolute; top: 10px; right: 10px; z-index: 5;
     background: rgba(0,0,0,0.7); color: white;
     border: none; border-radius: 8px; padding: 6px 10px;
-    font-size: 14px; cursor: pointer;
+    font-size: 16px; cursor: pointer;
     transition: background 0.15s;
   }
   .cam-toggle-btn:hover { background: var(--purple); }
@@ -932,8 +935,8 @@
     display: flex; align-items: center; gap: 14px;
     flex-wrap: wrap;
   }
-  .sensor-label { font-family: var(--font-head); font-size: 10px; color: #aaa; font-weight: 700; }
-  .sensor-dot { display: flex; align-items: center; gap: 6px; font-size: 11px; color: #ccc; }
+  .sensor-label { font-family: var(--font-head); font-size: 12px; color: #aaa; font-weight: 700; }
+  .sensor-dot { display: flex; align-items: center; gap: 6px; font-size: 13px; color: #ccc; }
   .sdot { width: 10px; height: 10px; border-radius: 50%; }
 
   /* ========== BOTTOM NAV ========== */
@@ -953,9 +956,9 @@
   }
   .nav-tab:hover { background: #f0ecff; }
   .nav-tab.active { background: var(--nav-active); }
-  .nav-tab-icon { font-size: 20px; color: #888; transition: color 0.15s; }
+  .nav-tab-icon { font-size: 23px; color: #888; transition: color 0.15s; }
   .nav-tab.active .nav-tab-icon { color: var(--purple); }
-  .nav-tab-label { font-family: var(--font-head); font-size: 9px; font-weight: 700; color: #888; letter-spacing: 0.05em; }
+  .nav-tab-label { font-family: var(--font-head); font-size: 10px; font-weight: 700; color: #888; letter-spacing: 0.05em; }
   .nav-tab.active .nav-tab-label { color: var(--purple); }
 
   /* ========== MODALS ========== */
@@ -981,13 +984,13 @@
     from { transform: scale(0.85) translateY(10px); opacity: 0; }
     to { transform: scale(1) translateY(0); opacity: 1; }
   }
-  .modal-icon { font-size: 40px; margin-bottom: 12px; }
-  .modal-title { font-family: var(--font-head); font-size: 16px; font-weight: 700; margin-bottom: 8px; color: #111; }
-  .modal-desc { font-size: 13px; color: #666; line-height: 1.6; margin-bottom: 20px; }
+  .modal-icon { font-size: 46px; margin-bottom: 12px; }
+  .modal-title { font-family: var(--font-head); font-size: 18px; font-weight: 700; margin-bottom: 8px; color: #111; }
+  .modal-desc { font-size: 15px; color: #666; line-height: 1.6; margin-bottom: 20px; }
   .modal-btn {
     background: var(--purple); color: white; border: none;
     border-radius: 10px; padding: 12px 28px;
-    font-family: var(--font-head); font-size: 13px; font-weight: 700;
+    font-family: var(--font-head); font-size: 15px; font-weight: 700;
     cursor: pointer; transition: background 0.15s;
     margin: 0 6px;
   }
@@ -1002,7 +1005,7 @@
     position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%);
     background: #222; color: white; border-radius: 12px;
     padding: 12px 24px; display: flex; align-items: center; gap: 14px;
-    font-size: 13px; z-index: 200; animation: slideUp 0.25s;
+    font-size: 15px; z-index: 200; animation: slideUp 0.25s;
     display: none;
   }
   .undo-toast.show { display: flex; }
@@ -1013,7 +1016,7 @@
   .undo-btn {
     background: var(--green); color: white; border: none;
     border-radius: 8px; padding: 6px 14px;
-    font-family: var(--font-head); font-size: 11px; font-weight: 700;
+    font-family: var(--font-head); font-size: 13px; font-weight: 700;
     cursor: pointer;
   }
 
@@ -1026,12 +1029,12 @@
   }
   .search-suggestions.show { display: block; }
   .suggestion-item {
-    padding: 12px 18px; cursor: pointer; font-size: 13px;
+    padding: 12px 18px; cursor: pointer; font-size: 15px;
     border-bottom: 1px solid #f0f0f5; display: flex; align-items: center; gap: 10px;
   }
   .suggestion-item:last-child { border-bottom: none; }
   .suggestion-item:hover { background: #f5f0ff; }
-  .suggestion-icon { font-size: 16px; color: #888; }
+  .suggestion-icon { font-size: 18px; color: #888; }
 
   /* Trip started overlay */
   .trip-active-bar {
@@ -1043,11 +1046,43 @@
   .trip-active-bar.show { display: flex; }
   .trip-active-dot { width: 8px; height: 8px; border-radius: 50%; background: #7fff7f; animation: pulse 1.2s ease infinite; }
   @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.4); } }
-  .trip-active-text { font-family: var(--font-head); font-size: 12px; color: white; font-weight: 700; }
+  .trip-active-text { font-family: var(--font-head); font-size: 14px; color: white; font-weight: 700; }
   .trip-stop-btn {
     margin-left: auto; background: rgba(255,255,255,0.2); color: white;
     border: none; border-radius: 8px; padding: 5px 14px;
-    font-family: var(--font-head); font-size: 11px; cursor: pointer;
+    font-family: var(--font-head); font-size: 13px; cursor: pointer;
+  }
+
+  /* ========== PERSISTENT TRIP BANNER (shown on all screens while driving) ========== */
+  .trip-live-banner {
+    display: none;
+    position: fixed; top: 56px; left: 0; right: 0;
+    background: linear-gradient(90deg, #003a1a 0%, #005a28 100%);
+    color: white; padding: 7px 16px;
+    align-items: center; gap: 10px;
+    z-index: 80; border-bottom: 1.5px solid rgba(0,220,120,0.35);
+    box-shadow: 0 3px 14px rgba(0,180,80,0.25);
+    animation: slideDown 0.3s ease;
+    flex-shrink: 0;
+  }
+  .trip-live-banner.show { display: flex; }
+  .trip-live-dot { width: 8px; height: 8px; border-radius: 50%; background: #00e07a; animation: pulse 1.2s ease infinite; flex-shrink: 0; }
+  .trip-live-dest { font-family: var(--font-head); font-size: 12px; font-weight: 700; color: #00e07a; letter-spacing: 0.06em; flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .trip-live-eta { font-family: var(--font-head); font-size: 12px; color: #aaa; white-space: nowrap; flex-shrink: 0; }
+  .trip-live-eta span { color: white; font-weight: 700; }
+  .trip-resume-btn {
+    background: var(--green-dark); color: white; border: none; border-radius: 7px;
+    padding: 5px 12px; font-family: var(--font-head); font-size: 11px; font-weight: 700;
+    cursor: pointer; white-space: nowrap; flex-shrink: 0;
+    transition: background 0.15s;
+  }
+  .trip-resume-btn:hover { background: #00e07a; }
+  /* Push screens down when trip banner is active */
+  body.trip-active-banner .screen { padding-top: 36px; }
+  body.trip-active-banner.fault-active .screen { padding-top: 80px; }
+  @media (max-width: 768px) {
+    .trip-live-banner { top: 50px; font-size: 11px; }
+    body.trip-active-banner .screen { padding-top: 32px; }
   }
 
   /* ========== PERSISTENT FAULT BANNER ========== */
@@ -1068,17 +1103,17 @@
     box-shadow: 0 4px 20px rgba(180,0,0,0.4);
   }
   .fault-banner.show { display: flex; }
-  .fault-banner-icon { font-size: 20px; flex-shrink: 0; }
+  .fault-banner-icon { font-size: 23px; flex-shrink: 0; }
   .fault-banner-text { flex: 1; }
   .fault-banner-title {
-    font-family: var(--font-head); font-size: 11px; font-weight: 700;
+    font-family: var(--font-head); font-size: 13px; font-weight: 700;
     letter-spacing: 0.06em; margin-bottom: 2px;
   }
-  .fault-banner-desc { font-size: 12px; color: rgba(255,255,255,0.88); line-height: 1.3; }
+  .fault-banner-desc { font-size: 14px; color: rgba(255,255,255,0.88); line-height: 1.3; }
   .fault-banner-dismiss {
     background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.35);
     color: white; border-radius: 8px; padding: 5px 12px;
-    font-family: var(--font-head); font-size: 10px; font-weight: 700;
+    font-family: var(--font-head); font-size: 12px; font-weight: 700;
     cursor: pointer; flex-shrink: 0;
     transition: background 0.15s;
   }
@@ -1099,15 +1134,15 @@
   }
   .energy-fault-panel.show { display: flex; }
   .efp-header { display: flex; align-items: center; gap: 10px; }
-  .efp-icon { font-size: 24px; }
-  .efp-title { font-family: var(--font-head); font-size: 13px; font-weight: 700; color: #ff6060; flex: 1; }
-  .efp-desc { font-size: 12px; color: #ffaaaa; line-height: 1.5; }
+  .efp-icon { font-size: 28px; }
+  .efp-title { font-family: var(--font-head); font-size: 15px; font-weight: 700; color: #ff6060; flex: 1; }
+  .efp-desc { font-size: 14px; color: #ffaaaa; line-height: 1.5; }
   .efp-actions { display: flex; gap: 10px; flex-wrap: wrap; }
   .efp-call-btn {
     flex: 1; min-width: 120px;
     background: var(--red); border: none; border-radius: 10px;
     padding: 11px 16px; color: white;
-    font-family: var(--font-head); font-size: 12px; font-weight: 700;
+    font-family: var(--font-head); font-size: 14px; font-weight: 700;
     cursor: pointer; display: flex; align-items: center; gap: 8px; justify-content: center;
     transition: filter 0.15s;
   }
@@ -1115,7 +1150,7 @@
   .efp-toggle-btn {
     background: #333; border: 1px solid #555; border-radius: 10px;
     padding: 11px 16px; color: #aaa;
-    font-family: var(--font-head); font-size: 11px; font-weight: 700;
+    font-family: var(--font-head); font-size: 13px; font-weight: 700;
     cursor: pointer; transition: background 0.15s;
   }
   .efp-toggle-btn:hover { background: #444; color: white; }
@@ -1143,6 +1178,49 @@
     100% { opacity: 0; pointer-events: none; display: none; }
   }
 
+
+  /* ========== REGEN BRAKING HUD ========== */
+  .regen-hud {
+    position: absolute; top: 16px; right: 16px;
+    background: rgba(0,0,0,0.65); border-radius: 14px;
+    padding: 12px 18px; color: white;
+    font-family: var(--font-head);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.1);
+    min-width: 130px; text-align: center;
+    transition: border-color 0.3s;
+  }
+  .regen-hud.active { border-color: rgba(0,220,120,0.7); }
+  .regen-hud.power-draw { border-color: rgba(255,188,0,0.7); }
+  .regen-label {
+    font-size: 9px; letter-spacing: 0.1em; color: #aaa; margin-bottom: 4px;
+  }
+  .regen-value {
+    font-size: 26px; font-weight: 900; color: #aaa;
+    transition: color 0.3s; line-height: 1;
+  }
+  .regen-hud.active .regen-value { color: #00e07a; }
+  .regen-hud.power-draw .regen-value { color: #ffbc00; }
+  .regen-unit { font-size: 11px; color: #777; margin-top: 2px; }
+  .regen-hud.active .regen-unit { color: #00b860; }
+  .regen-bar-wrap {
+    width: 100%; height: 5px; background: rgba(255,255,255,0.1);
+    border-radius: 3px; margin-top: 8px; overflow: hidden;
+  }
+  .regen-bar {
+    height: 100%; border-radius: 3px; width: 0%;
+    transition: width 0.4s, background 0.3s;
+    background: #aaa;
+  }
+  .regen-hud.active .regen-bar { background: #00e07a; }
+  .regen-hud.power-draw .regen-bar { background: #ffbc00; }
+  .regen-mode-tag {
+    font-size: 9px; letter-spacing: 0.08em; margin-top: 5px;
+    color: #555; transition: color 0.3s;
+  }
+  .regen-hud.active .regen-mode-tag { color: #00c060; }
+  .regen-hud.power-draw .regen-mode-tag { color: #cc9000; }
+
   /* ========== DRIVING SCREEN ========== */
   #screen-driving {
     background: #111; flex-direction: column; position: relative;
@@ -1168,14 +1246,14 @@
     backdrop-filter: blur(6px);
     border: 1px solid rgba(255,255,255,0.1);
   }
-  .driving-hud-speed { font-size: 40px; font-weight: 900; color: var(--green); line-height: 1; }
-  .driving-hud-unit { font-size: 13px; color: #aaa; }
-  .driving-hud-dest { margin-top: 8px; font-size: 12px; color: #ccc; font-weight: 600; }
+  .driving-hud-speed { font-size: 46px; font-weight: 900; color: var(--green); line-height: 1; }
+  .driving-hud-unit { font-size: 15px; color: #aaa; }
+  .driving-hud-dest { margin-top: 8px; font-size: 14px; color: #ccc; font-weight: 600; }
   .driving-end-btn {
     position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%);
     background: var(--red); color: white; border: none;
     border-radius: 16px; padding: 18px 60px;
-    font-family: var(--font-head); font-size: 18px; font-weight: 900;
+    font-family: var(--font-head); font-size: 21px; font-weight: 900;
     cursor: pointer; letter-spacing: 0.08em;
     box-shadow: 0 6px 30px rgba(255,59,59,0.5);
     transition: transform 0.15s, background 0.15s;
@@ -1192,10 +1270,10 @@
     pointer-events: none;
   }
   .charging-active-overlay.show { display: flex; pointer-events: all; }
-  .charging-active-icon { font-size: 64px; animation: chargePulse 1.2s ease infinite; }
+  .charging-active-icon { font-size: 74px; animation: chargePulse 1.2s ease infinite; }
   @keyframes chargePulse { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.15); opacity: 0.75; } }
-  .charging-active-title { font-family: var(--font-head); font-size: 26px; font-weight: 900; color: #111; text-align: center; }
-  .charging-active-pct { font-family: var(--font-head); font-size: 64px; font-weight: 900; color: var(--green-dark); line-height: 1; }
+  .charging-active-title { font-family: var(--font-head); font-size: 30px; font-weight: 900; color: #111; text-align: center; }
+  .charging-active-pct { font-family: var(--font-head); font-size: 74px; font-weight: 900; color: var(--green-dark); line-height: 1; }
   .charging-active-bars {
     display: flex; align-items: flex-end; gap: 8px; height: 80px;
   }
@@ -1208,11 +1286,11 @@
     background: rgba(0,0,0,0.06); border-radius: 14px; padding: 14px 28px;
   }
   .ca-stat { text-align: center; }
-  .ca-stat-label { font-size: 11px; color: #777; margin-bottom: 4px; }
-  .ca-stat-val { font-family: var(--font-head); font-size: 18px; font-weight: 800; color: #111; }
+  .ca-stat-label { font-size: 13px; color: #777; margin-bottom: 4px; }
+  .ca-stat-val { font-family: var(--font-head); font-size: 21px; font-weight: 800; color: #111; }
   .stop-charging-btn {
     background: #111; color: white; border: none; border-radius: 14px;
-    padding: 18px 60px; font-family: var(--font-head); font-size: 18px; font-weight: 900;
+    padding: 18px 60px; font-family: var(--font-head); font-size: 21px; font-weight: 900;
     cursor: pointer; letter-spacing: 0.06em;
     box-shadow: 0 6px 24px rgba(0,0,0,0.18);
     transition: background 0.15s, transform 0.1s;
@@ -1232,12 +1310,12 @@
     text-align: center; max-width: 380px;
     animation: popIn 0.3s cubic-bezier(0.34,1.56,0.64,1);
   }
-  .dest-reached-icon { font-size: 56px; margin-bottom: 14px; }
-  .dest-reached-title { font-family: var(--font-head); font-size: 20px; font-weight: 900; color: #111; margin-bottom: 10px; }
-  .dest-reached-desc { font-size: 14px; color: #666; margin-bottom: 24px; }
+  .dest-reached-icon { font-size: 64px; margin-bottom: 14px; }
+  .dest-reached-title { font-family: var(--font-head); font-size: 23px; font-weight: 900; color: #111; margin-bottom: 10px; }
+  .dest-reached-desc { font-size: 16px; color: #666; margin-bottom: 24px; }
   .dest-reached-btn {
     background: var(--purple); color: white; border: none; border-radius: 12px;
-    padding: 14px 36px; font-family: var(--font-head); font-size: 14px; font-weight: 700;
+    padding: 14px 36px; font-family: var(--font-head); font-size: 16px; font-weight: 700;
     cursor: pointer; transition: background 0.15s;
   }
   /* ========== BLUETOOTH INDICATOR ========== */
@@ -1251,7 +1329,7 @@
   .bt-indicator.connected { background: #e8f0ff; border-color: #4d9fff; }
   .bt-indicator.connected svg path { stroke: #1e6fff; }
   .bt-label {
-    font-family: var(--font-head); font-size: 10px; font-weight: 700; color: #555;
+    font-family: var(--font-head); font-size: 12px; font-weight: 700; color: #555;
     letter-spacing: 0.04em;
   }
   .bt-indicator.connected .bt-label { color: #1e6fff; }
@@ -1269,11 +1347,11 @@
     animation: fadeIn 0.18s ease;
   }
   .bt-device-toast.show { display: block; }
-  .bt-toast-title { font-family: var(--font-head); font-size: 10px; font-weight: 700; color: #444; margin-bottom: 6px; letter-spacing: 0.06em; }
-  .bt-device-item { display: flex; align-items: center; gap: 7px; padding: 5px 0; border-top: 1px solid #f0f0f5; font-size: 12px; color: #333; }
-  .bt-device-icon { font-size: 14px; }
+  .bt-toast-title { font-family: var(--font-head); font-size: 12px; font-weight: 700; color: #444; margin-bottom: 6px; letter-spacing: 0.06em; }
+  .bt-device-item { display: flex; align-items: center; gap: 7px; padding: 5px 0; border-top: 1px solid #f0f0f5; font-size: 14px; color: #333; }
+  .bt-device-icon { font-size: 16px; }
   .bt-device-name { flex: 1; font-weight: 500; }
-  .bt-device-status { font-size: 10px; color: #00c853; font-weight: 600; }
+  .bt-device-status { font-size: 12px; color: #00c853; font-weight: 600; }
 </style>
 </head>
 <body>
@@ -1329,6 +1407,14 @@
   <button class="fault-banner-dismiss" onclick="event.stopPropagation(); dismissFault()">✕</button>
 </div>
 
+<!-- PERSISTENT TRIP LIVE BANNER -->
+<div class="trip-live-banner" id="tripLiveBanner">
+  <div class="trip-live-dot"></div>
+  <div class="trip-live-dest" id="tripLiveDest">Navigating to destination</div>
+  <div class="trip-live-eta">ETA <span id="tripLiveETA">—</span></div>
+  <button class="trip-resume-btn" onclick="resumeDriving()">▶ Resume</button>
+</div>
+
 <!-- ======== HOME SCREEN ======== -->
 <div class="screen active" id="screen-home">
   <div class="home-cards">
@@ -1381,7 +1467,6 @@
       <div style="flex:1;"></div>
 
       <!-- Stats row pinned to bottom -->
-      <div class="batt-warning-msg" id="homeBattWarning" style="margin-bottom:8px;">⚠️ Low Battery — Please Charge ASAP!</div>
       <div class="battery-stats" style="width:100%;">
         <div class="bstat">
           <div class="bstat-label">Est. Range</div>
@@ -1796,7 +1881,7 @@
       </div>
       <div class="ecard">
         <div class="ecard-head"><span class="ecard-icon ecard-icon-blue">&#x1F504;</span><span class="ecard-title">Regen Saved</span></div>
-        <div class="ecard-val">18.6</div>
+        <div class="ecard-val" id="regenSavedVal">18.6</div>
         <div class="ecard-unit">kWh</div>
         <div class="ecard-tag">&#x2191; 12% vs last trip</div>
       </div>
@@ -1835,7 +1920,7 @@
 </div>
 <div class="screen" id="screen-camera">
   <div class="camera-inner">
-    <div style="display:flex;align-items:center;justify-content:space-between;">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
       <button class="back-btn" style="padding:6px 14px;font-size:11px;" onclick="goTo('home')">&#x2190; Back</button>
       <div class="sensor-status">
         <span class="sensor-label">SENSOR ARRAY</span>
@@ -1845,97 +1930,20 @@
         <span class="sensor-dot"><span class="sdot" style="background:#00e07a;"></span>Right OK</span>
       </div>
     </div>
-    <div class="camera-views">
-      <!-- Bird's eye view -->
-      <div class="cam-view">
-        <div class="cam-label">BIRD'S-EYE VIEW</div>
-        <svg viewBox="0 0 360 280" xmlns="http://www.w3.org/2000/svg" style="background:#3a3a3a;">
-          <!-- Parking lot background -->
-          <rect width="360" height="280" fill="#4a4a4a"/>
-          <!-- Parking spaces -->
-          <line x1="60" y1="0" x2="60" y2="280" stroke="#666" stroke-width="1.5"/>
-          <line x1="120" y1="0" x2="120" y2="280" stroke="#666" stroke-width="1.5"/>
-          <line x1="240" y1="0" x2="240" y2="280" stroke="#666" stroke-width="1.5"/>
-          <line x1="300" y1="0" x2="300" y2="280" stroke="#666" stroke-width="1.5"/>
-          <line x1="0" y1="100" x2="360" y2="100" stroke="#666" stroke-width="1.5"/>
-          <line x1="0" y1="180" x2="360" y2="180" stroke="#666" stroke-width="1.5"/>
-          <!-- Circular fish-eye effect -->
-          <ellipse cx="180" cy="140" rx="165" ry="130" fill="none" stroke="#555" stroke-width="1" stroke-dasharray="4,4"/>
-          <!-- Car body -->
-          <rect x="148" y="95" width="64" height="90" rx="12" fill="#f0f0f0"/>
-          <rect x="154" y="101" width="52" height="78" rx="8" fill="#d8d8d8"/>
-          <!-- Car details -->
-          <rect x="158" y="105" width="44" height="28" rx="4" fill="#aaa" opacity="0.6"/>
-          <rect x="158" y="147" width="44" height="24" rx="4" fill="#aaa" opacity="0.6"/>
-          <text x="180" y="178" text-anchor="middle" font-size="8" fill="#666" font-family="sans-serif" font-weight="bold">KESTRA EV</text>
-          <!-- Wheels -->
-          <rect x="144" y="103" width="10" height="18" rx="3" fill="#888"/>
-          <rect x="206" y="103" width="10" height="18" rx="3" fill="#888"/>
-          <rect x="144" y="159" width="10" height="18" rx="3" fill="#888"/>
-          <rect x="206" y="159" width="10" height="18" rx="3" fill="#888"/>
-          <!-- Proximity rings - animated -->
-          <ellipse cx="180" cy="86" rx="30" ry="10" fill="none" stroke="#ffd700" stroke-width="2.5" stroke-dasharray="6,4" opacity="0.9">
-            <animate attributeName="opacity" values="0.9;0.3;0.9" dur="1.2s" repeatCount="indefinite"/>
-          </ellipse>
-          <ellipse cx="180" cy="80" rx="42" ry="14" fill="none" stroke="#ffd700" stroke-width="1.5" stroke-dasharray="5,5" opacity="0.6">
-            <animate attributeName="opacity" values="0.6;0.1;0.6" dur="1.2s" begin="0.3s" repeatCount="indefinite"/>
-          </ellipse>
-          <ellipse cx="180" cy="194" rx="30" ry="10" fill="none" stroke="#ffd700" stroke-width="2.5" stroke-dasharray="6,4" opacity="0.9">
-            <animate attributeName="opacity" values="0.9;0.3;0.9" dur="1.2s" begin="0.6s" repeatCount="indefinite"/>
-          </ellipse>
-          <ellipse cx="180" cy="200" rx="42" ry="14" fill="none" stroke="#ffd700" stroke-width="1.5" stroke-dasharray="5,5" opacity="0.6">
-            <animate attributeName="opacity" values="0.6;0.1;0.6" dur="1.2s" begin="0.9s" repeatCount="indefinite"/>
-          </ellipse>
-          <!-- Side warning -->
-          <ellipse cx="135" cy="140" rx="12" ry="26" fill="none" stroke="#ff9900" stroke-width="2" stroke-dasharray="4,4" opacity="0.8">
-            <animate attributeName="opacity" values="0.8;0.2;0.8" dur="0.8s" repeatCount="indefinite"/>
-          </ellipse>
-        </svg>
-        <button class="cam-toggle-btn" id="birdToggle" onclick="toggleBirdView()">&#x1F4F7;</button>
+    <div id="camWrap" style="position:relative;width:100%;flex:1;min-height:200px;border-radius:14px;overflow:hidden;background:#111;display:flex;">
+      <canvas id="camCanvas" style="width:100%;height:100%;display:block;flex:1;"></canvas>
+      <div id="camViewLabel" style="position:absolute;top:10px;left:12px;background:rgba(0,0,0,0.6);color:#fff;font-family:'Orbitron',monospace;font-size:11px;font-weight:700;padding:4px 10px;border-radius:6px;letter-spacing:0.08em;">FRONT CAMERA</div>
+      <div style="position:absolute;top:10px;right:12px;display:flex;align-items:center;gap:5px;background:rgba(0,0,0,0.5);padding:4px 9px;border-radius:6px;">
+        <span style="width:8px;height:8px;border-radius:50%;background:#ff3b3b;display:inline-block;animation:pulse-dot 1s ease infinite;"></span>
+        <span style="font-size:10px;color:#fff;font-family:'Orbitron',monospace;font-weight:700;">REC</span>
       </div>
-      <!-- Rear camera -->
-      <div class="cam-view">
-        <div class="cam-label">REAR CAMERA</div>
-        <div id="camViewSvgWrap" style="width:100%;height:100%;position:absolute;inset:0;">
-        <svg viewBox="0 0 360 280" xmlns="http://www.w3.org/2000/svg" style="background:#2a2a2a;width:100%;height:100%;display:block;">
-          <!-- Road -->
-          <rect width="360" height="280" fill="#888"/>
-          <!-- Road texture -->
-          <rect x="0" y="0" width="360" height="280" fill="url(#roadGrad)"/>
-          <defs>
-            <linearGradient id="roadGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#777"/>
-              <stop offset="100%" stop-color="#555"/>
-            </linearGradient>
-          </defs>
-          <!-- Road markings -->
-          <line x1="180" y1="220" x2="60" y2="280" stroke="#fff" stroke-width="2" opacity="0.4"/>
-          <line x1="180" y1="220" x2="300" y2="280" stroke="#fff" stroke-width="2" opacity="0.4"/>
-          <!-- Curb/edge -->
-          <path d="M0 140 Q80 120 180 110 Q280 100 360 90" fill="none" stroke="#aaa" stroke-width="2"/>
-          <!-- Object on right -->
-          <rect x="300" y="80" width="60" height="120" rx="5" fill="#666" opacity="0.8"/>
-          <!-- Parking guide lines - green zone (safe) -->
-          <path d="M80 60 L40 180" fill="none" stroke="#00cc44" stroke-width="3.5" stroke-linecap="round"/>
-          <path d="M280 60 L320 180" fill="none" stroke="#00cc44" stroke-width="3.5" stroke-linecap="round"/>
-          <!-- Yellow zone (caution) -->
-          <path d="M100 140 L65 220" fill="none" stroke="#ffcc00" stroke-width="3.5" stroke-linecap="round"/>
-          <path d="M260 140 L295 220" fill="none" stroke="#ffcc00" stroke-width="3.5" stroke-linecap="round"/>
-          <!-- Red zone (danger) -->
-          <path d="M135 220 L80 275" fill="none" stroke="#ff2222" stroke-width="4" stroke-linecap="round"/>
-          <path d="M225 220 L280 275" fill="none" stroke="#ff2222" stroke-width="4" stroke-linecap="round"/>
-          <!-- Guide arc -->
-          <path d="M70 280 Q180 230 290 280" fill="none" stroke="#ff2222" stroke-width="3" stroke-dasharray="10,6"/>
-          <!-- Center guide -->
-          <line x1="180" y1="100" x2="180" y2="280" stroke="#ffcc00" stroke-width="1.5" stroke-dasharray="12,8" opacity="0.6"/>
-        </svg>
-        </div>
-        <button class="cam-toggle-btn" onclick="toggleCamView()" id="rearToggle">&#x1F504; Front</button>
-      </div>
+      <button onclick="rotateCamView()" style="position:absolute;bottom:12px;right:12px;background:rgba(0,0,0,0.65);border:1.5px solid rgba(255,255,255,0.25);color:#fff;border-radius:10px;padding:7px 10px;font-size:20px;cursor:pointer;">
+        &#x1F504;
+      </button>
+      <div id="camTimestamp" style="position:absolute;bottom:14px;left:12px;font-size:10px;color:rgba(255,255,255,0.55);font-family:'Orbitron',monospace;"></div>
     </div>
   </div>
 </div>
-
 <!-- ======== DRIVING SCREEN ======== -->
 <div class="screen" id="screen-driving">
   <div class="driving-road-view">
@@ -1995,13 +2003,22 @@
       <path d="M0 340 Q200 300 400 290 Q600 300 800 340" fill="none" stroke="#00cc44" stroke-width="3" stroke-dasharray="10,8" opacity="0.6"/>
       <!-- Speed overlay bottom -->
       <rect x="0" y="380" width="800" height="60" fill="rgba(0,0,0,0.45)"/>
-      <text x="400" y="418" text-anchor="middle" font-family="monospace" font-size="18" fill="#00e07a" font-weight="bold" letter-spacing="4">● KESTRA DRIVE ASSIST ACTIVE</text>
+
     </svg>
     <!-- HUD overlay -->
     <div class="driving-hud">
       <div class="driving-hud-speed" id="driveSpeed">72</div>
       <div class="driving-hud-unit">km/h</div>
       <div class="driving-hud-dest" id="driveDest">Navigating to destination</div>
+      <div style="margin-top:6px;font-size:12px;color:#7dff9f;font-family:var(--font-head);">ETA: <span id="driveETA" style="color:white;">—</span></div>
+    </div>
+    <!-- Regen / Power HUD -->
+    <div class="regen-hud" id="regenHud">
+      <div class="regen-label" id="regenLabel">POWER</div>
+      <div class="regen-value" id="regenValue">0.0</div>
+      <div class="regen-unit" id="regenUnit">kW</div>
+      <div class="regen-bar-wrap"><div class="regen-bar" id="regenBar"></div></div>
+      <div class="regen-mode-tag" id="regenModeTag">CRUISING</div>
     </div>
     <!-- End trip button -->
     <button class="driving-end-btn" onclick="endTrip()">⬛ End Trip</button>
@@ -2012,6 +2029,15 @@
         <div class="dest-reached-title">You have reached your destination!</div>
         <div class="dest-reached-desc" id="destReachedDesc">Welcome to your destination. Have a great day!</div>
         <button class="dest-reached-btn" onclick="finishTrip()">Back to Navigation</button>
+      </div>
+    </div>
+    <!-- Trip cancelled overlay -->
+    <div class="dest-reached-overlay" id="tripCancelledOverlay">
+      <div class="dest-reached-box">
+        <div class="dest-reached-icon">🛑</div>
+        <div class="dest-reached-title" style="color:#c00;">Trip Ended Early</div>
+        <div class="dest-reached-desc">You stopped before reaching <strong id="tripCancelledDest">your destination</strong>. Navigation has been cleared.</div>
+        <button class="dest-reached-btn" style="background:#555;" onclick="finishCancelledTrip()">Back to Navigation</button>
       </div>
     </div>
   </div>
@@ -2124,6 +2150,7 @@
     const tab = document.getElementById('tab-' + screen);
     if (tab) tab.classList.add('active');
     currentScreen = screen;
+    if (screen === 'camera') startCamLoop();
   }
 
   function updateTempColor() {
@@ -2298,6 +2325,31 @@
   let chargingInterval = null;
   let chargingBatteryPct = 15;
   let tripIsChargerDest = false;
+  let tripArrivalTime = null;   // Date object for when trip auto-ends
+  let tripCountdownInterval = null;
+
+  // Destination ETA durations in ms — all under 40s
+  const destDurations = {
+    'Sarawak General Hospital': 38000,
+    'UNIMAS Campus': 35000,
+    'Kuching Waterfront': 28000,
+    'Petronas AEON Kuching': 25000,
+    'Damai Beach Resort': 38000,
+    'Sarawak Energy HQ': 32000,
+    'Wisma Boustead': 30000,
+  };
+
+  function getDestDuration(dest) {
+    return destDurations[dest] || (20000 + Math.random() * 18000); // 20-38s for custom
+  }
+
+  function formatCountdown(msLeft) {
+    if (msLeft <= 0) return '0:00';
+    const totalSecs = Math.ceil(msLeft / 1000);
+    const m = Math.floor(totalSecs / 60);
+    const s = totalSecs % 60;
+    return m + ':' + String(s).padStart(2, '0');
+  }
 
   function startTrip() {
     const dest = document.getElementById('navSearch').value || tripDest;
@@ -2307,16 +2359,92 @@
     }
     tripDest = dest;
     tripStarted = true;
-    // Determine if this is a charger trip
     tripIsChargerDest = (dest === 'Petronas AEON Kuching' || dest === 'Sarawak Energy HQ' || dest === 'Wisma Boustead');
+
+    // Set real-time arrival clock
+    const duration = getDestDuration(dest);
+    tripArrivalTime = new Date(Date.now() + duration);
+
     // Show driving screen
     document.getElementById('driveDest').textContent = 'Navigating to ' + dest;
     goTo('driving');
-    // Animate speed
     startDrivingAnimation();
+    startTripCountdown();
+    showTripLiveBanner();
+  }
+
+  function startTripCountdown() {
+    clearInterval(tripCountdownInterval);
+    tripCountdownInterval = setInterval(() => {
+      const msLeft = tripArrivalTime - Date.now();
+      const label = msLeft > 0 ? formatCountdown(msLeft) : 'Arriving…';
+
+      // Update driving HUD ETA
+      const driveETA = document.getElementById('driveETA');
+      if (driveETA) driveETA.textContent = label;
+
+      // Update live banner ETA
+      const bannerETA = document.getElementById('tripLiveETA');
+      if (bannerETA) bannerETA.textContent = label;
+
+      if (msLeft <= 0) {
+        clearInterval(tripCountdownInterval);
+        tripCountdownInterval = null;
+        // Auto-trigger arrival
+        autoArriveTrip();
+      }
+    }, 500);
+  }
+
+  function showTripLiveBanner() {
+    const banner = document.getElementById('tripLiveBanner');
+    const destEl = document.getElementById('tripLiveDest');
+    if (banner) {
+      destEl.textContent = '▶ ' + tripDest;
+      banner.classList.add('show');
+      document.body.classList.add('trip-active-banner');
+    }
+  }
+
+  function hideTripLiveBanner() {
+    const banner = document.getElementById('tripLiveBanner');
+    if (banner) banner.classList.remove('show');
+    document.body.classList.remove('trip-active-banner');
+  }
+
+  function resumeDriving() {
+    if (tripStarted) goTo('driving');
+  }
+
+  function autoArriveTrip() {
+    clearInterval(drivingInterval);
+    drivingInterval = null;
+    hideTripLiveBanner();
+    if (tripIsChargerDest) {
+      startChargingSession(tripDest);
+      const dest = tripDest;
+      tripStarted = false; tripDest = '';
+      document.getElementById('navSearch').value = '';
+      document.getElementById('routeLine').style.opacity = '0';
+      document.getElementById('destMarker').style.opacity = '0';
+      document.getElementById('navDist').textContent = '0 km';
+      hideStartTripBtn();
+      // If not on driving screen, switch to energy; otherwise show arrival then energy
+      if (currentScreen === 'driving') {
+        goTo('energy');
+      } else {
+        goTo('energy');
+      }
+    } else {
+      // Show destination reached overlay — switch to driving screen first if needed
+      if (currentScreen !== 'driving') goTo('driving');
+      document.getElementById('destReachedDesc').textContent = 'You have arrived at ' + tripDest + '. Have a great day!';
+      document.getElementById('destReachedOverlay').classList.add('show');
+    }
   }
 
   function startDrivingAnimation() {
+    clearInterval(drivingInterval);
     let spd = 60 + Math.floor(Math.random()*20);
     const el = document.getElementById('driveSpeed');
     drivingInterval = setInterval(() => {
@@ -2327,29 +2455,36 @@
   }
 
   function endTrip() {
+    // Manual end — user stopped halfway, NOT arrived
     clearInterval(drivingInterval);
+    clearInterval(tripCountdownInterval);
+    drivingInterval = null; tripCountdownInterval = null;
+    hideTripLiveBanner();
     if (tripIsChargerDest) {
-      // Go to energy screen with charging overlay
-      startChargingSession(tripDest);
-      tripStarted = false;
-      tripDest = '';
-      document.getElementById('navSearch').value = '';
-      document.getElementById('routeLine').style.opacity = '0';
-      document.getElementById('destMarker').style.opacity = '0';
-      document.getElementById('navDist').textContent = '0 km';
-      hideStartTripBtn();
-      goTo('energy');
+      // For charger destinations, stopping halfway just cancels — no charging session
+      document.getElementById('tripCancelledDest').textContent = tripDest;
+      document.getElementById('tripCancelledOverlay').classList.add('show');
     } else {
-      // Show destination reached overlay
-      document.getElementById('destReachedDesc').textContent = 'You have arrived at ' + tripDest + '. Have a great day!';
-      document.getElementById('destReachedOverlay').classList.add('show');
+      document.getElementById('tripCancelledDest').textContent = tripDest;
+      document.getElementById('tripCancelledOverlay').classList.add('show');
     }
+  }
+
+  function finishCancelledTrip() {
+    document.getElementById('tripCancelledOverlay').classList.remove('show');
+    tripStarted = false; tripDest = ''; tripIsChargerDest = false;
+    document.getElementById('navSearch').value = '';
+    document.getElementById('routeLine').style.opacity = '0';
+    document.getElementById('destMarker').style.opacity = '0';
+    document.getElementById('navDist').textContent = '0 km';
+    document.getElementById('navETA').textContent = '9:30 AM';
+    hideStartTripBtn();
+    goTo('nav');
   }
 
   function finishTrip() {
     document.getElementById('destReachedOverlay').classList.remove('show');
-    tripStarted = false;
-    tripDest = '';
+    tripStarted = false; tripDest = '';
     document.getElementById('navSearch').value = '';
     document.getElementById('routeLine').style.opacity = '0';
     document.getElementById('destMarker').style.opacity = '0';
@@ -2357,6 +2492,7 @@
     document.getElementById('navETA').textContent = '9:30 AM';
     document.getElementById('startTripBtn').textContent = 'Start Trip';
     hideStartTripBtn();
+    hideTripLiveBanner();
     goTo('nav');
   }
 
@@ -2369,8 +2505,12 @@
     chargingInterval = setInterval(() => {
       chargingBatteryPct = Math.min(100, chargingBatteryPct + 0.3);
       updateChargingDisplay();
+      // Live-update all status bars while charging
+      liveBattPct = chargingBatteryPct;
+      updateAllBatteryDisplays(chargingBatteryPct);
+      updateHomeBattCard(chargingBatteryPct);
       if (chargingBatteryPct >= 100) clearInterval(chargingInterval);
-    }, 500);
+    }, 300);
   }
 
   function updateChargingDisplay() {
@@ -2413,53 +2553,49 @@
       else navAlert.classList.remove('hidden');
     }
 
+    // Determine how many bars to light and what color based on % range:
+    // 15-20: 1 bar red | 21-30: 2 bars red | 31-40: 2 bars yellow
+    // 41-50: 3 bars yellow | 51-60: 3 bars green | 61-80: 4 bars green | 81-100: 5 bars green
+    let activeBars, barColorClass, barColorHex;
+    if (p <= 20)      { activeBars = 1; barColorClass = 'low';    barColorHex = '#c00'; }
+    else if (p <= 30) { activeBars = 2; barColorClass = 'low';    barColorHex = '#c00'; }
+    else if (p <= 40) { activeBars = 2; barColorClass = 'medium'; barColorHex = '#c8a000'; }
+    else if (p <= 50) { activeBars = 3; barColorClass = 'medium'; barColorHex = '#c8a000'; }
+    else if (p <= 60) { activeBars = 3; barColorClass = 'good';   barColorHex = '#00b860'; }
+    else if (p <= 80) { activeBars = 4; barColorClass = 'good';   barColorHex = '#00b860'; }
+    else              { activeBars = 5; barColorClass = 'good';   barColorHex = '#00b860'; }
+
     // --- Home card ---
     document.getElementById('homeBattPct').textContent = p + '%';
     const homeBars = document.getElementById('homeBattBars').querySelectorAll('.home-nb-bar');
     const homeHeights = [18, 28, 38, 46, 52];
-    const homeTotal = homeBars.length;
     homeBars.forEach((bar, i) => {
-      // Bar i represents the band from (i * 100/total)% to ((i+1) * 100/total)%
-      // Light it up if the charge level is above the bottom of this band (i.e. the band has any charge in it)
-      const bandBottom = i * (100 / homeTotal);
       bar.className = 'home-nb-bar';
-      if (p > bandBottom) {
-        bar.classList.add(p < 20 ? 'low' : p < 50 ? 'medium' : 'good');
-      } else {
-        bar.classList.add('empty');
-      }
       bar.style.height = homeHeights[i] + 'px';
+      bar.classList.add(i < activeBars ? barColorClass : 'empty');
     });
 
     // --- Nav sidebar ---
     document.getElementById('navBattPct').textContent = p + '%';
-    document.getElementById('navBattPct').style.color = colorHex;
+    document.getElementById('navBattPct').style.color = barColorHex;
     document.getElementById('navBattRange').textContent = 'Range ' + range + ' km';
     const navBars = document.getElementById('navBattBars').querySelectorAll('.nb-bar');
     const navHeights = [20, 32, 44, 54, 64];
-    const navTotal = navBars.length;
     navBars.forEach((bar, i) => {
-      const bandBottom = i * (100 / navTotal);
       bar.className = 'nb-bar';
       bar.style.height = navHeights[i] + 'px';
-      if (p > bandBottom) {
-        bar.classList.add(p < 20 ? 'low' : p < 50 ? 'medium' : 'good');
-      } else {
-        bar.classList.add('empty');
-      }
+      bar.classList.add(i < activeBars ? barColorClass : 'empty');
     });
 
     // --- Energy screen ---
     document.getElementById('energyBattPct').innerHTML = p + '% <span class="batt-spin-icon">&#x21BA;</span>';
-    document.getElementById('energyBattPct').style.color = colorHex;
+    document.getElementById('energyBattPct').style.color = barColorHex;
     document.getElementById('energyBattRange').textContent = 'Range ' + range + ' km';
     const energyBars = document.getElementById('energyBattChart').querySelectorAll('.batt-bar-e');
     const eHeights = [24, 54, 84, 114, 144];
-    const eTotal = energyBars.length;
     energyBars.forEach((bar, i) => {
-      const bandBottom = i * (100 / eTotal);
       bar.style.height = eHeights[i] + 'px';
-      bar.style.background = p > bandBottom ? colorHex : '#444';
+      bar.style.background = i < activeBars ? barColorHex : '#444';
     });
   }
 
@@ -2474,8 +2610,11 @@
   }
 
   function stopTrip() {
+    clearInterval(tripCountdownInterval);
+    tripCountdownInterval = null;
     tripStarted = false;
     tripDest = '';
+    hideTripLiveBanner();
     document.getElementById('tripActiveBar').classList.remove('show');
     document.getElementById('startTripBtn').textContent = 'Start Trip';
     document.getElementById('navSearch').value = '';
@@ -2509,101 +2648,265 @@
   }
 
   // ========== CAMERA ==========
-  function toggleBirdView() {
-    // toggle animation effect
-    const view = document.querySelector('#screen-camera .camera-views .cam-view:first-child svg');
-    view.style.transition = 'opacity 0.2s';
-    view.style.opacity = '0';
-    setTimeout(() => { view.style.opacity = '1'; }, 220);
+  const camViews = ['front','rear','bird','left'];
+  const camLabels = { front:'FRONT CAMERA', rear:'REAR CAMERA', bird:"BIRD'S-EYE VIEW", left:'LEFT SIDE CAM' };
+  const camNextLabels = { front:'REAR', rear:"BIRD'S EYE", bird:'LEFT SIDE', left:'FRONT' };
+  let currentCamView = 'front';
+  let camAnimFrame = null;
+
+  const trafficFront = [
+    { x:155, y:280,  speed:-0.9, color:'#cc4444', lane:0  },
+    { x:90,  y:220, speed:-0.6, color:'#4488cc', lane:-1 },
+    { x:220, y:160, speed:-1.1, color:'#44aa66', lane:1  },
+  ];
+  const trafficRear = [
+    { x:130, y:180, speed:1.2, color:'#cc8844', lane:0 },
+    { x:200, y:240, speed:0.7, color:'#8844cc', lane:1 },
+  ];
+  const trafficBird = [
+    { x:-80,  y:0, speed:1.4,  color:'#cc4444' },
+    { x:-160, y:0, speed:1.0,  color:'#4488cc' },
+    { x:400,  y:0, speed:-1.2, color:'#44aa66' },
+  ];
+  const trafficLeft = [
+    { x:420, y:0, speed:-1.6, color:'#cc4444' },
+    { x:520, y:0, speed:-1.1, color:'#ffaa00' },
+    { x:-60, y:0, speed:1.3,  color:'#4488cc' },
+  ];
+  let dashOffset = 0;
+
+  function roundRect(ctx,x,y,w,h,r){
+    ctx.beginPath();
+    ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);
+    ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
+    ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);
+    ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);
+    ctx.closePath();ctx.fill();
   }
 
-  function toggleCamView() {
-    rearCamFront = !rearCamFront;
-    const btn = document.getElementById('rearToggle');
-    const label = document.querySelector('#screen-camera .cam-view:last-child .cam-label');
-    const svgWrap = document.getElementById('camViewSvgWrap');
-    btn.innerHTML = rearCamFront ? '&#x1F504; Rear' : '&#x1F504; Front';
-    label.textContent = rearCamFront ? 'FRONT CAMERA' : 'REAR CAMERA';
+  function drawFrontCam(ctx,W,H){
+    const hor=H*0.32;
+    const skyG=ctx.createLinearGradient(0,0,0,hor);
+    skyG.addColorStop(0,'#0d1a2e');skyG.addColorStop(0.7,'#1e3d6a');skyG.addColorStop(1,'#3a6a9a');
+    ctx.fillStyle=skyG;ctx.fillRect(0,0,W,hor);
+    ctx.save();ctx.globalAlpha=0.25;ctx.fillStyle='#6aaad0';
+    ctx.beginPath();ctx.ellipse(W/2,hor,W*0.55,H*0.06,0,0,Math.PI*2);ctx.fill();ctx.restore();
+    const roadG=ctx.createLinearGradient(0,hor,0,H);
+    roadG.addColorStop(0,'#4a4a4a');roadG.addColorStop(1,'#6e6e6e');
+    ctx.fillStyle=roadG;ctx.fillRect(0,hor,W,H-hor);
+    const vx=W/2,vy=hor;
+    ctx.strokeStyle='rgba(255,255,255,0.5)';ctx.lineWidth=2;
+    ctx.beginPath();ctx.moveTo(0,H);ctx.lineTo(vx,vy);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(W,H);ctx.lineTo(vx,vy);ctx.stroke();
+    ctx.strokeStyle='rgba(255,255,255,0.25)';ctx.lineWidth=1.5;
+    ctx.beginPath();ctx.moveTo(W*0.33,H);ctx.lineTo(vx,vy);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(W*0.67,H);ctx.lineTo(vx,vy);ctx.stroke();
+    ctx.strokeStyle='rgba(255,204,0,0.7)';ctx.lineWidth=2.5;
+    ctx.setLineDash([20,16]);ctx.lineDashOffset=-dashOffset*2;
+    ctx.beginPath();ctx.moveTo(vx,H);ctx.lineTo(vx,vy);ctx.stroke();
+    ctx.setLineDash([]);
+    [[W*0.03,hor,8,H*0.14],[W*0.10,hor,6,H*0.10],[W*0.89,hor,8,H*0.14],[W*0.96,hor,6,H*0.10]].forEach(([x,y,w,h])=>{
+      ctx.fillStyle='#1a3a10';ctx.fillRect(x,y-h,w,h);
+      ctx.fillStyle='#3a6a22';ctx.beginPath();ctx.ellipse(x+w/2,y-h,w*1.6,h*0.45,0,0,Math.PI*2);ctx.fill();
+    });
+    ctx.strokeStyle='rgba(0,220,80,0.45)';ctx.lineWidth=2;ctx.setLineDash([7,5]);
+    ctx.beginPath();ctx.moveTo(W*0.05,H*0.72);ctx.quadraticCurveTo(W/2,H*0.63,W*0.95,H*0.72);ctx.stroke();
+    ctx.setLineDash([]);
+    trafficFront.forEach(car=>{
+      if(car.y<=hor||car.y>H+20)return;
+      const prog=(car.y-hor)/(H-hor);
+      const sc=0.12+prog*0.88;
+      const cx=vx+car.lane*W*0.28*prog;
+      const cw=60*sc,ch=36*sc,bx=cx-cw/2,by=car.y-ch;
+      ctx.fillStyle=car.color;roundRect(ctx,bx,by,cw,ch,4*sc);
+      ctx.fillStyle='rgba(60,80,110,0.7)';roundRect(ctx,bx+cw*0.1,by+ch*0.08,cw*0.8,ch*0.4,2*sc);
+      ctx.fillStyle='#ff2222';
+      ctx.fillRect(bx,by+ch*0.7,cw*0.2,ch*0.24);
+      ctx.fillRect(bx+cw*0.8,by+ch*0.7,cw*0.2,ch*0.24);
+      ctx.fillStyle='#e8e8cc';roundRect(ctx,bx+cw*0.32,by+ch*0.74,cw*0.36,ch*0.2,1*sc);
+    });
+    const near=trafficFront.filter(c=>c.y>hor+40&&c.y<H*0.82);
+    if(near.length){
+      const car=near.reduce((a,b)=>a.y>b.y?a:b);
+      const prog=(car.y-hor)/(H-hor);const sc=0.12+prog*0.88;
+      const cx=vx+car.lane*W*0.28*prog;const cw=60*sc,ch=36*sc;
+      ctx.strokeStyle='#ffcc00';ctx.lineWidth=1.5;ctx.setLineDash([5,3]);
+      ctx.strokeRect(cx-cw/2-4,car.y-ch-4,cw+8,ch+8);ctx.setLineDash([]);
+    }
+  }
 
-    // Fade transition
-    svgWrap.style.transition = 'opacity 0.18s';
-    svgWrap.style.opacity = '0';
-    setTimeout(() => {
-      if (rearCamFront) {
-        // FRONT CAMERA — forward road view
-        svgWrap.innerHTML = `<svg viewBox="0 0 360 280" xmlns="http://www.w3.org/2000/svg" style="background:#2a2a2a;width:100%;height:100%;display:block;">
-          <defs>
-            <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#1a2a4a"/>
-              <stop offset="100%" stop-color="#3a5a8a"/>
-            </linearGradient>
-            <linearGradient id="roadGradF" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#555"/>
-              <stop offset="100%" stop-color="#777"/>
-            </linearGradient>
-          </defs>
-          <!-- Sky -->
-          <rect width="360" height="150" fill="url(#skyGrad)"/>
-          <!-- Horizon glow -->
-          <ellipse cx="180" cy="150" rx="200" ry="30" fill="#4a7aaa" opacity="0.3"/>
-          <!-- Road surface -->
-          <path d="M0 280 L0 150 Q180 135 360 150 L360 280 Z" fill="url(#roadGradF)"/>
-          <!-- Lane markings -->
-          <path d="M180 280 L180 155" stroke="#ffcc00" stroke-width="2.5" stroke-dasharray="18,12" opacity="0.7"/>
-          <!-- Left lane edge -->
-          <path d="M60 280 L135 155" stroke="#fff" stroke-width="2" opacity="0.5"/>
-          <!-- Right lane edge -->
-          <path d="M300 280 L225 155" stroke="#fff" stroke-width="2" opacity="0.5"/>
-          <!-- Distant car -->
-          <rect x="155" y="148" width="50" height="30" rx="4" fill="#cc4444" opacity="0.85"/>
-          <rect x="161" y="150" width="38" height="16" rx="2" fill="#88aacc" opacity="0.6"/>
-          <rect x="155" y="174" width="12" height="6" rx="1" fill="#ffee88"/>
-          <rect x="193" y="174" width="12" height="6" rx="1" fill="#ffee88"/>
-          <!-- Trees left -->
-          <rect x="20" y="120" width="8" height="35" fill="#3a5a2a"/>
-          <ellipse cx="24" cy="115" rx="18" ry="22" fill="#2a4a1a"/>
-          <rect x="50" y="125" width="6" height="28" fill="#3a5a2a"/>
-          <ellipse cx="53" cy="122" rx="14" ry="18" fill="#2a4a1a"/>
-          <!-- Trees right -->
-          <rect x="330" y="120" width="8" height="35" fill="#3a5a2a"/>
-          <ellipse cx="334" cy="115" rx="18" ry="22" fill="#2a4a1a"/>
-          <rect x="300" y="125" width="6" height="28" fill="#3a5a2a"/>
-          <ellipse cx="303" cy="122" rx="14" ry="18" fill="#2a4a1a"/>
-          <!-- HUD overlay lines -->
-          <path d="M0 200 Q90 180 180 175 Q270 180 360 200" fill="none" stroke="#00cc44" stroke-width="2" stroke-dasharray="6,4" opacity="0.5"/>
-          <!-- Collision warning box around distant car -->
-          <rect x="148" y="144" width="64" height="38" rx="3" fill="none" stroke="#ffcc00" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.8"/>
-        </svg>`;
+
+  function drawRearCam(ctx,W,H){
+    const hor=H*0.32;
+    const skyG=ctx.createLinearGradient(0,0,0,hor);
+    skyG.addColorStop(0,'#0d1a2e');skyG.addColorStop(0.7,'#1e3d6a');skyG.addColorStop(1,'#3a6a9a');
+    ctx.fillStyle=skyG;ctx.fillRect(0,0,W,hor);
+    ctx.save();ctx.globalAlpha=0.22;ctx.fillStyle='#6aaad0';
+    ctx.beginPath();ctx.ellipse(W/2,hor,W*0.55,H*0.06,0,0,Math.PI*2);ctx.fill();ctx.restore();
+    const roadG=ctx.createLinearGradient(0,hor,0,H);
+    roadG.addColorStop(0,'#4a4a4a');roadG.addColorStop(1,'#6e6e6e');
+    ctx.fillStyle=roadG;ctx.fillRect(0,hor,W,H-hor);
+    const vx=W/2,vy=hor;
+    ctx.strokeStyle='rgba(255,255,255,0.5)';ctx.lineWidth=2;
+    ctx.beginPath();ctx.moveTo(0,H);ctx.lineTo(vx,vy);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(W,H);ctx.lineTo(vx,vy);ctx.stroke();
+    ctx.strokeStyle='rgba(255,255,255,0.25)';ctx.lineWidth=1.5;
+    ctx.beginPath();ctx.moveTo(W*0.33,H);ctx.lineTo(vx,vy);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(W*0.67,H);ctx.lineTo(vx,vy);ctx.stroke();
+    ctx.strokeStyle='rgba(255,204,0,0.7)';ctx.lineWidth=2.5;
+    ctx.setLineDash([20,16]);ctx.lineDashOffset=dashOffset*2;
+    ctx.beginPath();ctx.moveTo(vx,H);ctx.lineTo(vx,vy);ctx.stroke();
+    ctx.setLineDash([]);
+    [[W*0.03,hor,8,H*0.14],[W*0.10,hor,6,H*0.10],[W*0.89,hor,8,H*0.14],[W*0.96,hor,6,H*0.10]].forEach(([x,y,w,h])=>{
+      ctx.fillStyle='#1a3a10';ctx.fillRect(x,y-h,w,h);
+      ctx.fillStyle='#3a6a22';ctx.beginPath();ctx.ellipse(x+w/2,y-h,w*1.6,h*0.45,0,0,Math.PI*2);ctx.fill();
+    });
+    ctx.strokeStyle='rgba(0,220,80,0.4)';ctx.lineWidth=2;ctx.setLineDash([7,5]);
+    ctx.beginPath();ctx.moveTo(W*0.05,H*0.72);ctx.quadraticCurveTo(W/2,H*0.63,W*0.95,H*0.72);ctx.stroke();
+    ctx.setLineDash([]);
+    trafficRear.forEach(car=>{
+      if(car.y<=hor||car.y>H+20)return;
+      const prog=(car.y-hor)/(H-hor);
+      const sc=0.12+prog*0.88;
+      const cx=vx+(car.lane===1?1:-1)*W*0.22*prog;
+      const cw=60*sc,ch=36*sc,bx=cx-cw/2,by=car.y-ch;
+      ctx.fillStyle=car.color;roundRect(ctx,bx,by,cw,ch,4*sc);
+      ctx.fillStyle='rgba(100,140,190,0.65)';roundRect(ctx,bx+cw*0.1,by+ch*0.08,cw*0.8,ch*0.42,2*sc);
+      ctx.fillStyle='#ffffaa';
+      ctx.fillRect(bx+cw*0.04,by+ch*0.68,cw*0.2,ch*0.24);
+      ctx.fillRect(bx+cw*0.76,by+ch*0.68,cw*0.2,ch*0.24);
+      ctx.fillStyle='rgba(0,0,0,0.35)';roundRect(ctx,bx+cw*0.3,by+ch*0.7,cw*0.4,ch*0.22,1*sc);
+    });
+  }
+
+
+  function drawBirdCam(ctx,W,H){
+    ctx.fillStyle='#4a4a4a';ctx.fillRect(0,0,W,H);
+    ctx.fillStyle='#606060';ctx.fillRect(0,H*0.36,W,H*0.28);
+    ctx.strokeStyle='rgba(255,255,255,0.45)';ctx.lineWidth=2;ctx.setLineDash([20,14]);ctx.lineDashOffset=-dashOffset*1.5;
+    ctx.beginPath();ctx.moveTo(0,H/2);ctx.lineTo(W,H/2);ctx.stroke();ctx.setLineDash([]);
+    ctx.fillStyle='#3a3a3a';
+    ctx.fillRect(20,20,80,55);ctx.fillRect(W*0.4,10,100,55);ctx.fillRect(W*0.82,25,W*0.16,50);
+    ctx.fillRect(20,H*0.73,90,50);ctx.fillRect(W*0.43,H*0.76,80,44);ctx.fillRect(W*0.8,H*0.71,W*0.18,55);
+    const cx=W/2,cy=H/2;
+    ctx.fillStyle='#f0f0f0';roundRect(ctx,cx-32,cy-22,64,44,8);
+    ctx.fillStyle='#d0d0d0';roundRect(ctx,cx-26,cy-16,52,32,5);
+    ctx.fillStyle='#777';
+    ctx.fillRect(cx-36,cy-18,8,14);ctx.fillRect(cx+28,cy-18,8,14);
+    ctx.fillRect(cx-36,cy+4,8,14);ctx.fillRect(cx+28,cy+4,8,14);
+    ctx.fillStyle='rgba(255,255,150,0.85)';ctx.fillRect(cx-32,cy-8,5,16);
+    ctx.fillStyle='rgba(255,80,80,0.85)';ctx.fillRect(cx+27,cy-8,5,16);
+    const pulse=0.5+0.5*Math.sin(Date.now()/300);
+    ctx.strokeStyle=`rgba(255,215,0,${0.4+0.5*pulse})`;ctx.lineWidth=2;ctx.setLineDash([5,4]);
+    ctx.beginPath();ctx.ellipse(cx,cy-28,28,9,0,0,Math.PI*2);ctx.stroke();
+    ctx.beginPath();ctx.ellipse(cx,cy+28,28,9,0,0,Math.PI*2);ctx.stroke();
+    ctx.setLineDash([]);
+    trafficBird.forEach(car=>{
+      const by=H*0.39;ctx.fillStyle=car.color;roundRect(ctx,car.x,by,38,20,4);
+      ctx.fillStyle='rgba(180,210,255,0.5)';roundRect(ctx,car.x+4,by+3,30,10,2);
+    });
+  }
+
+  function drawLeftCam(ctx,W,H){
+    const sg=ctx.createLinearGradient(0,0,0,H*0.5);sg.addColorStop(0,'#1a2a4a');sg.addColorStop(1,'#3a5a8a');
+    ctx.fillStyle=sg;ctx.fillRect(0,0,W,H*0.5);
+    // Horizon haze
+    ctx.save();ctx.globalAlpha=0.15;ctx.fillStyle='#6a9aba';
+    ctx.beginPath();ctx.ellipse(W/2,H*0.5,W*0.6,H*0.07,0,0,Math.PI*2);ctx.fill();ctx.restore();
+    // Road surface
+    ctx.fillStyle='#626262';ctx.fillRect(0,H*0.5,W,H*0.5);
+    ctx.fillStyle='#848484';ctx.fillRect(0,H*0.5,W,H*0.06);
+    // Building / car body on far left (our vehicle's body)
+    ctx.fillStyle='#3a3a4a';ctx.fillRect(0,H*0.1,W*0.34,H*0.4);
+    ctx.fillStyle='#4a4a5a';ctx.fillRect(W*0.04,H*0.16,W*0.22,H*0.1);ctx.fillRect(W*0.04,H*0.3,W*0.22,H*0.1);
+    // Road lane lines (horizontal perspective)
+    ctx.strokeStyle='rgba(255,255,255,0.38)';ctx.lineWidth=2;
+    ctx.beginPath();ctx.moveTo(0,H*0.68);ctx.lineTo(W,H*0.68);ctx.stroke();
+    ctx.strokeStyle='rgba(255,204,0,0.45)';ctx.setLineDash([18,12]);ctx.lineDashOffset=-dashOffset;
+    ctx.beginPath();ctx.moveTo(0,H*0.58);ctx.lineTo(W,H*0.58);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(0,H*0.75);ctx.lineTo(W,H*0.75);ctx.stroke();ctx.setLineDash([]);
+    // Cars passing by — near lane (closer to us, larger, lower in frame) and far lane (smaller, higher)
+    // Draw BEFORE mirror so mirror occludes them
+    trafficLeft.forEach((car,i)=>{
+      const isNear=(i%2===0);
+      const by=isNear?H*0.56:H*0.52;
+      const sc=isNear?1.0:0.65;
+      const cw=54*sc,ch=30*sc;
+      ctx.fillStyle=car.color;roundRect(ctx,car.x,by-ch,cw,ch,5*sc);
+      ctx.fillStyle='rgba(180,210,255,0.5)';roundRect(ctx,car.x+5*sc,by-ch+5*sc,44*sc,14*sc,2*sc);
+      if(car.speed>0){
+        ctx.fillStyle='#ffffbb';ctx.fillRect(car.x+cw-6*sc,by-ch+8*sc,5*sc,8*sc);
       } else {
-        // REAR CAMERA — original rear view
-        svgWrap.innerHTML = `<svg viewBox="0 0 360 280" xmlns="http://www.w3.org/2000/svg" style="background:#2a2a2a;width:100%;height:100%;display:block;">
-          <defs>
-            <linearGradient id="roadGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#777"/>
-              <stop offset="100%" stop-color="#555"/>
-            </linearGradient>
-          </defs>
-          <rect width="360" height="280" fill="#888"/>
-          <rect x="0" y="0" width="360" height="280" fill="url(#roadGrad)"/>
-          <line x1="180" y1="220" x2="60" y2="280" stroke="#fff" stroke-width="2" opacity="0.4"/>
-          <line x1="180" y1="220" x2="300" y2="280" stroke="#fff" stroke-width="2" opacity="0.4"/>
-          <path d="M0 140 Q80 120 180 110 Q280 100 360 90" fill="none" stroke="#aaa" stroke-width="2"/>
-          <rect x="300" y="80" width="60" height="120" rx="5" fill="#666" opacity="0.8"/>
-          <path d="M80 60 L40 180" fill="none" stroke="#00cc44" stroke-width="3.5" stroke-linecap="round"/>
-          <path d="M280 60 L320 180" fill="none" stroke="#00cc44" stroke-width="3.5" stroke-linecap="round"/>
-          <path d="M100 140 L65 220" fill="none" stroke="#ffcc00" stroke-width="3.5" stroke-linecap="round"/>
-          <path d="M260 140 L295 220" fill="none" stroke="#ffcc00" stroke-width="3.5" stroke-linecap="round"/>
-          <path d="M135 220 L80 275" fill="none" stroke="#ff2222" stroke-width="4" stroke-linecap="round"/>
-          <path d="M225 220 L280 275" fill="none" stroke="#ff2222" stroke-width="4" stroke-linecap="round"/>
-          <path d="M70 280 Q180 230 290 280" fill="none" stroke="#ff2222" stroke-width="3" stroke-dasharray="10,6"/>
-          <line x1="180" y1="100" x2="180" y2="280" stroke="#ffcc00" stroke-width="1.5" stroke-dasharray="12,8" opacity="0.6"/>
-        </svg>`;
+        ctx.fillStyle='#ff4444';ctx.fillRect(car.x+2*sc,by-ch+8*sc,5*sc,8*sc);
+        ctx.fillRect(car.x+4*sc,by-ch+8*sc,5*sc,8*sc);
       }
-      svgWrap.style.opacity = '1';
-    }, 180);
+    });
+    // Side mirror — drawn LAST so it sits in front of passing cars
+    ctx.fillStyle='#e0e0e0';roundRect(ctx,W*0.88,H*0.37,W*0.12,H*0.22,4);
+    ctx.fillStyle='rgba(140,180,210,0.48)';roundRect(ctx,W*0.895,H*0.41,W*0.095,H*0.12,2);
+    // Mirror housing edge
+    ctx.strokeStyle='rgba(180,180,180,0.6)';ctx.lineWidth=1.5;
+    ctx.beginPath();roundRect(ctx,W*0.88,H*0.37,W*0.12,H*0.22,4);ctx.stroke();
   }
 
-  // ========== MODALS ==========
+  function updateCamTraffic(W,H){
+    const hor=H*0.32;
+    trafficFront.forEach(car=>{
+      car.y+=car.speed*1.8;
+      if(car.y<hor)car.y=H+20+Math.random()*80;
+    });
+    trafficRear.forEach(car=>{
+      car.y+=car.speed*1.5;
+      if(car.y>H+40)car.y=hor+Math.random()*20;
+    });
+    trafficBird.forEach(car=>{
+      car.x+=car.speed*1.6;
+      if(car.speed>0&&car.x>W+80)car.x=-80-Math.random()*120;
+      if(car.speed<0&&car.x<-80)car.x=W+80+Math.random()*120;
+    });
+    trafficLeft.forEach(car=>{
+      car.x+=car.speed*1.6;
+      if(car.speed>0&&car.x>W+80)car.x=-80-Math.random()*100;
+      if(car.speed<0&&car.x<-80)car.x=W+60+Math.random()*100;
+    });
+    dashOffset=(dashOffset+1.4)%32;
+  }
+
+  function camLoop(){
+    const canvas=document.getElementById('camCanvas');
+    if(!canvas||!document.getElementById('screen-camera').classList.contains('active')){
+      camAnimFrame=null;return;
+    }
+    const wrap=document.getElementById('camWrap');
+    const W=wrap?wrap.clientWidth:0;
+    const H=wrap?wrap.clientHeight:0;
+    if(W<10||H<10){camAnimFrame=requestAnimationFrame(camLoop);return;}
+    if(canvas.width!==W||canvas.height!==H){canvas.width=W;canvas.height=H;}
+    const ctx=canvas.getContext('2d');
+    ctx.clearRect(0,0,W,H);
+    updateCamTraffic(W,H);
+    if(currentCamView==='front')drawFrontCam(ctx,W,H);
+    else if(currentCamView==='rear')drawRearCam(ctx,W,H);
+    else if(currentCamView==='bird')drawBirdCam(ctx,W,H);
+    else drawLeftCam(ctx,W,H);
+    const ts=document.getElementById('camTimestamp');
+    if(ts){const n=new Date();ts.textContent=n.toLocaleTimeString('en-GB')+' — '+camLabels[currentCamView];}
+    camAnimFrame=requestAnimationFrame(camLoop);
+  }
+
+  function startCamLoop(){if(!camAnimFrame)requestAnimationFrame(()=>requestAnimationFrame(camLoop));}
+
+  function rotateCamView(){
+    const idx=camViews.indexOf(currentCamView);
+    currentCamView=camViews[(idx+1)%camViews.length];
+    const label=document.getElementById('camViewLabel');
+    if(label)label.textContent=camLabels[currentCamView];
+  }
+
+  function toggleBirdView(){rotateCamView();}
+  function toggleCamView(){rotateCamView();}
+
+    // ========== MODALS ==========
   function openModal(id) { document.getElementById(id).classList.add('open'); }
   function closeModal(id) { document.getElementById(id).classList.remove('open'); }
   function showAlertModal() { openModal('alertModal'); }
@@ -2765,7 +3068,6 @@
 
     const rangeEl = document.getElementById('homeBattRange');
     const estEl = document.getElementById('homeBattEstTime');
-    const warnEl = document.getElementById('homeBattWarning');
     const dotEl = document.getElementById('homeBattDot');
     const statusTxtEl = document.getElementById('homeBattStatusTxt');
     const drainBadge = document.getElementById('homeBattDrainBadge');
@@ -2773,10 +3075,8 @@
     if (rangeEl) rangeEl.textContent = range + ' km';
     if (estEl) estEl.textContent = estTimeStr;
 
-    // Warning / tip visibility
     const isLow = p < 20;
     const isCritical = p <= 15;
-    if (warnEl) { if (isLow) warnEl.classList.add('show'); else warnEl.classList.remove('show'); }
 
     // Status dot & text
     if (dotEl) { dotEl.className = 'batt-status-dot' + (isLow ? ' warn' : ''); }
@@ -2824,6 +3124,8 @@
     showUndoToast('Drive Mode: ' + (cfg ? cfg.label : mode));
     // Dismiss toast quickly (no undo needed for mode change)
     setTimeout(hideUndoToast, 1800);
+    // Restart drain at new rate
+    restartBattDrain();
   }
 
   function showUndoToast(msg) {
@@ -2847,19 +3149,41 @@
   let liveBattPct = 15;
   let battDrainInterval = null;
 
+  // Drain amount per tick (every 2s) by drive mode
+  const driveDrainRate = {
+    'eco':        0.2,
+    'comfort':    0.5,
+    'sport':      1.4,
+    'sport-plus': 2.2,
+  };
+
   function startBattDrain() {
     if (battDrainInterval) return;
     battDrainInterval = setInterval(() => {
-      if (liveBattPct > 15) {
-        liveBattPct = Math.max(15, parseFloat((liveBattPct - 0.5).toFixed(1)));
+      const rate = driveDrainRate[currentDriveMode] || 0.5;
+      const regenPenalty = liveBattPct > 50 ? 0.15 : 0;
+      // Always drain down to 0, no floor — battery can go as low as it goes
+      const newPct = parseFloat((liveBattPct - rate - regenPenalty).toFixed(1));
+      if (newPct <= 15) {
+        liveBattPct = 15;
         updateAllBatteryDisplays(liveBattPct);
         updateHomeBattCard(liveBattPct);
-      } else {
         clearInterval(battDrainInterval);
         battDrainInterval = null;
+      } else {
+        liveBattPct = newPct;
+        updateAllBatteryDisplays(liveBattPct);
         updateHomeBattCard(liveBattPct);
       }
     }, 2000);
+  }
+
+  function restartBattDrain() {
+    if (battDrainInterval) {
+      clearInterval(battDrainInterval);
+      battDrainInterval = null;
+    }
+    if (liveBattPct > 15) startBattDrain();
   }
 
   // Init
@@ -2880,16 +3204,111 @@
     if (toast) toast.classList.remove('show');
   });
 
-  // ========== SPEED ANIMATION ==========
+  // ========== SPEED + REGEN BRAKING SYSTEM ==========
   updateTempColor();
   let speed = 70, speedDir = 1;
+  let regenKwhTotal = 18.6; // starts at existing displayed value
+  let lastSpeed = 70;
+  let regenActive = false;
+  let powerDrawActive = false;
+
+  function updateRegenHud(spd) {
+    const hud = document.getElementById('regenHud');
+    const valEl = document.getElementById('regenValue');
+    const labelEl = document.getElementById('regenLabel');
+    const unitEl = document.getElementById('regenUnit');
+    const barEl = document.getElementById('regenBar');
+    const tagEl = document.getElementById('regenModeTag');
+    if (!hud) return;
+
+    const delta = spd - lastSpeed;
+
+    // Auto-disable regen braking when battery >= 51% (cold/high battery efficiency rule)
+    const regenEnabled = liveBattPct <= 50;
+
+    // Sync the home status bar regen display
+    const regenStatVal = document.querySelector('.home-status-bar .hstat:nth-child(3) .hstat-val');
+    if (regenStatVal) {
+      if (regenEnabled) {
+        regenStatVal.textContent = 'ON';
+        regenStatVal.style.color = '';
+      } else {
+        regenStatVal.textContent = 'AUTO OFF';
+        regenStatVal.style.color = '#aaa';
+      }
+    }
+
+    if (delta < -1 && regenEnabled) {
+      // Decelerating — regen braking active, battery above 0% and low/amber
+      const regenKw = Math.min(40, Math.abs(delta) * 6 + Math.random() * 4);
+      regenActive = true; powerDrawActive = false;
+      hud.className = 'regen-hud active';
+      labelEl.textContent = 'REGEN BRAKING';
+      valEl.textContent = regenKw.toFixed(1);
+      unitEl.textContent = 'kW  ·  +' + (regenKw * 2/3600 * 100).toFixed(3) + '% added';
+      barEl.style.width = Math.min(100, regenKw / 40 * 100) + '%';
+      tagEl.textContent = '↺ ENERGY RECOVERY';
+      // Accumulate regen energy and add tiny charge to battery
+      regenKwhTotal += regenKw * (2/3600); // 2s tick
+      const regenCard = document.getElementById('regenSavedVal');
+      if (regenCard) regenCard.textContent = regenKwhTotal.toFixed(1);
+      // Slight battery boost from regen
+      if (liveBattPct < 100) {
+        liveBattPct = Math.min(100, liveBattPct + 0.15);
+        updateAllBatteryDisplays(liveBattPct);
+        updateHomeBattCard(liveBattPct);
+      }
+    } else if (delta < -1 && !regenEnabled) {
+      // Decelerating but regen is off (battery too high) — coasting, slight drain still
+      regenActive = false; powerDrawActive = false;
+      hud.className = 'regen-hud';
+      labelEl.textContent = 'COASTING';
+      valEl.textContent = (2 + Math.random() * 2).toFixed(1);
+      unitEl.textContent = 'kW  ·  Regen suspended';
+      barEl.style.width = '8%';
+      tagEl.textContent = '⊘ REGEN OFF (BATT > 50%)';
+      // Small drain even while coasting (no regen recovery)
+      if (liveBattPct > 0) {
+        liveBattPct = Math.max(0, liveBattPct - 0.05);
+        updateAllBatteryDisplays(liveBattPct);
+        updateHomeBattCard(liveBattPct);
+      }
+    } else if (delta > 1) {
+      // Accelerating — power draw, battery goes down
+      const drawKw = Math.min(120, delta * 9 + 12 + Math.random() * 6);
+      regenActive = false; powerDrawActive = true;
+      hud.className = 'regen-hud power-draw';
+      labelEl.textContent = 'POWER DRAW';
+      valEl.textContent = drawKw.toFixed(1);
+      unitEl.textContent = 'kW';
+      barEl.style.width = Math.min(100, drawKw / 120 * 100) + '%';
+      tagEl.textContent = '↑ CONSUMING POWER';
+    } else {
+      // Cruising
+      const cruiseKw = (12 + Math.random() * 4).toFixed(1);
+      regenActive = false; powerDrawActive = false;
+      hud.className = 'regen-hud';
+      labelEl.textContent = 'POWER';
+      valEl.textContent = cruiseKw;
+      unitEl.textContent = 'kW';
+      barEl.style.width = (cruiseKw / 120 * 100) + '%';
+      tagEl.textContent = 'CRUISING';
+    }
+    lastSpeed = spd;
+  }
+
   setInterval(() => {
-    speed += speedDir * (Math.random() * 2 | 0);
-    if (speed > 80) speedDir = -1;
-    if (speed < 60) speedDir = 1;
+    speed += speedDir * (Math.random() * 3 | 0);
+    if (speed > 82) speedDir = -1;
+    if (speed < 58) speedDir = 1;
     const el = document.getElementById('speedDisplay');
     if (el) el.textContent = speed + ' km/h';
-  }, 3000);
+    // Update driving screen speed too
+    const driveEl = document.getElementById('driveSpeed');
+    if (driveEl && currentScreen === 'driving') driveEl.textContent = speed;
+    // Update regen HUD only while driving
+    if (currentScreen === 'driving') updateRegenHud(speed);
+  }, 2000);
 </script>
 </body>
 </html>
